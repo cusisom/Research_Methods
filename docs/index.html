@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Methods - D. Cusimano Research Methods</title>
+<title>Methods - Photgrammetry</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,14 +98,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#photogrammetry-workflow" id="toc-photogrammetry-workflow" class="nav-link active" data-scroll-target="#photogrammetry-workflow">Photogrammetry Workflow</a>
+  <ul class="collapse">
+  <li><a href="#photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" id="toc-photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" class="nav-link" data-scroll-target="#photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics">Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics</a>
+  <ul class="collapse">
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software:</a></li>
+  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware:</a></li>
+  <li><a href="#photogrammetry" id="toc-photogrammetry" class="nav-link" data-scroll-target="#photogrammetry">Photogrammetry</a></li>
+  </ul></li>
+  <li><a href="#lightroom" id="toc-lightroom" class="nav-link" data-scroll-target="#lightroom">Lightroom</a></li>
+  <li><a href="#reality-capture" id="toc-reality-capture" class="nav-link" data-scroll-target="#reality-capture">Reality Capture</a></li>
+  <li><a href="#the-next-processing-steps-can-be-found-in-the-morphometrics-section" id="toc-the-next-processing-steps-can-be-found-in-the-morphometrics-section" class="nav-link" data-scroll-target="#the-next-processing-steps-can-be-found-in-the-morphometrics-section">The next processing steps can be found in the <code>Morphometrics</code> section</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">D. Cusimano Research Methods</h1>
+<h1 class="title">Photgrammetry</h1>
 </div>
 
 
@@ -120,9 +137,189 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is a new attempt at illustrating the workflow for my coming research.</p>
+<section id="photogrammetry-workflow" class="level1">
+<h1>Photogrammetry Workflow</h1>
+<section id="photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" class="level2">
+<h2 class="anchored" data-anchor-id="photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics">Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics</h2>
+<p>This workflow walks through the process of digitizing skeletal materials via photogrammetry for geometric morphometric analysis in 3D Slicer.</p>
+<section id="software" class="level3">
+<h3 class="anchored" data-anchor-id="software">Software:</h3>
+<p>Foldio 360 <em>Phone App</em></p>
+<p>Adobe Lightroom</p>
+<p>Reality Capture</p>
+<p>3D Slicer</p>
+<pre><code>Extensions: Slicer IGT &amp; SlicerMorph</code></pre>
+</section>
+<section id="hardware" class="level3">
+<h3 class="anchored" data-anchor-id="hardware">Hardware:</h3>
+<p>Foldio smart turntable and lightbox</p>
+<p>Canon EOS 6D DSLR camera</p>
+</section>
+<section id="photogrammetry" class="level3">
+<h3 class="anchored" data-anchor-id="photogrammetry">Photogrammetry</h3>
+<section id="the-focus-of-this-section-is-on-capturing-data-to-develop-three-dimensional-models-in-the-reality-capture-software.-this-walkthrough-is-a-step-by-step-guide-designed-for-unfamiliar-users." class="level4">
+<h4 class="anchored" data-anchor-id="the-focus-of-this-section-is-on-capturing-data-to-develop-three-dimensional-models-in-the-reality-capture-software.-this-walkthrough-is-a-step-by-step-guide-designed-for-unfamiliar-users.">The focus of this section is on capturing data to develop three dimensional models in the Reality Capture software. This walkthrough is a step-by-step guide designed for unfamiliar users.</h4>
+<ol type="1">
+<li><p>Turn on the foldio equipment and camera to initialize Bluetooth link between turntable and camera</p></li>
+<li><p>Ensure that the light box is turned on and the fluorescent room lights are turned off</p></li>
+<li><p>Open <code>foldio app</code> on smartphone</p>
+<ul>
+<li>Select DSLR 360 from the device information screen</li>
+<li>Click on Select Device at bottom of screen
+<ul>
+<li>Foldio 360 should appear as an option
+<ul>
+<li>Open Select Camera Brand menu and select Canon (either one)</li>
+<li>Under settings select IR remote delay and set to 2 seconds</li>
+<li>On main screen, set number of shots to 36 (you will see the default of 24 on the display. Click this once to change to 36)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Set the camera to Av</p>
+<ul>
+<li>Set the <code>White Balance</code> to <code>Color Temperature</code> (hit the <code>Q menu</code> button and scroll through options until you see white balance)</li>
+<li>Set camera to <code>Manual Focus</code></li>
+</ul></li>
+<li><p>Place specimen in the center of the turntable</p>
+<ul>
+<li><p>Use a stand/ring mold</p></li>
+<li><p>If this is a skull, set the beginning position as close to Frankfurt horizontal as possible.</p></li>
+</ul></li>
+<li><p>Focus camera on specimen. For best precision, use the magnifying glass button on camera to zoom over focused region.</p></li>
+<li><p>Once all settings are in place, press the orange button on the foldio app to begin shooting.</p>
+<ul>
+<li><em>Do not close the app or return to home screen on phone. This will stop the process.</em></li>
+</ul></li>
+<li><p>Wait until all 36 photos have been taken. Then rotate antero-superiorly (rotate along sagittal plane)</p>
+<ul>
+<li>To capture all need angles you will need to reposition the skull about 6 times, rotating it approximately 30 degrees in the sagittal plane each time. Your last set of photos should be shot with the frontal bone positioned in the ring mold.</li>
+</ul></li>
+<li><p>Remove the memory card from the camera and load into Adobe Lightroom on computer</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="lightroom" class="level2">
+<h2 class="anchored" data-anchor-id="lightroom">Lightroom</h2>
+<ol type="1">
+<li>To view photos, click on import and choose the USB drive
+<ul>
+<li>Find DCIM under 100 Canon</li>
+<li>Make sure that only the photos that you want imported are selected</li>
+<li>Click <code>Import</code></li>
+</ul></li>
+<li>Once photos are imported, click on <code>Develop</code> in top right corner
+<ul>
+<li>This will open full view of first photo in the list</li>
+</ul></li>
+<li>Click on the <code>eyedropper icon</code> on the right side of the screen and then click on the photo
+<ul>
+<li>From this window you can also adjust the Texture and Temp of the file. Increase a bit for more detail but not so much that it begins to highlight details other than the crania (e.g., aspects of the turntable or specimen stand)</li>
+</ul></li>
+<li>When settings are as you want them, click on <code>Copy</code> in the bottom left corner. Click <code>Ok</code> on the menu that pops up.
+<ul>
+<li>Then hold control and press ‘a’ to select the entire library.</li>
+<li>Click <code>Sync</code> in the bottom right corner to apply to all
+<ul>
+<li>Another pop-up window will appear. Click <code>Ok</code> to sync</li>
+</ul></li>
+<li>You can switch back to library view from the menu in the top right corner to see if Lightroom is applying your changes to all photos.</li>
+</ul></li>
+<li>When complete, hit <code>Export</code> in bottom left corner and choose a folder to send the images.</li>
+</ol>
+</section>
+<section id="reality-capture" class="level2">
+<h2 class="anchored" data-anchor-id="reality-capture">Reality Capture</h2>
+<ol type="1">
+<li>Open Reality Capture</li>
+<li>Under <code>Workflow</code> in the ribbon on top should have an icon that says <code>Folder</code>, click on this and select the folder that your exported photos are in.</li>
+<li>Check to see that the images loaded by observing the image count in the window on the left of the screen</li>
+<li>Click on the <code>Alignment</code> tab in the ribbon and find/click on the <code>Align Images</code> button
+<ul>
+<li><p>Wait while the program creates your model</p>
+<ul>
+<li><em>The resulting image can vary in its presentation. In any case, it will look like a pixelated model of your specimen. If it looks like your specimen in multiple views (i.e., the images didn’t create one cohesive model) you will need to add more photos or begin the process again. If the images come together to create what looks like a good rendition of the specimen you can move on.</em></li>
+</ul></li>
+</ul></li>
+<li>To orient the model, click on the <code>Tools</code> button in the <code>SCENE 3D</code> ribbon. At the very left of the ribbon menu there are two buttons for setting the <code>Reconstruction Region</code> and the <code>Ground Plane</code>. Begin by clicking <code>Set Ground Plane</code>
+<ul>
+<li>You will observe three colored rings and three colored bars appear within your model.</li>
+<li>Clicking on any of the colored rings will allow you to rotate your model. Do this until it is in proper anatomical position (for crania, position in Frankfurt Horizontal).</li>
+<li>Once in the correct position, click on the vertical colored bar to drag the model up to place on the ground plane.</li>
+<li>If importing this into <code>3D Slicer</code> (which we will for this purpose), you will want to orient the image backwords (i.e., when viewed from the front, you are looking at the back). This can be checked by opening the <code>View</code> menu under the <code>Scene 3D</code> tab and finding the <code>View Camera</code> box. The default setting is on <code>Perspective</code> which will be used for orienting the specimens. Click on this to see the dropdown menu and select <code>Front</code>. Adjust the orientation until this view shows the back of the specimen.</li>
+</ul></li>
+<li>Click on the <code>Set Reconstruction Region</code> tab in the top left menu
+<ul>
+<li>A bounding box will appear around your model. Make sure that this box encompasses your entire model (nothing outside the box)</li>
+</ul></li>
+<li>Setting Scale
+<ul>
+<li>Once the model is properly oriented, move to establishing the correct scale.</li>
+<li>Under the <code>Tools</code> tab in <code>SCENE 3D</code>, click on the <code>Control Points</code> tab</li>
+<li>A menu will appear on the left of the screen</li>
+<li>Click on the button that says <code>Control Points</code> in this menu and then select <code>Create</code>
+<ul>
+<li>It will generate an unassigned point (point 0)</li>
+</ul></li>
+<li>A small pop-up window will appear in the upper right corner of your screen suggesting that control points be assigned in 2D mode. Heed this advice.
+<ul>
+<li><p>Near where this pop-up appeared (top right of model viewer screen) is a small white box that reads <code>3Ds</code>. Click and hold this button to access the dropdown menu.</p></li>
+<li><p>Open the <code>2Ds</code> library</p></li>
+<li><p><em>Important. You will need to choose at least 2 different photos to set the control points. If you pressed <code>Test Connection</code> on the foldio app when taking photos, you will likely have at least two copies of the first image. Do not use the duplicate shot when setting control points.</em></p></li>
+<li><p>Click on the first image you want to use and open the drop down menu again.</p>
+<ul>
+<li>Click on <code>2D</code>, to view this image</li>
+<li>Click on the point 0 button that generated earlier. You can now place this point on your image.</li>
+<li>After this point is placed, generate another unassigned point by clicking <code>create</code>. This will give you ‘point 1’</li>
+<li>Select this unassigned point and place it on the image.</li>
+</ul></li>
+<li><p><em>There is no protocol yet for what points to use. I am using the nasal height as my metric for setting scale. Thus, I am setting point 0 at Nasion, and point 1 at the tip of the anterior nasal spine</em></p>
+<ul>
+<li>Return to the <code>2Ds</code> library and click on the second image. Being sure to select the correct points (first point 0, then point 1), assign the points to the corresponding positions on this image.</li>
+</ul></li>
+<li><p>To set your scale, you will first need to know the distance between these two points. Collect this distance manually on the physical specimen with sliding calipers.</p></li>
+<li><p>In Reality Capture, under <code>Tools</code> in the <code>SCENE 3D</code> menu, select <code>Define Distance</code></p>
+<ul>
+<li>Click on point 0 in one of your 2D images and drag to point 1</li>
+<li>A box will appear in the menu on the left of your screen (Selected Constraint(s))</li>
+<li>Reality Capture will provide you with a Defined Distance that does not look accurate. Delete the number provided for you and type in the measurement that you collected manually.</li>
+<li><em>Note that Reality Capture insists on the scale being in meters. If your measurement is in Millimeters (should be), make sure to properly convert the measurement.</em></li>
+</ul></li>
+</ul></li>
+<li>Once your distance is defined, go back to the <code>Alignment</code> Menu from the top ribbon.
+<ul>
+<li>Click on <code>Update</code></li>
+<li>If everything went right, this will quickly update the scale for your model</li>
+</ul></li>
+</ul></li>
+<li>Finishing the Model
+<ul>
+<li>To finish the model making process, return to the <code>Mesh Model</code> menu</li>
+<li>Click on the <code>Normal Detail</code> button.</li>
+<li>This will take a minute
+<ul>
+<li>When complete, a matte white model will be provided</li>
+<li>Look over the model to ensure that all aspects of your specimen are visible</li>
+<li><em>If the model includes foreign objects (e.g., parts of the stand), use the <code>Lasso</code> tool provided in the <code>Tools</code> menu under the <code>Scene 3D</code> ribbon.Use this tool to highlight the unwanted objects and click on <code>Filter Selection</code> to remove.</em></li>
+</ul></li>
+<li>With the model completed, we want to compress the file for more efficient computing down the line. <em>This step may or may not be necessary depending on the computing power of the processor being used. Thus, it is a part of our workflow but possibly unnecessary for others.</em> To accomplish this, click on the <code>Simplify</code> button in the same <code>Tools</code> menu. We simplify the <code>Target Triangle Count</code> to 200,000 (Observe the <code>Simplify Tool</code> menu that appears on the left side of the screen).
+<ul>
+<li>Click <code>Simplify</code> at the bottom of the menu</li>
+</ul></li>
+</ul></li>
+<li>Texturize and Export
+<ul>
+<li>With the model completed and simplified, we want to apply the appropriate texture. This can be done by selecting <code>Texture</code> under the <code>Mesh Model</code> menu.</li>
+<li>With each step completed we can now export the model to be analyzed in <code>3D Slicer'      - While in the same menu, select</code>Dense Mesh Model<code>from the</code>Export<code>box      - Choose the Folder to save it in (*We create a new folder for each specimen*)      Press</code>Ok<code>when the</code>Export Model` window pops up</li>
+</ul></li>
+</ol>
+</section>
+<section id="the-next-processing-steps-can-be-found-in-the-morphometrics-section" class="level2">
+<h2 class="anchored" data-anchor-id="the-next-processing-steps-can-be-found-in-the-morphometrics-section">The next processing steps can be found in the <code>Morphometrics</code> section</h2>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
