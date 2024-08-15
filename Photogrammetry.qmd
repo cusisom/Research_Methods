@@ -4,7 +4,7 @@
 title: "Photogrammetry"
 ---
 
-# Photogrammetry Workflow
+# Photogrammetry Workflow {#sec-photogrammetry}
 
 ## Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics
 This workflow walks through the process of digitizing skeletal materials via photogrammetry for geometric morphometric analysis in 3D Slicer.
@@ -53,7 +53,14 @@ Canon EOS 6D DSLR camera
    
    - If this is a skull, set the beginning position as close to Frankfurt horizontal as possible. 
 
-   ![](Images/STT.jpg){fig-align="center" width=60%}
+:::{#fig-lightbox layout-ncol=2}
+
+   ![](Images/STT.jpg)
+   
+   ![](Images/tripod.jpg)
+   
+   Lightbox Arrangement
+:::
    
    
 6. Focus camera on specimen. For best precision, use the magnifying glass button on camera to zoom over focused region. 
@@ -98,6 +105,9 @@ Canon EOS 6D DSLR camera
 	- You will observe three colored rings and three colored bars appear within your model.
 	- Clicking on any of the colored rings will allow you to rotate your model. Do this until it is in proper anatomical position (for crania, position in Frankfurt Horizontal). 
 	- Once in the correct position, click on the vertical colored bar to drag the model up to place on the ground plane. 
+	
+	![](Images/ground plane.png){fig-align="center" width=90%}
+	
 	- If importing this into `3D Slicer` (which we will for this purpose), you will want to orient the image backwords (i.e., when viewed from the front, you are looking at the back). This can be checked by opening the `View` menu under the `Scene 3D` tab and finding the `View Camera` box. The default setting is on `Perspective` which will be used for orienting the specimens. Click on this to see the dropdown menu and select `Front`. Adjust the orientation until this view shows the back of the specimen.
 	
 6. Click on the `Set Reconstruction Region` tab in the top left menu
@@ -144,12 +154,12 @@ Canon EOS 6D DSLR camera
 
 9. Texturize and Export
 	- With the model completed and simplified, we want to apply the appropriate texture. This can be done by selecting `Texture` under the `Mesh Model` menu. 
-	- With each step completed we can now export the model to be analyzed in `3D Slicer'
+	- With each step completed we can now export the model to be analyzed in `3D Slicer`
 		- While in the same menu, select `Dense Mesh Model` from the `Export` box
 		- Choose the Folder to save it in (*We create a new folder for each specimen*)
 		Press `Ok` when the `Export Model` window pops up
 
-## The next processing steps can be found in the `Morphometrics` section
+## The next processing steps can be found on the [`Morphometrics`](Morph.qmd) page.
 
 	
 

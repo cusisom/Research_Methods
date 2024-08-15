@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#photogrammetry-workflow" id="toc-photogrammetry-workflow" class="nav-link active" data-scroll-target="#photogrammetry-workflow">Photogrammetry Workflow</a>
+  <li><a href="#sec-photogrammetry" id="toc-sec-photogrammetry" class="nav-link active" data-scroll-target="#sec-photogrammetry">Photogrammetry Workflow</a>
   <ul class="collapse">
   <li><a href="#photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" id="toc-photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" class="nav-link" data-scroll-target="#photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics">Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics</a>
   <ul class="collapse">
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#lightroom" id="toc-lightroom" class="nav-link" data-scroll-target="#lightroom">Lightroom</a></li>
   <li><a href="#reality-capture" id="toc-reality-capture" class="nav-link" data-scroll-target="#reality-capture">Reality Capture</a></li>
-  <li><a href="#the-next-processing-steps-can-be-found-in-the-morphometrics-section" id="toc-the-next-processing-steps-can-be-found-in-the-morphometrics-section" class="nav-link" data-scroll-target="#the-next-processing-steps-can-be-found-in-the-morphometrics-section">The next processing steps can be found in the <code>Morphometrics</code> section</a></li>
+  <li><a href="#the-next-processing-steps-can-be-found-on-the-morphometrics-page." id="toc-the-next-processing-steps-can-be-found-on-the-morphometrics-page." class="nav-link" data-scroll-target="#the-next-processing-steps-can-be-found-on-the-morphometrics-page.">The next processing steps can be found on the <code>Morphometrics</code> page.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="photogrammetry-workflow" class="level1">
+<section id="sec-photogrammetry" class="level1">
 <h1>Photogrammetry Workflow</h1>
 <section id="photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" class="level2">
 <h2 class="anchored" data-anchor-id="photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics">Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics</h2>
@@ -188,12 +188,22 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Use a stand/ring mold</p></li>
 <li><p>If this is a skull, set the beginning position as close to Frankfurt horizontal as possible.</p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
+</ul></li>
+</ol>
+<div id="fig-lightbox" class="quarto-layout-panel">
 <figure class="figure">
-<p><img src="Images/STT.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/STT.jpg" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/tripod.jpg" class="img-fluid figure-img"></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Lightbox Arrangement</figcaption><p></p>
 </figure>
-</div></li>
+</div>
+<ol start="6" type="1">
 <li><p>Focus camera on specimen. For best precision, use the magnifying glass button on camera to zoom over focused region.</p></li>
 <li><p>Once all settings are in place, press the orange button on the foldio app to begin shooting.</p>
 <ul>
@@ -240,28 +250,35 @@ ul.task-list li input[type="checkbox"] {
 <section id="reality-capture" class="level2">
 <h2 class="anchored" data-anchor-id="reality-capture">Reality Capture</h2>
 <ol type="1">
-<li>Open Reality Capture</li>
-<li>Under <code>Workflow</code> in the ribbon on top should have an icon that says <code>Folder</code>, click on this and select the folder that your exported photos are in.</li>
-<li>Check to see that the images loaded by observing the image count in the window on the left of the screen</li>
-<li>Click on the <code>Alignment</code> tab in the ribbon and find/click on the <code>Align Images</code> button
+<li><p>Open Reality Capture</p></li>
+<li><p>Under <code>Workflow</code> in the ribbon on top should have an icon that says <code>Folder</code>, click on this and select the folder that your exported photos are in.</p></li>
+<li><p>Check to see that the images loaded by observing the image count in the window on the left of the screen</p></li>
+<li><p>Click on the <code>Alignment</code> tab in the ribbon and find/click on the <code>Align Images</code> button</p>
 <ul>
 <li><p>Wait while the program creates your model</p>
 <ul>
 <li><em>The resulting image can vary in its presentation. In any case, it will look like a pixelated model of your specimen. If it looks like your specimen in multiple views (i.e., the images didn’t create one cohesive model) you will need to add more photos or begin the process again. If the images come together to create what looks like a good rendition of the specimen you can move on.</em></li>
 </ul></li>
 </ul></li>
-<li>To orient the model, click on the <code>Tools</code> button in the <code>SCENE 3D</code> ribbon. At the very left of the ribbon menu there are two buttons for setting the <code>Reconstruction Region</code> and the <code>Ground Plane</code>. Begin by clicking <code>Set Ground Plane</code>
+<li><p>To orient the model, click on the <code>Tools</code> button in the <code>SCENE 3D</code> ribbon. At the very left of the ribbon menu there are two buttons for setting the <code>Reconstruction Region</code> and the <code>Ground Plane</code>. Begin by clicking <code>Set Ground Plane</code></p>
 <ul>
 <li>You will observe three colored rings and three colored bars appear within your model.</li>
 <li>Clicking on any of the colored rings will allow you to rotate your model. Do this until it is in proper anatomical position (for crania, position in Frankfurt Horizontal).</li>
 <li>Once in the correct position, click on the vertical colored bar to drag the model up to place on the ground plane.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/ground plane.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<ul>
 <li>If importing this into <code>3D Slicer</code> (which we will for this purpose), you will want to orient the image backwords (i.e., when viewed from the front, you are looking at the back). This can be checked by opening the <code>View</code> menu under the <code>Scene 3D</code> tab and finding the <code>View Camera</code> box. The default setting is on <code>Perspective</code> which will be used for orienting the specimens. Click on this to see the dropdown menu and select <code>Front</code>. Adjust the orientation until this view shows the back of the specimen.</li>
 </ul></li>
-<li>Click on the <code>Set Reconstruction Region</code> tab in the top left menu
+<li><p>Click on the <code>Set Reconstruction Region</code> tab in the top left menu</p>
 <ul>
 <li>A bounding box will appear around your model. Make sure that this box encompasses your entire model (nothing outside the box)</li>
 </ul></li>
-<li>Setting Scale
+<li><p>Setting Scale</p>
 <ul>
 <li>Once the model is properly oriented, move to establishing the correct scale.</li>
 <li>Under the <code>Tools</code> tab in <code>SCENE 3D</code>, click on the <code>Control Points</code> tab</li>
@@ -301,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
 <li>If everything went right, this will quickly update the scale for your model</li>
 </ul></li>
 </ul></li>
-<li>Finishing the Model
+<li><p>Finishing the Model</p>
 <ul>
 <li>To finish the model making process, return to the <code>Mesh Model</code> menu</li>
 <li>Click on the <code>Normal Detail</code> button.</li>
@@ -316,15 +333,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Click <code>Simplify</code> at the bottom of the menu</li>
 </ul></li>
 </ul></li>
-<li>Texturize and Export
+<li><p>Texturize and Export</p>
 <ul>
 <li>With the model completed and simplified, we want to apply the appropriate texture. This can be done by selecting <code>Texture</code> under the <code>Mesh Model</code> menu.</li>
-<li>With each step completed we can now export the model to be analyzed in <code>3D Slicer'      - While in the same menu, select</code>Dense Mesh Model<code>from the</code>Export<code>box      - Choose the Folder to save it in (*We create a new folder for each specimen*)      Press</code>Ok<code>when the</code>Export Model` window pops up</li>
+<li>With each step completed we can now export the model to be analyzed in <code>3D Slicer</code>
+<ul>
+<li>While in the same menu, select <code>Dense Mesh Model</code> from the <code>Export</code> box</li>
+<li>Choose the Folder to save it in (<em>We create a new folder for each specimen</em>) Press <code>Ok</code> when the <code>Export Model</code> window pops up</li>
+</ul></li>
 </ul></li>
 </ol>
 </section>
-<section id="the-next-processing-steps-can-be-found-in-the-morphometrics-section" class="level2">
-<h2 class="anchored" data-anchor-id="the-next-processing-steps-can-be-found-in-the-morphometrics-section">The next processing steps can be found in the <code>Morphometrics</code> section</h2>
+<section id="the-next-processing-steps-can-be-found-on-the-morphometrics-page." class="level2">
+<h2 class="anchored" data-anchor-id="the-next-processing-steps-can-be-found-on-the-morphometrics-page.">The next processing steps can be found on the <a href="./Morph.html"><code>Morphometrics</code></a> page.</h2>
 
 
 </section>

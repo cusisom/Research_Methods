@@ -17,9 +17,7 @@ format:
     css: styles.css
     toc: true
     
-editor_options:
-    markdown:
-        wrap: sentence
+
 
 
 
