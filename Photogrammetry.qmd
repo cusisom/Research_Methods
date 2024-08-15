@@ -1,7 +1,7 @@
 
 
 ---
-title: "Photgrammetry"
+title: "Photogrammetry"
 ---
 
 # Photogrammetry Workflow
@@ -52,7 +52,7 @@ Canon EOS 6D DSLR camera
    - Use a stand/ring mold
    
    - If this is a skull, set the beginning position as close to Frankfurt horizontal as possible. 
-   
+
    ![](Images/STT.jpg){fig-align="center" width=60%}
    
    
