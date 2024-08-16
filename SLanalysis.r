@@ -154,10 +154,12 @@ d1Links <- "Data/d1Links.csv"
 d1Links <- read.csv(d1Links)
 save_data_location <- "Data/d1Links.rds"
 saveRDS(d1Links, file = save_data_location)
+d1rds <- "Data/d1Links.rds"
+d1RD <- readRDS(d1rds)
 
 
 
- plot(Mshape.Coords, d1Links[ ,2:3])
+ plot(Mshape.Coords, d1RD[ ,2:3])
 
 
 ## ---- EndChunk --------
