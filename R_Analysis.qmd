@@ -42,6 +42,9 @@ Run preliminary analyses
 ```{r, GPA}
 ```
 
+```{r, fourplot}
+```
+
 ```{r, gdf}
 ```
 

@@ -79,13 +79,18 @@ plot(d1.pca)
                                             sep="/"),
                                sep=",", header = TRUE, row.names=1)
 							   
-							   par(mfrow= c(2,2))
+							   
 plot(d1.pca, main = "PCA",
 col=dat$Ancestry,
 pch=16)
 legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
 
-
+## ---- fourplot -------
+par(mfrow= c(2,2))
+plot(d1.pca, main = "PCA",
+col=dat$Ancestry,
+pch=16)
+legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
 
 plot(d1.pca, main = "PCA",
 	axis1=1, axis2=3,
