@@ -1,5 +1,49 @@
 ---
 title: "R_Analysis"
+subtitle: "Workflow"
+author: "Daniel Cusimano"
+date: "08/15/2024"
+output: html_document
 ---
 
 # R_Analysis Workflow
+
+I'm saving this string of code here for the time being `d1Links <- define.links(Mshape.Coords, ptsize = 7, links = NULL)`
+
+This markdown file utilizes codechunks.
+```{r, include=FALSE, cache=FALSE}
+knitr::read_chunk('SLanalysis.r')
+```
+
+Load needed packages
+
+```{r, Loadpackages, message=FALSE, warning=FALSE}
+```
+
+Load needed data
+
+```{r, loaddata}
+```
+
+Merge Demographic data with Landmark data
+
+```{r, merge}
+```
+
+Build array from Slicer data
+
+```{r, BuildingArray}
+```
+
+Run preliminary analyses
+
+```{r, GPA}
+```
+
+Why not?
+
+```{r, gdf}
+```
+
+```{r, wireframe}
+```

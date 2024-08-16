@@ -251,5 +251,5 @@ Generalized Procrustes Analysis
 Output Files
 :::
 
-## The next processing steps can be found on the [`Analysis in R`](R_Analysis.qmd) page.
+## The next processing steps can be found on the [`R_Analysis`](R_Analysis.qmd) page.
 

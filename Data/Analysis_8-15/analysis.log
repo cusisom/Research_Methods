@@ -1,0 +1,15 @@
+Date=2024-08-15
+Time=18:22:43
+InputPath=C:/Users/danny/Documents/git/Research_Methods/Data/Coordinates
+OutputPath=C:/Users/danny/Documents/git/Research_Methods/Data/Analysis_8-15
+Files=LM_1575.fcsv,LM_1601.fcsv,LM_2270.fcsv,LM_2274.fcsv,LM_2294.fcsv,LM_2303.fcsv,LM_2317.fcsv,LM_2343.fcsv,LM_2368.fcsv,LM_2380.fcsv,LM_2458.fcsv,LM_2463.fcsv,LM_2467.fcsv,LM_2487.fcsv,LM_2508.fcsv
+LM_format=.fcsv
+NumberLM=55
+ExcludedLM=
+Boas=False
+MeanShape=MeanShape.csv
+eigenvalues=eigenvalues.csv
+eigenvectors=eigenvectors.csv
+OutputData=OutputData.csv
+pcScores=pcScores.csv
+SemiLandmarks= 
