@@ -130,7 +130,7 @@ plot(d1.pca, main = "PCA",
 col=dat$Sex,
 pch=16
 )
-legend("topright", pch = 20, col=unique(dat$Sex), legend = unique(dat$Sex))
+legend("bottomright", pch = 20, col=unique(dat$Sex), legend = unique(dat$Sex))
 ## ---- wireframe -------
 
 plot.coords <- function(A, W, points.col="black", points.cex=1, lines.col="black", lines.wd=2, bg.col=NULL, 
