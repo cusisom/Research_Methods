@@ -605,12 +605,97 @@ Consensus (mean) Configuration
 <p><img src="R_Analysis_files/figure-html/GPA-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Why not?</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(PD,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="at">Ancestry =</span> dat<span class="sc">$</span>Ancestry,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="at">Sex =</span> dat<span class="sc">$</span>Sex,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="at">Csize =</span> dat<span class="sc">$</span>centeroid)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(gdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$names
+[1] ""         "Ancestry" "Sex"      "Csize"   
 
+$class
+[1] "geomorph.data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lm.fit <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(Coords<span class="sc">~</span>Ancestry<span class="sc">*</span>Sex, <span class="at">data=</span>gdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Warning: Because variables in the linear model are redundant,
+the linear model design has been truncated (via QR decomposition).
+Original X columns: 10
+Final X columns (rank): 7
+Check coefficients or degrees of freedom in ANOVA to see changes.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Analysis of Variance, using Residual Randomization
+Permutation procedure: Randomization of null model residuals 
+Number of permutations: 1000 
+Estimation method: Ordinary Least Squares 
+Sums of Squares and Cross-products: Type I 
+Effect sizes (Z) based on F distributions
+
+             Df        SS        MS     Rsq      F        Z Pr(&gt;F)  
+Ancestry      4 0.0090834 0.0022709 0.37550 1.5073  1.63054  0.056 .
+Sex           1 0.0019193 0.0019193 0.07934 1.2739  0.69194  0.234  
+Ancestry:Sex  1 0.0011348 0.0011348 0.04691 0.7532 -0.46291  0.675  
+Residuals     8 0.0120528 0.0015066 0.49825                         
+Total        14 0.0241903                                           
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Call: procD.lm(f1 = Coords ~ Ancestry * Sex, data = gdf)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">procD.lm</span>(Coords<span class="sc">~</span>Csize <span class="sc">+</span> Ancestry<span class="sc">*</span>Sex, <span class="at">data=</span>gdf))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Warning: Because variables in the linear model are redundant,
+the linear model design has been truncated (via QR decomposition).
+Original X columns: 11
+Final X columns (rank): 8
+Check coefficients or degrees of freedom in ANOVA to see changes.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Analysis of Variance, using Residual Randomization
+Permutation procedure: Randomization of null model residuals 
+Number of permutations: 1000 
+Estimation method: Ordinary Least Squares 
+Sums of Squares and Cross-products: Type I 
+Effect sizes (Z) based on F distributions
+
+             Df        SS        MS     Rsq      F        Z Pr(&gt;F)   
+Csize         1 0.0034837 0.0034837 0.14401 2.5410  2.97834  0.001 **
+Ancestry      4 0.0082665 0.0020666 0.34173 1.5074  1.49535  0.079 . 
+Sex           1 0.0018098 0.0018098 0.07481 1.3200  0.70917  0.247   
+Ancestry:Sex  1 0.0010333 0.0010333 0.04272 0.7537 -0.43578  0.658   
+Residuals     7 0.0095969 0.0013710 0.39673                          
+Total        14 0.0241903                                            
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Call: procD.lm(f1 = Coords ~ Csize + Ancestry * Sex, data = gdf)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span>dat<span class="sc">$</span>Sex,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="at">pch=</span><span class="dv">16</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="R_Analysis_files/figure-html/gdf-1.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>d1Links <span class="ot">&lt;-</span> <span class="st">"Data/d1Links.csv"</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>d1Links <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(d1Links)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>save_data_location <span class="ot">&lt;-</span> <span class="st">"Data/d1Links.rds"</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(d1Links, <span class="at">file =</span> save_data_location)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="fu">plot</span>(Mshape.Coords, d1Links[ ,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>Model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

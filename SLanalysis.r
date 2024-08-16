@@ -108,7 +108,7 @@ plot(d1.pca, main = "PCA",
 )
 legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
 
-## ---- Wireframe -------
+## ---- gdf -------
 
 gdf <- geomorph.data.frame(PD,
 Ancestry = dat$Ancestry,
@@ -125,6 +125,8 @@ plot(d1.pca, main = "PCA",
 col=dat$Sex,
 pch=16
 )
+
+## ---- wireframe -------
 
 plot.coords <- function(A, W, points.col="black", points.cex=1, lines.col="black", lines.wd=2, bg.col=NULL, 
                         main=NULL, main.line=2, main.cex=2, legend=NULL, legend.pos="topright", legend.title="", 
@@ -145,8 +147,20 @@ plot.coords <- function(A, W, points.col="black", points.cex=1, lines.col="black
     segments3d(rbind(A[W[i,1],], A[W[i,2],]), lwd=lines.wd[i], col=lines.col[i])
   }
 }
+
+## ---- Plotpoints -------
+
 d1Links <- "Data/d1Links.csv"
 d1Links <- read.csv(d1Links)
+save_data_location <- "Data/d1Links.rds"
+saveRDS(d1Links, file = save_data_location)
+
+
+
+Model <- plot(Mshape.Coords, d1Links[ ,2:3])
+Model
+
+## ---- EndChunk --------
 
 plot.coords(Mshape.Coords, d1Links[ ,2:3], points.col="brown2", points.cex=1.5)
 plot.coords(d1array.gpa$consensus, d1Links[,2:3], points.col="coral", points.cex=2, lines.col="aquamarine4", lines.wd=3)

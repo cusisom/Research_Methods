@@ -40,10 +40,8 @@ Run preliminary analyses
 ```{r, GPA}
 ```
 
-Why not?
-
 ```{r, gdf}
 ```
 
-```{r, wireframe}
+```{r, Plotpoints}
 ```
