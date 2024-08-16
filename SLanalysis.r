@@ -157,8 +157,8 @@ saveRDS(d1Links, file = save_data_location)
 
 
 
-Model <- plot(Mshape.Coords, d1Links[ ,2:3])
-Model
+ plot(Mshape.Coords, d1Links[ ,2:3])
+
 
 ## ---- EndChunk --------
 

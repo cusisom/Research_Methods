@@ -18,6 +18,8 @@ knitr::read_chunk('SLanalysis.r')
 Load needed packages
 
 ```{r, Loadpackages, message=FALSE, warning=FALSE}
+library(rgl)
+setupKnitr(autoprint = TRUE)
 ```
 
 Load needed data
