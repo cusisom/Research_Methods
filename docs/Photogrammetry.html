@@ -91,6 +91,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./Morph.html">
  <span class="menu-text">Morphometrics</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./R_Analysis.html">
+ <span class="menu-text">R_Analysis</span></a>
+  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -106,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-photogrammetry" id="toc-sec-photogrammetry" class="nav-link active" data-scroll-target="#sec-photogrammetry">Photogrammetry Workflow</a>
+  <li><a href="#photogrammetry-workflow" id="toc-photogrammetry-workflow" class="nav-link active" data-scroll-target="#photogrammetry-workflow">Photogrammetry Workflow</a>
   <ul class="collapse">
   <li><a href="#photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" id="toc-photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" class="nav-link" data-scroll-target="#photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics">Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics</a>
   <ul class="collapse">
@@ -141,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-photogrammetry" class="level1">
+<section id="photogrammetry-workflow" class="level1">
 <h1>Photogrammetry Workflow</h1>
 <section id="photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics" class="level2">
 <h2 class="anchored" data-anchor-id="photogrammetry-and-slicer-workflow-for-3d-geometric-morphometrics">Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics</h2>
@@ -342,7 +346,18 @@ ul.task-list li input[type="checkbox"] {
 <li>Choose the Folder to save it in (<em>We create a new folder for each specimen</em>) Press <code>Ok</code> when the <code>Export Model</code> window pops up</li>
 </ul></li>
 </ul></li>
+<li><p>Resize texture file</p>
+<ul>
+<li>The texture file that was exported with your model will look something like <code>Mesh_Model_1_u1_v1_diffuse</code> and will be in a <code>.PNG</code> format</li>
+<li>Depending on your computer, this file may be fine as is but for our purpose it became important to resize the image for quicker processing in 3D Slicer</li>
+<li>To resize the image, open it from your file, right click over the image and find the <code>Resize image</code> option.</li>
+<li>click on the <code>Percentage</code> option and change to 50%</li>
+<li><em>Ideally the image size is at 4096x4096</em></li>
+<li>It is also our practice to change the file type to <code>JPG</code></li>
+<li>Save this image under a recognizable name and you’re good to go</li>
+</ul></li>
 </ol>
+<p><img src="Images/resize.png" class="img-fluid"></p>
 </section>
 <section id="the-next-processing-steps-can-be-found-on-the-morphometrics-page." class="level2">
 <h2 class="anchored" data-anchor-id="the-next-processing-steps-can-be-found-on-the-morphometrics-page.">The next processing steps can be found on the <a href="./Morph.html"><code>Morphometrics</code></a> page.</h2>

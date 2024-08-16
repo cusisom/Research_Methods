@@ -4,7 +4,7 @@
 title: "Photogrammetry"
 ---
 
-# Photogrammetry Workflow {#sec-photogrammetry}
+# Photogrammetry Workflow 
 
 ## Photogrammetry and Slicer Workflow for 3D Geometric Morphometrics
 This workflow walks through the process of digitizing skeletal materials via photogrammetry for geometric morphometric analysis in 3D Slicer.
@@ -158,6 +158,17 @@ Canon EOS 6D DSLR camera
 		- While in the same menu, select `Dense Mesh Model` from the `Export` box
 		- Choose the Folder to save it in (*We create a new folder for each specimen*)
 		Press `Ok` when the `Export Model` window pops up
+
+10. Resize texture file
+	- The texture file that was exported with your model will look something like `Mesh_Model_1_u1_v1_diffuse` and will be in a `.PNG` format
+	- Depending on your computer, this file may be fine as is but for our purpose it became important to resize the image for quicker processing in 3D Slicer
+	- To resize the image, open it from your file, right click over the image and find the `Resize image` option.
+	- click on the `Percentage` option and change to 50%
+	- *Ideally the image size is at 4096x4096*
+	- It is also our practice to change the file type to `JPG`
+	- Save this image under a recognizable name and you're good to go
+
+![](Images/resize.png)
 
 ## The next processing steps can be found on the [`Morphometrics`](Morph.qmd) page.
 
