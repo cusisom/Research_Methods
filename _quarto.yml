@@ -10,6 +10,7 @@ website:
         text: Home
       - Photogrammetry.qmd
       - Morph.qmd
+      - data_processing.qmd 
       - R_Analysis.qmd
 
 format:

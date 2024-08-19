@@ -9,7 +9,7 @@
 <meta name="author" content="Daniel Cusimano">
 <meta name="dcterms.date" content="2024-08-15">
 
-<title>Methods - Analysis</title>
+<title>Methods - Data Processing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,11 +157,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Morphometrics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data_processing.html">
+    <a class="nav-link active" href="./data_processing.html" aria-current="page">
  <span class="menu-text">Data Processing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./R_Analysis.html" aria-current="page">
+    <a class="nav-link" href="./R_Analysis.html">
  <span class="menu-text">Analysis</span></a>
   </li>  
 </ul>
@@ -179,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-analysis-in-r-workflow" id="toc-data-analysis-in-r-workflow" class="nav-link active" data-scroll-target="#data-analysis-in-r-workflow">Data Analysis in R Workflow</a>
+  <li><a href="#data-processing-in-r-workflow" id="toc-data-processing-in-r-workflow" class="nav-link active" data-scroll-target="#data-processing-in-r-workflow">Data Processing in R Workflow</a>
   <ul class="collapse">
   <li><a href="#purpose-and-design" id="toc-purpose-and-design" class="nav-link" data-scroll-target="#purpose-and-design">Purpose and Design</a></li>
   <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data">Importing Data</a></li>
@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysis</h1>
+<h1 class="title">Data Processing</h1>
 <p class="subtitle lead">Workflow</p>
 </div>
 
@@ -220,8 +220,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="data-analysis-in-r-workflow" class="level1">
-<h1>Data Analysis in R Workflow</h1>
+<section id="data-processing-in-r-workflow" class="level1">
+<h1>Data Processing in R Workflow</h1>
 <p>I’m saving this string of code here for the time being <code>d1Links &lt;- define.links(Mshape.Coords, ptsize = 7, links = NULL)</code>. It is the code needed to initiate the construction of a wireframe. I will need to move it in this qmd file as part of my workflow but keep it out of my r script. If in the code script, the analysis will pause and wait for the construction of a new wireframe.</p>
 <section id="purpose-and-design" class="level2">
 <h2 class="anchored" data-anchor-id="purpose-and-design">Purpose and Design</h2>
@@ -486,243 +486,6 @@ $skipped
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(Coords) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span>no.LM,</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"x"</span>,<span class="st">"y"</span>,<span class="st">"z"</span>),</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>SM.log<span class="sc">$</span>ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Run preliminary analyses</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>d1array.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(Coords, <span class="at">print.progress=</span><span class="cn">FALSE</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(d1array.gpa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-gpagen(A = Coords, print.progress = FALSE) 
-
-
-
-Generalized Procrustes Analysis
-with Partial Procrustes Superimposition
-
-55 fixed landmarks
-0 semilandmarks (sliders)
-3-dimensional landmarks
-2 GPA iterations to converge
-
-
-Consensus (mean) Configuration
-
-              X            Y            Z
-1   0.088944373  0.017112548 -0.041115700
-2   0.086713372 -0.027345317 -0.040021395
-3  -0.162443890  0.117405845 -0.018763507
-4  -0.174582983 -0.097198168 -0.022417884
-5  -0.072835774  0.005410136 -0.069411402
-6  -0.061195686  0.003623447  0.194245899
-7   0.072841404  0.014012998  0.026215460
-8   0.070317703 -0.022981056  0.025318686
-9   0.055937474  0.090097271  0.019004102
-10  0.042264419 -0.095650389  0.016701833
-11  0.041823214  0.056701035 -0.079885979
-12  0.031724630 -0.059210552 -0.082664696
-13 -0.088723351  0.137570447  0.047611249
-14 -0.118946520 -0.126509256  0.050197105
-15 -0.106340677  0.038772004 -0.080774211
-16 -0.111675376 -0.023241438 -0.080421196
-17  0.060162857  0.088468310  0.032156854
-18  0.045968220 -0.095906425  0.030038061
-19  0.056787889  0.093792044  0.037006096
-20  0.041374212 -0.100759624  0.034888199
-21  0.054626471  0.084012697  0.068863984
-22  0.040931330 -0.091916980  0.066414210
-23  0.090848557 -0.005977439  0.061501267
-24  0.034752009  0.102310323 -0.008181600
-25  0.020402348 -0.106164678 -0.009282208
-26 -0.242708463  0.017510623  0.074039167
-27  0.077062242  0.049744606 -0.013061859
-28  0.070255052 -0.058779766 -0.013404260
-29  0.078631253  0.055598228  0.055444973
-30  0.067061074 -0.065688694  0.054134265
-31 -0.085089793  0.110034274 -0.081992605
-32 -0.100780129 -0.098243674 -0.082436290
-33 -0.008952205  0.110512561  0.098894026
-34 -0.029123494 -0.111124422  0.104723166
-35  0.092003602  0.004661012 -0.055469829
-36  0.090565965 -0.015323603 -0.055366853
-37  0.088115891 -0.005829385  0.044062491
-38 -0.247452919  0.021116598  0.002338568
-39 -0.141391551  0.010524882 -0.083613989
-40 -0.070052672  0.110397031 -0.028715450
-41 -0.085465394 -0.102537393 -0.029127669
-42  0.105687539 -0.005653951 -0.086204524
-43 -0.015247706  0.105121853  0.123212577
-44 -0.028721660 -0.106831839  0.118379151
-45  0.100453940 -0.005586806 -0.065498736
-46 -0.010619253  0.121897023 -0.023504552
-47 -0.031223312 -0.119754233 -0.024495686
-48  0.060985556  0.079391502 -0.048708201
-49  0.048934846 -0.086426001 -0.050274464
-50  0.076454649  0.043958386 -0.010324984
-51  0.070609291 -0.053127943 -0.010492446
-52  0.007195879  0.113277545 -0.030760860
-53 -0.010007651 -0.113315049 -0.031915608
-54  0.024282284  0.107561862 -0.013055180
-55  0.008860913 -0.109513011 -0.014027568</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Mshape.Coords<span class="ot">&lt;-</span><span class="fu">mshape</span>(Coords)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Mshape.Coords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>              x           y            z
-1  0.0142205765 -0.04501951 -0.024759076
-2 -0.0096120764 -0.04619559 -0.024655985
-3  0.0541053831  0.09325809 -0.003028978
-4 -0.0608354106  0.08862981 -0.007258012
-5 -0.0003492661  0.04146364 -0.034552159
-6 -0.0031006576  0.02596099  0.105905142</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>d1.pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(d1array.gpa<span class="sc">$</span>coords)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="R_Analysis_files/figure-html/GPA-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a> SlicerMorph.MS <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="fu">paste</span>(SM.log<span class="sc">$</span>output.path,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                                            SM.log<span class="sc">$</span>MeanShape,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">sep=</span><span class="st">"/"</span>),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sep=</span><span class="st">","</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span>dat<span class="sc">$</span>Ancestry,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="at">pch=</span><span class="dv">16</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="R_Analysis_files/figure-html/GPA-2.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span>dat<span class="sc">$</span>Ancestry,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="at">pch=</span><span class="dv">16</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry))</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis1=</span><span class="dv">1</span>, <span class="at">axis2=</span><span class="dv">3</span>,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">col=</span>dat<span class="sc">$</span>Ancestry,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch=</span><span class="dv">16</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry))</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis1=</span><span class="dv">2</span>, <span class="at">axis2=</span><span class="dv">3</span>,</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">col=</span>dat<span class="sc">$</span>Ancestry,</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch=</span><span class="dv">16</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry))</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis1=</span><span class="dv">3</span>, <span class="at">axis2=</span><span class="dv">4</span>,</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">col=</span>dat<span class="sc">$</span>Ancestry,</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch=</span><span class="dv">16</span></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Ancestry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="R_Analysis_files/figure-html/fourplot-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(PD,</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">Ancestry =</span> dat<span class="sc">$</span>Ancestry,</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">Sex =</span> dat<span class="sc">$</span>Sex,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="at">Csize =</span> dat<span class="sc">$</span>centeroid)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(gdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$names
-[1] ""         "Ancestry" "Sex"      "Csize"   
-
-$class
-[1] "geomorph.data.frame"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>lm.fit <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(Coords<span class="sc">~</span>Ancestry<span class="sc">*</span>Sex, <span class="at">data=</span>gdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Warning: Because variables in the linear model are redundant,
-the linear model design has been truncated (via QR decomposition).
-Original X columns: 10
-Final X columns (rank): 7
-Check coefficients or degrees of freedom in ANOVA to see changes.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Analysis of Variance, using Residual Randomization
-Permutation procedure: Randomization of null model residuals 
-Number of permutations: 1000 
-Estimation method: Ordinary Least Squares 
-Sums of Squares and Cross-products: Type I 
-Effect sizes (Z) based on F distributions
-
-             Df        SS        MS     Rsq      F        Z Pr(&gt;F)  
-Ancestry      4 0.0090834 0.0022709 0.37550 1.5073  1.63054  0.056 .
-Sex           1 0.0019193 0.0019193 0.07934 1.2739  0.69194  0.234  
-Ancestry:Sex  1 0.0011348 0.0011348 0.04691 0.7532 -0.46291  0.675  
-Residuals     8 0.0120528 0.0015066 0.49825                         
-Total        14 0.0241903                                           
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Call: procD.lm(f1 = Coords ~ Ancestry * Sex, data = gdf)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">procD.lm</span>(Coords<span class="sc">~</span>Csize <span class="sc">+</span> Ancestry<span class="sc">*</span>Sex, <span class="at">data=</span>gdf))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Warning: Because variables in the linear model are redundant,
-the linear model design has been truncated (via QR decomposition).
-Original X columns: 11
-Final X columns (rank): 8
-Check coefficients or degrees of freedom in ANOVA to see changes.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Analysis of Variance, using Residual Randomization
-Permutation procedure: Randomization of null model residuals 
-Number of permutations: 1000 
-Estimation method: Ordinary Least Squares 
-Sums of Squares and Cross-products: Type I 
-Effect sizes (Z) based on F distributions
-
-             Df        SS        MS     Rsq      F        Z Pr(&gt;F)   
-Csize         1 0.0034837 0.0034837 0.14401 2.5410  2.97834  0.001 **
-Ancestry      4 0.0082665 0.0020666 0.34173 1.5074  1.49535  0.079 . 
-Sex           1 0.0018098 0.0018098 0.07481 1.3200  0.70917  0.247   
-Ancestry:Sex  1 0.0010333 0.0010333 0.04272 0.7537 -0.43578  0.658   
-Residuals     7 0.0095969 0.0013710 0.39673                          
-Total        14 0.0241903                                            
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Call: procD.lm(f1 = Coords ~ Csize + Ancestry * Sex, data = gdf)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span>dat<span class="sc">$</span>Sex,</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="at">pch=</span><span class="dv">16</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(dat<span class="sc">$</span>Sex), <span class="at">legend =</span> <span class="fu">unique</span>(dat<span class="sc">$</span>Sex))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="R_Analysis_files/figure-html/gdf-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>d1Links <span class="ot">&lt;-</span> <span class="st">"Data/d1Links.csv"</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>d1Links <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(d1Links)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>save_data_location <span class="ot">&lt;-</span> <span class="st">"Data/d1Links.rds"</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(d1Links, <span class="at">file =</span> save_data_location)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>d1rds <span class="ot">&lt;-</span> <span class="st">"Data/d1Links.rds"</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>d1RD <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(d1rds)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>d1RD2 <span class="ot">&lt;-</span> d1RD[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a> <span class="fu">plot</span>(Mshape.Coords, d1RD2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

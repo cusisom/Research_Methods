@@ -28,7 +28,7 @@ The Photogrammetry page walks through how to collect and process image data for 
 
 The Morphometrics page discusses how to use the 3D Slicer software to collect Geometric Morphometric data from 3D models
 	
-## R_Analysis
+## Data Processing
 
 The R_Analysis page currently displays each aspect of the analysis code that will be used to illustrate variance in GM data. This page is still under development but currently displays the process of importing and manipulating the needed data files and running Generalized Procrustes Analyses, ANOVAs, and Principal Component Analyses. 
 

@@ -1,12 +1,12 @@
 ---
-title: "Analysis"
+title: "Data Processing"
 subtitle: "Workflow"
 author: "Daniel Cusimano"
 date: "08/15/2024"
 output: html_document
 ---
 
-# Data Analysis in R Workflow
+# Data Processing in R Workflow
 
 I'm saving this string of code here for the time being `d1Links <- define.links(Mshape.Coords, ptsize = 7, links = NULL)`. It is the code needed to initiate the construction of a wireframe. I will need to move it in this qmd file as part of my workflow but keep it out of my r script. If in the code script, the analysis will pause and wait for the construction of a new wireframe. 
 
@@ -43,18 +43,4 @@ Merge Demographic data with Landmark data
 Build array from Slicer data
 
 ```{r, BuildingArray}
-```
-
-Run preliminary analyses
-
-```{r, GPA}
-```
-
-```{r, fourplot}
-```
-
-```{r, gdf}
-```
-
-```{r, Plotpoints}
 ```

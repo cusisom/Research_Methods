@@ -83,7 +83,7 @@ plot(d1.pca)
 plot(d1.pca, main = "PCA",
 col=dat$Ancestry,
 pch=16)
-legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
+legend("bottomright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
 
 ## ---- fourplot -------
 par(mfrow= c(2,2))
@@ -161,10 +161,12 @@ save_data_location <- "Data/d1Links.rds"
 saveRDS(d1Links, file = save_data_location)
 d1rds <- "Data/d1Links.rds"
 d1RD <- readRDS(d1rds)
+d1RD2 <- d1RD[,2:3]
 
 
 
- plot(Mshape.Coords, d1RD[ ,2:3])
+
+ plot(Mshape.Coords, d1RD2)
 
 
 ## ---- EndChunk --------
