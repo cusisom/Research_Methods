@@ -61,7 +61,7 @@ dimnames(Coords) <- list(1:no.LM,
 c("x","y","z"),
 SM.log$ID)
 
-## ---- GPA -------
+## ---- Array -------
 
 d1array.gpa <- gpagen(Coords, print.progress=FALSE)
 
@@ -69,6 +69,8 @@ summary(d1array.gpa)
 
 Mshape.Coords<-mshape(Coords)
 head(Mshape.Coords)
+
+## ---- GPA -------
 
 d1.pca<-gm.prcomp(d1array.gpa$coords)
 plot(d1.pca)
@@ -171,6 +173,6 @@ d1RD2 <- d1RD[,2:3]
 
 ## ---- EndChunk --------
 
-plot.coords(Mshape.Coords, d1Links[ ,2:3], points.col="brown2", points.cex=1.5)
-plot.coords(d1array.gpa$consensus, d1Links[,2:3], points.col="coral", points.cex=2, lines.col="aquamarine4", lines.wd=3)
+plot.coords(Mshape.Coords, d1Links[ ,2:3], points.col="blue", points.cex=1.5)
+plot.coords(d1array.gpa$consensus, d1Links[,2:3], points.col="blue", points.cex=1, lines.col="black", lines.wd=3)
  
