@@ -48,15 +48,6 @@ Build array from Slicer data
 ```{r, Array}
 ```
 
-:::{#fig layout-ncol=2}
-
-   ![](Images/AntWire.png)
-   
-   ![](Images/LatWire.png)
-   
-   Wireframe from Coordinates
-:::
-
 Run preliminary analyses
 
 ```{r, GPA}
