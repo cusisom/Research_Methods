@@ -30,7 +30,7 @@ The Morphometrics page discusses how to use the 3D Slicer software to collect Ge
 	
 ## Data Processing
 
-The R_Analysis page currently displays each aspect of the analysis code that will be used to illustrate variance in GM data. This page is still under development but currently displays the process of importing and manipulating the needed data files and running Generalized Procrustes Analyses, ANOVAs, and Principal Component Analyses. 
+The Data Processing page currently displays each aspect of the analysis code that will be used to illustrate variance in GM data. This page is still under development but currently displays the process of importing and manipulating the needed data files and running Generalized Procrustes Analyses, ANOVAs, and Principal Component Analyses. 
 
 # The Lab
 

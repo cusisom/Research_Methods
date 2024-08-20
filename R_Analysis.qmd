@@ -8,7 +8,6 @@ output: html_document
 
 # Data Analysis in R Workflow
 
-I'm saving this string of code here for the time being `d1Links <- define.links(Mshape.Coords, ptsize = 7, links = NULL)`. It is the code needed to initiate the construction of a wireframe. I will need to move it in this qmd file as part of my workflow but keep it out of my r script. If in the code script, the analysis will pause and wait for the construction of a new wireframe. 
 
 ## Purpose and Design
 

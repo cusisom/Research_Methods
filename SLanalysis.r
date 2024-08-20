@@ -14,6 +14,7 @@ require(skimr) #for nice visualization of data
 require(knitr) #for qmd building
 require(gapminder) #for plot aesthetics
 
+
 ## ---- loaddata --------
 
 SM.log.file = "Data/Analysis_8-15/analysis.log"
@@ -125,6 +126,7 @@ attributes(gdf)
 
 lm.fit <- procD.lm(Coords~Ancestry*Sex, data=gdf)
 summary(lm.fit)
+plot(lm.fit)
 
 anova(procD.lm(Coords~Csize + Ancestry*Sex, data=gdf))
 
@@ -133,46 +135,3 @@ col=dat$Sex,
 pch=16
 )
 legend("bottomright", pch = 20, col=unique(dat$Sex), legend = unique(dat$Sex))
-## ---- wireframe -------
-
-plot.coords <- function(A, W, points.col="black", points.cex=1, lines.col="black", lines.wd=2, bg.col=NULL, 
-                        main=NULL, main.line=2, main.cex=2, legend=NULL, legend.pos="topright", legend.title="", 
-                        legend.col=NULL, legend.cex=1.2, legend.lwd=2, legend.bty="n", params=NULL, add=FALSE) {
-  if (!is.null(params)) {par3d(params)}
-  points.col <- rep(points.col, length.out=nrow(A))
-  points.cex <- rep(points.cex, length.out=nrow(A))
-  lines.col <- rep(lines.col, length.out=nrow(W))
-  lines.wd <- rep(lines.wd, length.out=nrow(W))
-  if (!is.null(bg.col)) rgl.bg(sphere=TRUE, color=bg.col, lit=FALSE, back="fill")
-  plot3d(A, type="s", col=points.col, xlab="", ylab="", zlab="", size=points.cex, aspect=FALSE, box=FALSE, axes=FALSE, add=add)
-    if (!is.null(main) | !is.null(legend)) {
-      if (!is.null(legend) & is.null(legend.col)) stop("must supply legend colors")
-      bgplot3d({plot.new()
-    if (!is.null(main)) title(main=main, line=main.line, cex.main=main.cex)
-    if (!is.null(legend)) legend(legend.pos, title=legend.title, legend=legend, col=legend.col, lwd=legend.lwd, cex=legend.cex, bty=legend.bty)})}
-  for (i in 1:nrow(W)) {
-    segments3d(rbind(A[W[i,1],], A[W[i,2],]), lwd=lines.wd[i], col=lines.col[i])
-  }
-}
-
-## ---- Plotpoints -------
-
-d1Links <- "Data/d1Links.csv"
-d1Links <- read.csv(d1Links)
-save_data_location <- "Data/d1Links.rds"
-saveRDS(d1Links, file = save_data_location)
-d1rds <- "Data/d1Links.rds"
-d1RD <- readRDS(d1rds)
-d1RD2 <- d1RD[,2:3]
-
-
-
-
- plot(Mshape.Coords, d1RD2)
-
-
-## ---- EndChunk --------
-
-plot.coords(Mshape.Coords, d1Links[ ,2:3], points.col="blue", points.cex=1.5)
-plot.coords(d1array.gpa$consensus, d1Links[,2:3], points.col="blue", points.cex=1, lines.col="black", lines.wd=3)
- 

@@ -8,8 +8,6 @@ output: html_document
 
 # Data Processing in R Workflow
 
-I'm saving this string of code here for the time being `d1Links <- define.links(Mshape.Coords, ptsize = 7, links = NULL)`. It is the code needed to initiate the construction of a wireframe. I will need to move it in this qmd file as part of my workflow but keep it out of my r script. If in the code script, the analysis will pause and wait for the construction of a new wireframe. 
-
 ## Purpose and Design
 
 This page is a short overview of the SlicerMorph data and a walkthrough of how it was prepared for detailed analysis in r. It illustrates the processes of importing data, merging it with demographic qualifiers, and organizing it into an array that can be read and manipulated with the `geomorph` package. 
@@ -52,6 +50,11 @@ To work with coordinate data in r, `geomorph` requires that the information be f
 ```
 
 
+```{r, Array}
+```
+
+To visualize the coordinate data (see below) I took the mean shape from the landmarks and plotted them to build a wire fram using `d1Links <- define.links(Mshape.Coords, ptsize = 7, links = NULL)`. This is the code needed to initiate the construction of a wireframe. This code is not saved in my `data_processing.r` script. If in the code script, the analysis will pause and wait for the construction of a new wireframe each time it is run. Instead I ran the code once and saved the resulting data as a spreadsheet `d1Links.csv`. This file can be found in the `Data` folder. 
+
 :::{#fig layout-ncol=2}
 
    ![](Images/AntWire.png)
@@ -60,3 +63,5 @@ To work with coordinate data in r, `geomorph` requires that the information be f
    
    Wireframe from Coordinates
 :::
+
+## The next steps in this project can be found on the [`Analysis`](R_Analysis.qmd) page. 
