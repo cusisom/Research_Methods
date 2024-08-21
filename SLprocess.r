@@ -47,9 +47,11 @@ dat$ID <- as.factor(dat$ID)
 dat$Sex <- as.factor(dat$Sex)
 dat$Age <- as.factor(dat$Age)
 dat$Ancestry <- as.factor(dat$Ancestry)
-
+plot(dat$Ancestry)
 d1 <- dat %>% relocate(where(is.factor), .before = proc_dist)
 skim(d1[1:6], )
+
+
 
 ## ---- BuildingArray -------
 

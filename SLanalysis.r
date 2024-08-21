@@ -138,6 +138,6 @@ plot(lm.fit)
 anova(procD.lm(Coords~Csize + Ancestry*Sex, data=gdf))
 
 
-plot(PD~dat$Ancestry, main = "PCA",
+plot(PD,
 col=dat$Ancestry,
 pch=16)

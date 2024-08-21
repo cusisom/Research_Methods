@@ -320,9 +320,12 @@ $skipped
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(dat<span class="sc">$</span>Sex)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(dat<span class="sc">$</span>Age)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Ancestry <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(dat<span class="sc">$</span>Ancestry)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="fu">where</span>(is.factor), <span class="at">.before =</span> proc_dist)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(d1[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat<span class="sc">$</span>Ancestry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="data_processing_files/figure-html/merge-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="fu">where</span>(is.factor), <span class="at">.before =</span> proc_dist)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(d1[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>Data summary</caption>
@@ -486,18 +489,18 @@ $skipped
 <h2 class="anchored" data-anchor-id="build-array-from-slicer-data">Build array from Slicer data</h2>
 <p>To work with coordinate data in r, <code>geomorph</code> requires that the information be formatted into an array by using <code>arrayspecs</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Coords <span class="ot">&lt;-</span> <span class="fu">arrayspecs</span>(SM.output[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)],</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">p=</span>no.LM,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">k=</span><span class="dv">3</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(Coords) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span>no.LM,</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"x"</span>,<span class="st">"y"</span>,<span class="st">"z"</span>),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>SM.log<span class="sc">$</span>ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Coords <span class="ot">&lt;-</span> <span class="fu">arrayspecs</span>(SM.output[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)],</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">p=</span>no.LM,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">k=</span><span class="dv">3</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(Coords) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span>no.LM,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"x"</span>,<span class="st">"y"</span>,<span class="st">"z"</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>SM.log<span class="sc">$</span>ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>d1array.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(Coords, <span class="at">print.progress=</span><span class="cn">FALSE</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(d1array.gpa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>d1array.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(Coords, <span class="at">print.progress=</span><span class="cn">FALSE</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(d1array.gpa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -573,7 +576,7 @@ Consensus (mean) Configuration
 54  0.024282284  0.107561862 -0.013055180
 55  0.008860913 -0.109513011 -0.014027568</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Mshape.Coords<span class="ot">&lt;-</span><span class="fu">mshape</span>(Coords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Mshape.Coords<span class="ot">&lt;-</span><span class="fu">mshape</span>(Coords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To visualize the coordinate data (see below) I took the mean shape from the landmarks and plotted them to build a wire fram using <code>d1Links &lt;- define.links(Mshape.Coords, ptsize = 7, links = NULL)</code>. This is the code needed to initiate the construction of a wireframe. This code is not saved in my <code>data_processing.r</code> script. If in the code script, the analysis will pause and wait for the construction of a new wireframe each time it is run. Instead I ran the code once and saved the resulting data as a spreadsheet <code>d1Links.csv</code>. This file can be found in the <code>Data</code> folder.</p>
 <div id="fig" class="quarto-layout-panel">
