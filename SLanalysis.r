@@ -83,6 +83,12 @@ plot(d1.pca)
                                sep=",", header = TRUE, row.names=1)
 							   
 							   
+plot(d1.pca, main = "PCA by Sex",
+col=dat$Sex,
+pch=16
+)
+legend("bottomright", pch = 20, col=unique(dat$Sex), legend = unique(dat$Sex))
+							   
 plot(d1.pca, main = "PCA",
 col=dat$Ancestry,
 pch=16)
@@ -128,10 +134,11 @@ lm.fit <- procD.lm(Coords~Ancestry*Sex, data=gdf)
 summary(lm.fit)
 plot(lm.fit)
 
+
 anova(procD.lm(Coords~Csize + Ancestry*Sex, data=gdf))
 
-plot(d1.pca, main = "PCA",
-col=dat$Sex,
-pch=16
-)
-legend("bottomright", pch = 20, col=unique(dat$Sex), legend = unique(dat$Sex))
+
+plot(PD, main = "PCA",
+col=dat$Ancestry,
+pch=16)
+legend("bottomright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))

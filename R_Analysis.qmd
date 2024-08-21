@@ -11,7 +11,7 @@ output: html_document
 
 ## Purpose and Design
 
-This page needs to be broken into two: one for processing and the other for analysis. The processing page will work through how the data from 3D Slicer is imported and modified into the needed file types for Geometric Morphometric analysis. The following page will then consolidate the needed analytical results and graphics for a simplified review. 
+This page is still in progress. From the data obtained via SlicerMorph and the step described on the [`processing`](data_processing.qmd) page, I am running ANOVA and PCA analyses. Running the statistics and understanding the superficial insights is pretty straightforward. Some of the more detailed analysis, however, still need to be worked out. 
 
 This markdown file utilizes codechunks.
 ```{r, include=FALSE, cache=FALSE}
