@@ -138,7 +138,6 @@ plot(lm.fit)
 anova(procD.lm(Coords~Csize + Ancestry*Sex, data=gdf))
 
 
-plot(PD, main = "PCA",
+plot(PD~dat$Ancestry, main = "PCA",
 col=dat$Ancestry,
 pch=16)
-legend("bottomright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
