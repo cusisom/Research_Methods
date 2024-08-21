@@ -14,7 +14,6 @@ This page is a short overview of the SlicerMorph data and a walkthrough of how i
 
 This markdown file utilizes codechunks.
 ```{r, include=FALSE, cache=FALSE}
-opts_knit$set(root.dir='c:Users/danny/Documents/git/Research_Methods/Code')
 knitr::read_chunk('SLprocess.r')
 ```
 
