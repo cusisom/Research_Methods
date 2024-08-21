@@ -14,7 +14,7 @@ This page is a short overview of the SlicerMorph data and a walkthrough of how i
 
 This markdown file utilizes codechunks.
 ```{r, include=FALSE, cache=FALSE}
-knitr::read_chunk('SLprocess.r')
+knitr::read_chunk('...Code/SLprocess.r')
 ```
 
 Load needed packages
