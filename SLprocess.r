@@ -17,24 +17,37 @@ require(knitr) #for qmd building
 ## ---- loaddata --------
 
 SM.log.file = "Data/Analysis_8-15/analysis.log"
-SM.log <- parser(SM.log.file)
-head(SM.log)
+SMlog <- parser(SM.log.file)
+head(SMlog)
 
-SM.output <- read.csv(file=paste(SM.log$output.path,
-SM.log$OutputData,
+save_data_location<-"Data/Processed_data/SMlog.rds"
+saveRDS(SMlog, file=save_data_location)
+
+
+SM_output <- read.csv(file=paste(SMlog$output.path,
+SMlog$OutputData,
 sep = "/"))
 
-SlicerMorph.PCs <- read.table(file = paste(SM.log$output.path,
-SM.log$pcScores,
+save_data_location<-"Data/Processed_data/SM_output.rds"
+saveRDS(SM_output, file=save_data_location)
+
+SlicerMorph_PCs <- read.table(file = paste(SMlog$output.path,
+SMlog$pcScores,
 sep="/"),
 sep=",", header = TRUE, row.names=1)
 
-PD <- SM.output[,2]
-if (!SM.log$skipped) {
-no.LM <- SM.log$no.LM
+save_data_location<-"Data/Processed_data/SlicerMorph_PCs.rds"
+saveRDS(SlicerMorph_PCs, file=save_data_location)
+
+PD <- SM_output[,2]
+if (!SMlog$skipped) {
+no.LM <- SMlog$no.LM
 } else {
-no.LM <- SM.log$no.LM - length(SM.log$skipped.LM)
+no.LM <- SMlog$no.LM - length(SMlog$skipped.LM)
 }
+
+save_data_location<-"Data/Processed_data/PD.rds"
+saveRDS(PD, file=save_data_location)
 
 dem<-read.csv(paste("Data/dem.csv", sep=""))
 dem
@@ -42,7 +55,7 @@ dem
 
 ## ---- merge -------
 
-dat<- merge(SM.output, dem, by= "ID")
+dat<- merge(SM_output, dem, by= "ID")
 dat$ID <- as.factor(dat$ID)
 dat$Sex <- as.factor(dat$Sex)
 dat$Age <- as.factor(dat$Age)
@@ -51,17 +64,23 @@ plot(dat$Ancestry)
 d1 <- dat %>% relocate(where(is.factor), .before = proc_dist)
 skim(d1[1:6], )
 
+save_data_location<-"Data/Processed_data/output.rds"
+saveRDS(d1, file=save_data_location)
 
 
 ## ---- BuildingArray -------
 
-Coords <- arrayspecs(SM.output[,-c(1:3)],
+Coords <- arrayspecs(SM_output[,-c(1:3)],
 p=no.LM,
 k=3)
 
+
 dimnames(Coords) <- list(1:no.LM,
 c("x","y","z"),
-SM.log$ID)
+SMlog$ID)
+
+save_data_location<-"Data/Processed_data/Coords.rds"
+saveRDS(Coords, file=save_data_location)
 
 ## ---- wireframe -------
 
@@ -88,6 +107,9 @@ plot.coords <- function(A, W, points.col="black", points.cex=1, lines.col="black
 ## ---- Array -------
 
 d1array.gpa <- gpagen(Coords, print.progress=FALSE)
+
+save_data_location<-"Data/Processed_data/gpa.rds"
+saveRDS(d1array.gpa, file=save_data_location)
 
 summary(d1array.gpa)
 
