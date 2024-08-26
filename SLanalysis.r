@@ -17,117 +17,85 @@ require(gapminder) #for plot aesthetics
 
 ## ---- loaddata --------
 
-SM.log.file = "Data/Analysis_8-15/analysis.log"
-SM.log <- parser(SM.log.file)
-head(SM.log)
+data_location1 <- "Data/Processed_data/output.rds"
+d1 <- readRDS(data_location1)
 
-SM.output <- read.csv(file=paste(SM.log$output.path,
-SM.log$OutputData,
-sep = "/"))
+data_location2 <- "Data/Processed_data/Coords.rds"
+Coords <- readRDS(data_location2) 
 
-SlicerMorph.PCs <- read.table(file = paste(SM.log$output.path,
-SM.log$pcScores,
-sep="/"),
-sep=",", header = TRUE, row.names=1)
+data_location3 <- "Data/Processed_data/gpa.rds"
+d1array.gpa <- readRDS(data_location3)
 
-PD <- SM.output[,2]
-if (!SM.log$skipped) {
-no.LM <- SM.log$no.LM
-} else {
-no.LM <- SM.log$no.LM - length(SM.log$skipped.LM)
-}
+data_location4 <- "Data/Processed_data/SMlog.rds"
+SMlog <- readRDS(data_location4)
 
-dem<-read.csv(paste("Data/dem.csv", sep=""))
-dem
+data_location5 <- "Data/Processed_data/PD.rds"
+PD <- readRDS(data_location5)
 
 
-## ---- merge -------
 
-dat<- merge(SM.output, dem, by= "ID")
-dat$ID <- as.factor(dat$ID)
-dat$Sex <- as.factor(dat$Sex)
-dat$Age <- as.factor(dat$Age)
-dat$Ancestry <- as.factor(dat$Ancestry)
+###Work in progress#### 
 
-d1 <- dat %>% relocate(where(is.factor), .before = proc_dist)
-skim(d1[1:6], )
-
-## ---- BuildingArray -------
-
-Coords <- arrayspecs(SM.output[,-c(1:3)],
-p=no.LM,
-k=3)
-
-dimnames(Coords) <- list(1:no.LM,
-c("x","y","z"),
-SM.log$ID)
-
-## ---- Array -------
-
-d1array.gpa <- gpagen(Coords, print.progress=FALSE)
-
-summary(d1array.gpa)
-
-Mshape.Coords<-mshape(Coords)
-head(Mshape.Coords)
 
 ## ---- GPA -------
+
+par(mar=c(1,1,1,1))
 
 d1.pca<-gm.prcomp(d1array.gpa$coords)
 plot(d1.pca)
 
 
- SlicerMorph.MS <- read.table(file = paste(SM.log$output.path,
-                                            SM.log$MeanShape,
+ SlicerMorph.MS <- read.table(file = paste(SMlog$output.path,
+                                            SMlog$MeanShape,
                                             sep="/"),
                                sep=",", header = TRUE, row.names=1)
 							   
 							   
 plot(d1.pca, main = "PCA by Sex",
-col=dat$Sex,
+col=d1$Sex,
 pch=16
 )
-legend("bottomright", pch = 20, col=unique(dat$Sex), legend = unique(dat$Sex))
+legend("bottomright", pch = 20, col=unique(d1$Sex), legend = unique(d1$Sex))
 							   
 plot(d1.pca, main = "PCA",
-col=dat$Ancestry,
+col=d1$Ancestry,
 pch=16)
-legend("bottomright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
+legend("bottomright", pch = 20, col=unique(d1$Ancestry), legend = unique(d1$Ancestry))
 
 ## ---- fourplot -------
 par(mfrow= c(2,2))
 plot(d1.pca, main = "PCA",
-col=dat$Ancestry,
+col=d1$Ancestry,
 pch=16)
-legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
+legend("topright", pch = 20, col=unique(d1$Ancestry), legend = unique(d1$Ancestry))
 
 plot(d1.pca, main = "PCA",
 	axis1=1, axis2=3,
-	col=dat$Ancestry,
+	col=d1$Ancestry,
 	pch=16
 )
-legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
+legend("topright", pch = 20, col=unique(d1$Ancestry), legend = unique(d1$Ancestry))
 
 plot(d1.pca, main = "PCA",
 	axis1=2, axis2=3,
-	col=dat$Ancestry,
+	col=d1$Ancestry,
 	pch=16
 )
-legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
+legend("topright", pch = 20, col=unique(d1$Ancestry), legend = unique(d1$Ancestry))
 
 plot(d1.pca, main = "PCA",
 	axis1=3, axis2=4,
-	col=dat$Ancestry,
+	col=d1$Ancestry,
 	pch=16
 )
-legend("topright", pch = 20, col=unique(dat$Ancestry), legend = unique(dat$Ancestry))
+legend("topright", pch = 20, col=unique(d1$Ancestry), legend = unique(d1$Ancestry))
 
 ## ---- gdf -------
 
 gdf <- geomorph.data.frame(PD,
-Ancestry = dat$Ancestry,
-Sex = dat$Sex,
-Csize = dat$centeroid)
+Ancestry = d1$Ancestry,
+Sex = d1$Sex,
+Csize = d1$centeroid)
 attributes(gdf)
 
 lm.fit <- procD.lm(Coords~Ancestry*Sex, data=gdf)
@@ -138,6 +106,3 @@ plot(lm.fit)
 anova(procD.lm(Coords~Csize + Ancestry*Sex, data=gdf))
 
 
-plot(PD,
-col=dat$Ancestry,
-pch=16)
