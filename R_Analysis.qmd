@@ -32,6 +32,12 @@ The files used in this analysis were produced in the processing code (`SLprocess
 ```{r, loaddata}
 ```
 
+:::{#fig-SliceData}
+
+![](Images/Variance.png)
+
+Slicer Analysis
+:::
 
 # PCA
 

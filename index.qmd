@@ -4,7 +4,7 @@ title: "D. Cusimano Research Methods"
 
 # About
 
-This site is exists to reflect the development of the Methods being proposed for capturing Geometric Morphometric data by using 3D Photogrammetry and digital landmarking software. The navigation bar above links to the different components of this project. 
+This site exists to reflect the development of the Methods being proposed for capturing Geometric Morphometric data by using 3D Photogrammetry and digital landmarking software. The navigation bar above links to the different components of this project. 
 
 All current research is being produced at the John A. Burns School of Medicine (JABSOM) at the University of Hawai'i, Manoa in Kaka'ako, Honolulu. All work done and published through JABSOM is done in accordance with the school's protocols and done with the express permission and supervision of JABSOM faculty. All of the human remains used for this research have come from the [`Willed Body Program'](https://jabsom.hawaii.edu/about/giving/willed-body/index.html) and are thus donated for use in research and education. 
 
@@ -18,7 +18,7 @@ All current research is being produced at the John A. Burns School of Medicine (
 
 # Navigation
 
-There are currently three active pages on this site which illustrate the workflow for each component of my methods.
+There are currently four active pages on this site which illustrate the workflow for each component of my methods.
 
 ## Photogrammetry
 
@@ -30,7 +30,11 @@ The Morphometrics page discusses how to use the 3D Slicer software to collect Ge
 	
 ## Data Processing
 
-The Data Processing page currently displays each aspect of the analysis code that will be used to illustrate variance in GM data. This page is still under development but currently displays the process of importing and manipulating the needed data files and running Generalized Procrustes Analyses, ANOVAs, and Principal Component Analyses. 
+The Data Processing page currently displays each aspect of the processing code used to import and modify the datafiles needed to study variance across the sample. This page illustrates some basic figures regarding the sample demographics as well as preliminary visualization of coordinate data. 
+
+## Analysis
+
+Finally, the analysis page acts as a repository that will be used to illustrate variance in GM data. This page is still under development but currently displays the process of importing and manipulating the needed data files and running Generalized Procrustes Analyses, ANOVAs, and Principal Component Analyses. 
 
 # The Lab
 
