@@ -37,11 +37,12 @@ PD <- readRDS(data_location5)
 ###Work in progress#### 
 
 
-## ---- GPA -------
+## ---- PCA -------
 
 par(mar=c(1,1,1,1))
 
 d1.pca<-gm.prcomp(d1array.gpa$coords)
+d1.pca
 plot(d1.pca)
 
 
