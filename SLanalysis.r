@@ -58,7 +58,7 @@ pch=16
 )
 legend("bottomright", pch = 20, col=unique(d1$Sex), legend = unique(d1$Sex))
 							   
-plot(d1.pca, main = "PCA",
+plot(d1.pca, main = "PCA by Ancestry",
 col=d1$Ancestry,
 pch=16)
 legend("bottomright", pch = 20, col=unique(d1$Ancestry), legend = unique(d1$Ancestry))

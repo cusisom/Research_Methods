@@ -315,7 +315,7 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 <div class="cell-output-display">
 <p><img src="R_Analysis_files/figure-html/PCA-2.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA by Ancestry"</span>,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span>d1<span class="sc">$</span>Ancestry,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">pch=</span><span class="dv">16</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -323,7 +323,7 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 <p><img src="R_Analysis_files/figure-html/PCA-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>The collage below shows the original PC1 by PC2 compared with analyses by three different planes. Unsurprisingly, the original analysis shows the most variation and the strongest clustering by ancestry.</p>
+<p>The collage below shows the original PC1 by PC2 compared with analyses by three different planes. Unsurprisingly, the original analysis shows the most variation and the strongest clustering by ancestry. This collage also labels the PC axes for me which I haven’t figured out how do yet for the larger plots. Everything is still a work in progress.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
