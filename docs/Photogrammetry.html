@@ -306,26 +306,29 @@ ul.task-list li input[type="checkbox"] {
 <li>After this point is placed, generate another unassigned point by clicking <code>create</code>. This will give you ‘point 1’</li>
 <li>Select this unassigned point and place it on the image.</li>
 </ul></li>
-<li><p><em>There is no protocol yet for what points to use. I am using the nasal height as my metric for setting scale. Thus, I am setting point 0 at Nasion, and point 1 at the tip of the anterior nasal spine</em></p>
-<ul>
-<li>Return to the <code>2Ds</code> library and click on the second image. Being sure to select the correct points (first point 0, then point 1), assign the points to the corresponding positions on this image.</li>
-</ul></li>
-<li><p>To set your scale, you will first need to know the distance between these two points. Collect this distance manually on the physical specimen with sliding calipers.</p></li>
-<li><p>In Reality Capture, under <code>Tools</code> in the <code>SCENE 3D</code> menu, select <code>Define Distance</code></p>
-<ul>
-<li>Click on point 0 in one of your 2D images and drag to point 1</li>
-<li>A box will appear in the menu on the left of your screen (Selected Constraint(s))</li>
-<li>Reality Capture will provide you with a Defined Distance that does not look accurate. Delete the number provided for you and type in the measurement that you collected manually.</li>
-<li><em>Note that Reality Capture insists on the scale being in meters. If your measurement is in Millimeters (should be), make sure to properly convert the measurement.</em></li>
+<li><p><em>There is no protocol yet for what points to use. I am using the nasal height as my metric for setting scale. Thus, I am setting point 0 at Nasion, and point 1 at the tip of the anterior nasal spine</em></p></li>
 </ul></li>
 </ul></li>
-<li>Once your distance is defined, go back to the <code>Alignment</code> Menu from the top ribbon.
-<ul>
-<li>Click on <code>Update</code></li>
-<li>If everything went right, this will quickly update the scale for your model</li>
-</ul></li>
-</ul></li>
-<li><p>Finishing the Model</p>
+</ol>
+<div id="fig-controlpts" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/controlpts.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Setting Control Points</figcaption><p></p>
+</figure>
+</div>
+<pre><code>        - Return to the `2Ds` library and click on the second image. Being sure to select the correct points (first point 0, then point 1), assign the points to the corresponding positions on this image.
+    - To set your scale, you will first need to know the distance between these two points. Collect this distance manually on the physical specimen with sliding calipers. 
+    - In Reality Capture, under `Tools` in the `SCENE 3D` menu, select `Define Distance`
+        - Click on point 0 in one of your 2D images and drag to point 1
+        - A box will appear in the menu on the left of your screen (Selected Constraint(s))
+        - Reality Capture will provide you with a Defined Distance that does not look accurate. Delete the number provided for you and type in the  measurement that you collected manually. 
+        - *Note that Reality Capture insists on the scale being in meters. If your measurement is in Millimeters (should be), make sure to properly convert the measurement.*
+- Once your distance is defined, go back to the `Alignment` Menu from the top ribbon.
+    - Click on `Update`
+    - If everything went right, this will quickly update the scale for your model
+    </code></pre>
+<ol start="8" type="1">
+<li>Finishing the Model
 <ul>
 <li>To finish the model making process, return to the <code>Mesh Model</code> menu</li>
 <li>Click on the <code>Normal Detail</code> button.</li>
@@ -335,12 +338,25 @@ ul.task-list li input[type="checkbox"] {
 <li>Look over the model to ensure that all aspects of your specimen are visible</li>
 <li><em>If the model includes foreign objects (e.g., parts of the stand), use the <code>Lasso</code> tool provided in the <code>Tools</code> menu under the <code>Scene 3D</code> ribbon.Use this tool to highlight the unwanted objects and click on <code>Filter Selection</code> to remove.</em></li>
 </ul></li>
-<li>With the model completed, we want to compress the file for more efficient computing down the line. <em>This step may or may not be necessary depending on the computing power of the processor being used. Thus, it is a part of our workflow but possibly unnecessary for others.</em> To accomplish this, click on the <code>Simplify</code> button in the same <code>Tools</code> menu. We simplify the <code>Target Triangle Count</code> to 200,000 (Observe the <code>Simplify Tool</code> menu that appears on the left side of the screen).
-<ul>
-<li>Click <code>Simplify</code> at the bottom of the menu</li>
 </ul></li>
-</ul></li>
-<li><p>Texturize and Export</p>
+</ol>
+<div id="fig-lasso" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/lasso1.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/lasso2.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Filtering Debris</figcaption><p></p>
+</figure>
+</div>
+<pre><code> - With the model completed, we want to compress the file for more efficient computing down the line. *This step may or may not be necessary depending on the computing power of the processor being used. Thus, it is a part of our workflow but possibly unnecessary for others.* To accomplish this, click on the `Simplify` button in the same `Tools` menu. We simplify the `Target Triangle Count` to 200,000 (Observe the `Simplify Tool` menu that appears on the left side of the screen).
+    - Click `Simplify` at the bottom of the menu</code></pre>
+<ol start="9" type="1">
+<li>Texturize and Export
 <ul>
 <li>With the model completed and simplified, we want to apply the appropriate texture. This can be done by selecting <code>Texture</code> under the <code>Mesh Model</code> menu.</li>
 <li>With each step completed we can now export the model to be analyzed in <code>3D Slicer</code>
@@ -349,7 +365,15 @@ ul.task-list li input[type="checkbox"] {
 <li>Choose the Folder to save it in (<em>We create a new folder for each specimen</em>) Press <code>Ok</code> when the <code>Export Model</code> window pops up</li>
 </ul></li>
 </ul></li>
-<li><p>Resize texture file</p>
+</ol>
+<div id="fig-Textured" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/RCtexture.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Textured Model</figcaption><p></p>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Resize texture file
 <ul>
 <li>The texture file that was exported with your model will look something like <code>Mesh_Model_1_u1_v1_diffuse</code> and will be in a <code>.PNG</code> format</li>
 <li>Depending on your computer, this file may be fine as is but for our purpose it became important to resize the image for quicker processing in 3D Slicer</li>

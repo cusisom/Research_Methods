@@ -131,6 +131,13 @@ Canon EOS 6D DSLR camera
 			- Select this unassigned point and place it on the image.
 		- *There is no protocol yet for what points to use. I am using the nasal height as my metric for setting scale. Thus, I am setting point 0 at Nasion, and point 1 at the tip of the anterior nasal spine*
 		
+:::{#fig-controlpts}
+
+   ![](Images/controlpts.png)
+   
+   Setting Control Points
+:::
+
 			- Return to the `2Ds` library and click on the second image. Being sure to select the correct points (first point 0, then point 1), assign the points to the corresponding positions on this image.
 		- To set your scale, you will first need to know the distance between these two points. Collect this distance manually on the physical specimen with sliding calipers. 
 		- In Reality Capture, under `Tools` in the `SCENE 3D` menu, select `Define Distance`
@@ -149,6 +156,16 @@ Canon EOS 6D DSLR camera
       - When complete, a matte white model will be provided
 	  - Look over the model to ensure that all aspects of your specimen are visible
 	  - *If the model includes foreign objects (e.g., parts of the stand), use the `Lasso` tool provided in the `Tools` menu under the `Scene 3D` ribbon.Use this tool to highlight the unwanted objects and click on `Filter Selection` to remove.*
+	  
+:::{#fig-lasso layout-ncol=2}
+
+   ![](Images/lasso1.png)
+   
+   ![](Images/lasso2.png)
+   
+   Filtering Debris
+:::
+
 	 - With the model completed, we want to compress the file for more efficient computing down the line. *This step may or may not be necessary depending on the computing power of the processor being used. Thus, it is a part of our workflow but possibly unnecessary for others.* To accomplish this, click on the `Simplify` button in the same `Tools` menu. We simplify the `Target Triangle Count` to 200,000 (Observe the `Simplify Tool` menu that appears on the left side of the screen).
 		- Click `Simplify` at the bottom of the menu
 
@@ -158,6 +175,14 @@ Canon EOS 6D DSLR camera
 		- While in the same menu, select `Dense Mesh Model` from the `Export` box
 		- Choose the Folder to save it in (*We create a new folder for each specimen*)
 		Press `Ok` when the `Export Model` window pops up
+		
+:::{#fig-Textured}
+
+   ![](Images/RCtexture)
+   
+   
+   Textured Model
+:::
 
 10. Resize texture file
 	- The texture file that was exported with your model will look something like `Mesh_Model_1_u1_v1_diffuse` and will be in a `.PNG` format
