@@ -16,7 +16,7 @@ title: "Morphometrics"
     - SlicerIGT
     - SlicerMorph
 
-__This workflow is in progress. The following walkthrough provides instructions on how to `import`, `align`, `fix landmarks` to, and `analyze data` from the models created in `Reality Capture`. Before any of this is achieved, it is important to load the correct modules into 3D Slicer.__
+__The following walkthrough provides instructions on how to `import`, `align`, `fix landmarks` to, and `analyze data` from the models created in `Reality Capture`. Before any of this is achieved, it is important to load the correct modules into 3D Slicer.__
 
 ### Loading Modules
 

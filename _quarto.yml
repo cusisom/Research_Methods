@@ -9,10 +9,12 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - Research.qmd
       - Photogrammetry.qmd
       - Morph.qmd
       - data_processing.qmd 
       - R_Analysis.qmd
+      
 
 format:
   html:
