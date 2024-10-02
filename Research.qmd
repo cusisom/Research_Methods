@@ -2,4 +2,29 @@
 title: "Research Background and Aims"
 ---
 
-# Project Context
+## Project Context
+
+The Late Middle Pleistocene spans from approximatly 350 Ka to 100 ka 
+and is characterized by `climate instability`, `shifting sea
+levels`, and `faunal dispersals which reflect much of today's
+modern biota`. As it pertains to paleoanthropology, the Late Middle 
+Pleistocene (hereafter LMP) hosts a minimum of three widely agreed 
+upon hominin species: *Homo erectus* (1.8 Ma-`125 Ka`), *Homo 
+neanderthalensis* (~440 ka - 30 Ka), and *Homo sapiens* (300 
+Ka-present). In addition to these agreed upon taxa, `many scholars` 
+recognize or argue for the existence of additional hominin species 
+designations. These include common nomina such as *Homo 
+heidelbergensis* as well as the even more contentious claims of 
+*Homo naledi* and *Homo longi*. Further, while *Homo 
+heidelbergensis* is a commonly referenced taxon, recent 
+considerations have divided the assemblage into the already 
+well-regarded *H. neanderthalensis* taxon throughout Europe and a 
+new designation of *H. bodoensis* in Africa. The latter designation would also encapsulate the contended *H. rhodesiensis* named by Woodward in 1921. 
+
+| Concensus Species    | Contested Species   | Proposed Species |
+|:--------------------:|:-------------------:|:----------------:|
+| *H. sapiens*         | *H. heidelbergensis*| *H. bodoensis*   |
+| *H. neanderthalensis*| *H. naledi*         | *H longi*        |
+| *H. erectus*         | *H rhodesiensis*    | *H. juluensis*   |
+
+: LMP Hominin taxa {.striped .hover}
