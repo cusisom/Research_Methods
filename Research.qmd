@@ -21,6 +21,8 @@ considerations have divided the assemblage into the already
 well-regarded *H. neanderthalensis* taxon throughout Europe and a 
 new designation of *H. bodoensis* in Africa. The latter designation would also encapsulate the contended *H. rhodesiensis* named by Woodward in 1921. 
 
+TESTING
+
 | Concensus Species    | Contested Species   | Proposed Species |
 |:--------------------:|:-------------------:|:----------------:|
 | *H. sapiens*         | *H. heidelbergensis*| *H. bodoensis*   |
@@ -28,3 +30,5 @@ new designation of *H. bodoensis* in Africa. The latter designation would also e
 | *H. erectus*         | *H rhodesiensis*    | *H. juluensis*   |
 
 : LMP Hominin taxa {.striped .hover}
+
+Kaifu and Athreya (2024) suggest that the "high level of craniodental variability" observable in the Asian Chibanian fossils has "defied efforts" to classify them along morphological grounds (4). While not directly approaching the subject of how many species are present in this assemblage or where the species boundaries should be drawn, they outline theoretical explanations for where the observed variation might have come from. [*might be getting off track. want to focus on the first statement that there is such a high level of variation that we cannot confidently discern higher level taxa. My initial thought is that there isn't any more variation present in this sample as there is in named (accepted) species. If there is less variation than we have identified in other species (i.e. H. sapiens and H. erectus) then this statement should be challenged and the reasons for taxonomic timidness can be explained in other ways.*] They state that the "lack of consensus does not...have a chance of being resolved by more or better arguments because the concept of species is itself a culturally constructed one". While I don't totally disagree, we still name species, we will still name species from this assemblage, and how we name species still matters. To sidestep the question (and reasonably so because it doesn't matter for their discussion) they fall back on Howell's use of Paleodemes to reflect "local populations of fossil taxa that are inferred to have shared a closer gene pool than their geographically and temporally more distant relative populations" (4). 
