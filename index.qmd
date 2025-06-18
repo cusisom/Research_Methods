@@ -18,7 +18,11 @@ All current research is being produced at the John A. Burns School of Medicine (
 
 # Navigation
 
-There are currently four active pages on this site which illustrate the workflow for each component of my methods.
+There are currently five active pages on this site which illustrate the workflow for each component of my methods.
+
+## Research Background and Aims
+
+A brief overview of the project context and research proposal. Navigate here to view the project goals, timeline, and progress.  
 
 ## Photogrammetry
 

@@ -40,7 +40,8 @@ Welcome to Slicer
 1. To import the Reality Capture models, click on the `Add Data` button
 	- This button can be found twice on the welcome screen or under the `File` dropdown menu
 2. Select `Choose File(s) to Add`
-	- Select both the Model file and the Texture file *Fig.2*
+	- Files for this project can be found under `Photogrammetry/Lightroom/Dcusimano`
+	- Select both the Model (OBJ) file and the Texture (JPEG) file *Fig.2*
 	- Give the software a moment to load your data and you should see two images loaded *Fig.2*
 	- To keep track of what files are loaded in Slicer, navigate to the `Data` window from the `Modules` dropdown menu. *See Below*
 3. While not important for this step, you can check to see that your `Texture` file works with the model by opening the `Texture Model` modules
