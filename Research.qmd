@@ -28,11 +28,16 @@ new designation of *H. bodoensis* in Africa. The latter designation would also e
 | *H. floresiensis*      | ~100-50ka           | S.E. Asia/Indonesia  |
 | *`H. heidelbergensis*`*| ~600-200ka          | W. Eurasia (see below)|
 | *`H. naledi*`*         | ~335-236ka          | South Africa         |
-| *`H. rhodesiensis*`*   |        N/A¹         | Zimbabwe             |
-| *`H. bodoensis`*       |        N/A²         | Africa/W. Eurasia    |
+| *`H. rhodesiensis*`*   |        N/A[^1]      | Zimbabwe             |
+| *`H. bodoensis`*       |        N/A[^2]      | Africa/W. Eurasia    |
 | *`H. longi`*           | ~309-138ka          | China                |
 | *`H. juluensis`*       |        N/A³         | China                |
 
 : Chibanian Hominin taxa  {.striped .hover}
+
+[^1]: *H. rhodesiensis* would have ICZN priority for the Kabwe/Broken Hill specimen if were to be removed from the *H. heidelbergensis* designation. Roksandic et al. 2022 challenge this designation on ethical grounds given the nomina's association with Cecil Rhodes and a call to remove taxonomic names with ethical baggage (i.e., racism, colonialism, genocide, and etcetera). 
+
+[^2]: *H. bodoensis* is the taxonomic designation offered to replace *H. rhodesiensis* an encapsulate specimens such as Bodo, Kabwe, and others. There is no current precedent for such replacement by the current ICZN standards. As such, the ICZN will need to change the rules governing taxonomic designation before this taxon will be accepted. 
+```
 
 Kaifu and Athreya (2024) suggest that the "high level of craniodental variability" observable in the Asian Chibanian fossils has "defied efforts" to classify them along morphological grounds (4). While not directly approaching the subject of how many species are present in this assemblage or where the species boundaries should be drawn, they outline theoretical explanations for where the observed variation might have come from. [*might be getting off track. want to focus on the first statement that there is such a high level of variation that we cannot confidently discern higher level taxa. My initial thought is that there isn't any more variation present in this sample as there is in named (accepted) species. If there is less variation than we have identified in other species (i.e. H. sapiens and H. erectus) then this statement should be challenged and the reasons for taxonomic timidness can be explained in other ways.*] They state that the "lack of consensus does not...have a chance of being resolved by more or better arguments because the concept of species is itself a culturally constructed one". While I don't totally disagree, we still name species, we will still name species from this assemblage, and how we name species still matters. To sidestep the question (and reasonably so because it doesn't matter for their discussion) they fall back on Howell's use of Paleodemes to reflect "local populations of fossil taxa that are inferred to have shared a closer gene pool than their geographically and temporally more distant relative populations" (4). 
