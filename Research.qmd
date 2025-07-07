@@ -2,6 +2,12 @@
 title: "Research Background and Aims"
 ---
 
+## Abstract
+
+The classification of fossil populations informs on such evolutionary dynamics as reproductive and behavioral cohesion, adaptation, and patterns of divergence, anagenesis, and reticulation. Species designations therefore provide the individual components from which we articulate our understanding of human evolutionary pattern and process. Determining how these populations should be classified, however, is a daunting task often spurring debate and conflicting interpretation. Here I build on efforts to disentangle variation from diversity in the human fossil record. Such research is of relevance in Late Chibanian paleoanthropology as new designations are being offered and debated for fossils across Africa and Eurasia (e.g., Homo longi, Homo juluensis, and Homo bodoensis). 
+
+This research tackles the broader issue of species delineation while more narrowly investigating Late Chibanian hominin species diversity. It is pursued by implementing 3D Geometric Morphometrics to investigate species boundaries, morphological distance, and phylogenetics. Specifically, species boundaries will be investigated by using a geographically and temporally broad sample of H. sapiens to establish a model range of variation by which fossil populations can be compared. Late Chibanian Chinese fossils which have eluded classification until recently will be considered against this model to determine if and how many different species comprise the assemblage. As there are currently two posited species designations for the assemblage (H. longi and H. juluensis), the rest of the project will focus on testing these taxa. This will be done following the Phylogenetic Species Concept by first running a phylogenetic analysis (using 3DGM and discrete data) of these fossils amidst the greater Chibanian fossil record and subsequently partitioning the clades into species groupings through Principal Components Analysis (PCA). 
+
 ## Project Context
 
 The Late Middle Pleistocene (hereafter referred to as the "Chibanian") spans from approximatly 350 Ka to 100 ka 
