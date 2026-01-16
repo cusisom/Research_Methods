@@ -1,0 +1,7 @@
+---
+title: "Mirroring"
+---
+
+## Test Page
+
+This is a test page to input instructions for Mirroring creating and mirroring cranial hemisections for generating landmarks in missing bilateral regions. 
