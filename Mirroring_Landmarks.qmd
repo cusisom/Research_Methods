@@ -10,9 +10,10 @@ A problem that I will inevitably face in this project is that imposed by fragmen
 
 To set up the problem, the skull I am examining here is missing the necessary morphology to get a good landmark on Ectomolare. This point (see data dictionary) is situated on the lateral most aspect of the buccal alveolar margin, at the center of the second molar position. 
 
-:::{fig-Fragmentary Maxilla}
+:::{#fig-SliceData}
 
-![](Images/sym3.png)
+   ![](Images/Sym3.png)
 
 Missing Landmarks
 :::
+
