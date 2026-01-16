@@ -187,5 +187,19 @@
     "title": "Research Background and Aims",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nH. rhodesiensis would have ICZN priority for the Kabwe/Broken Hill specimen if were to be removed from the H. heidelbergensis designation. Roksandic et al. 2022 challenge this designation on ethical grounds given the nomina’s association with Cecil Rhodes and a call to remove taxonomic names with ethical baggage (i.e., racism, colonialism, genocide, and etcetera). As it stands, this designation does not have a known/accepted date range.↩︎\nH. bodoensis is the taxonomic designation offered to replace H. rhodesiensis an encapsulate specimens such as Bodo, Kabwe, and others. There is no current precedent for such replacement by the current ICZN standards. As such, the ICZN will need to change the rules governing taxonomic designation before this taxon will be accepted. As it stands, this designation does not have a known/accepted date range.↩︎\nThis species was named by Ji et al., 2021 but not largely accepted. It encompasses a single speciemen (Harbin) belonging to a larger clade of eastern Asian Chibanian hominins including Dali, Hualongdong, Jinniushan, Xujiayao, and possibly Xiahe (Ni et al., 2021). The date range listed here is based solely on the Harbin specimen.↩︎\nH. juluensis is the designation suggested by Bae 2024 and supported by Wu and Bae 2024 for the Xuchang, Xujiayao, Xiahe, and Penghu specimens. The current date range is not established but, based on this hypodigm should span between ~220-105ka. ```↩︎"
+  },
+  {
+    "objectID": "Mirroring_Landmarks.html#the-problem",
+    "href": "Mirroring_Landmarks.html#the-problem",
+    "title": "Mirroring",
+    "section": "The Problem",
+    "text": "The Problem\nTo set up the problem, the skull I am examining here is missing the necessary morphology to get a good landmark on Ectomolare. This point (see data dictionary) is situated on the lateral most aspect of the buccal alveolar margin, at the center of the second molar position.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Missing Landmarks\n\n\n\nIn the above image (fig.1) I illustrate damage along the buccal alveolar margin that makes it impossible to landmark the Right Ectomolare (ecmr) coordinate. The left side of the alveolar margin, however, is intact and has the needed landmark (ecml). To obtain the missing data (ecmr) I will need to\n    1. Create a plane of symmetry (MSP)\n    \n    2. bisect the skull along that plane\n    \n    3. Mirror the intact side of the skull\n    \n    4. Place the needed landmark on the mirrored image\n    \n    5. Replace the mirrored model with the original skull"
+  },
+  {
+    "objectID": "Mirroring_Landmarks.html#defining-the-midsagittal-plane-msp",
+    "href": "Mirroring_Landmarks.html#defining-the-midsagittal-plane-msp",
+    "title": "Mirroring",
+    "section": "Defining the Midsagittal Plane (MSP)",
+    "text": "Defining the Midsagittal Plane (MSP)"
   }
 ]

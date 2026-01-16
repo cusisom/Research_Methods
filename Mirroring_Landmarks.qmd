@@ -8,7 +8,7 @@ A problem that I will inevitably face in this project is that imposed by fragmen
 
 The empirical plane that is used in these approaches is the Midsagittal Plane (MSP) that bisects the skull in left and right halves. One approach to identifying this plane with skeletal structures is to identify common midsaggital landmarks that, hypothetically at least, fall along this plane. Such landmarks include Nasion along the frontonasal suture, Basion along the anterior middorsal aspect of the foramen magnum, the Anterior Nasal Spine situated at the base of the nasal aperture along the MSP (on the anterior nasal spine)(Green, Bloom, and Kulbersh 2017). Though these landmarks are said to be found along the MSP, Gunz et al. (2009) suggest that this is somewhat of an abstraction and that the points do not actually lie exactly on a plane. Because of this they recommend computing the actual plane through a larger analysis of all unpaired landmarks to find an "empirical midplane" which paired landmarks can be mirrored across. I deviate from this logic by following Green, Bloom, and Kulbersh (2017) who illustrated the higher efficacy of a landmark guided MSP over the calculated midplane. The following workflow is therefore a description of how I plan to mirror paired landmarks across a MSP established using unpaired coordinates. 
 
-## Defining a Midsagittal Plane
+## The Problem
 
 To set up the problem, the skull I am examining here is missing the necessary morphology to get a good landmark on Ectomolare. This point (see data dictionary) is situated on the lateral most aspect of the buccal alveolar margin, at the center of the second molar position. 
 
@@ -16,8 +16,28 @@ To set up the problem, the skull I am examining here is missing the necessary mo
 
    ![](Images/Sym2.png){width=80%}
 
-   ![](Images/Sym3.png)
+   ![](Images/Sym3.png){widteh=120%}
 
 Missing Landmarks
 :::
 
+In the above image (fig.1) I illustrate damage along the buccal alveolar margin that makes it impossible to landmark the Right Ectomolare (ecmr) coordinate. The left side of the alveolar margin, however, is intact and has the needed landmark (ecml). To obtain the missing data (ecmr) I will need to 
+
+		1) Create a plane of symmetry (MSP)
+		2) Bisect the skull along that plane
+		3) Mirror the intact side of the skull
+		4) Place the needed landmark on the mirrored image
+		5) Replace the mirrored model with the original skull
+
+## Defining the Midsagittal Plane (MSP)
+
+Following Green, Bloom, and Kulbersh (2017) I will use the Nasion, Basion, and Incisive Foramen landmarks to define the MSP (fig.2).
+
+:::{fig-SliceData layout-ncol=2}
+
+   ![](Images/MSP1)
+   
+   ![](Images/MSP2)
+   
+Unpaired landmarks for MSP
+:::

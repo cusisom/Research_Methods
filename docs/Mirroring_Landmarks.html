@@ -132,7 +132,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#missing-data" id="toc-missing-data" class="nav-link active" data-scroll-target="#missing-data">Missing Data</a></li>
-  <li><a href="#defining-a-midsagittal-plane" id="toc-defining-a-midsagittal-plane" class="nav-link" data-scroll-target="#defining-a-midsagittal-plane">Defining a Midsagittal Plane</a></li>
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem">The Problem</a></li>
+  <li><a href="#defining-the-midsagittal-plane-msp" id="toc-defining-the-midsagittal-plane-msp" class="nav-link" data-scroll-target="#defining-the-midsagittal-plane-msp">Defining the Midsagittal Plane (MSP)</a></li>
   </ul>
 </nav>
     </div>
@@ -163,8 +164,8 @@ ul.task-list li input[type="checkbox"] {
 <p>A problem that I will inevitably face in this project is that imposed by fragmentary crania that are missing necessary morphologies for landmarking. Runnng morphometric assessments requires that all specimens under consideration have the same complete sets of landmarks (Gunz et al.&nbsp;2009). Thus, any specimen that cannot be completely landmarked is rendered useless for the analysis. With limited fossil assemblages, such constraints severly limit the ability to investigate questions of variation over time. Fortunately, some of the issues arising from fragmentary remains have been remedied by digitally exploiting the tendancy towards bilateral symmetry in vertebrate morphology (Gunz et al.&nbsp;2009; Toxvaerd 2021). As is observed on the <a href="./Morph.html"><code>Morphometrics</code></a> page, landmarks can be paired (bilateral) or unpaired. Assuming that the crania are largely symmetrical therefore allows us to “mirror” a single paired landmark from on side of the specimen to the other. Gunz et al.&nbsp;(2009) and Lautenschlager (2016) discuss the common approaches to this task through the production of landmark-based algorithms to approximate the location of the missing coordinate. These predominate strategies include 1) mirroring across an empirical midplane, 2) reflected relabeling, and 3) reflection using the thin-plate spline. Of these, I will employ a strategy most similar to Gunz et al.’s depiction of mirroring across an empirical plan. The deviation I make in my approach, however, is something to consider.</p>
 <p>The empirical plane that is used in these approaches is the Midsagittal Plane (MSP) that bisects the skull in left and right halves. One approach to identifying this plane with skeletal structures is to identify common midsaggital landmarks that, hypothetically at least, fall along this plane. Such landmarks include Nasion along the frontonasal suture, Basion along the anterior middorsal aspect of the foramen magnum, the Anterior Nasal Spine situated at the base of the nasal aperture along the MSP (on the anterior nasal spine)(Green, Bloom, and Kulbersh 2017). Though these landmarks are said to be found along the MSP, Gunz et al.&nbsp;(2009) suggest that this is somewhat of an abstraction and that the points do not actually lie exactly on a plane. Because of this they recommend computing the actual plane through a larger analysis of all unpaired landmarks to find an “empirical midplane” which paired landmarks can be mirrored across. I deviate from this logic by following Green, Bloom, and Kulbersh (2017) who illustrated the higher efficacy of a landmark guided MSP over the calculated midplane. The following workflow is therefore a description of how I plan to mirror paired landmarks across a MSP established using unpaired coordinates.</p>
 </section>
-<section id="defining-a-midsagittal-plane" class="level2">
-<h2 class="anchored" data-anchor-id="defining-a-midsagittal-plane">Defining a Midsagittal Plane</h2>
+<section id="the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem">The Problem</h2>
 <p>To set up the problem, the skull I am examining here is missing the necessary morphology to get a good landmark on Ectomolare. This point (see data dictionary) is situated on the lateral most aspect of the buccal alveolar margin, at the center of the second molar position.</p>
 <div id="fig-SliceData" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -183,6 +184,19 @@ Figure&nbsp;1: Missing Landmarks
 </figcaption>
 </figure>
 </div>
+<p>In the above image (fig.1) I illustrate damage along the buccal alveolar margin that makes it impossible to landmark the Right Ectomolare (ecmr) coordinate. The left side of the alveolar margin, however, is intact and has the needed landmark (ecml). To obtain the missing data (ecmr) I will need to</p>
+<pre><code>    1. Create a plane of symmetry (MSP)
+    
+    2. bisect the skull along that plane
+    
+    3. Mirror the intact side of the skull
+    
+    4. Place the needed landmark on the mirrored image
+    
+    5. Replace the mirrored model with the original skull</code></pre>
+</section>
+<section id="defining-the-midsagittal-plane-msp" class="level2">
+<h2 class="anchored" data-anchor-id="defining-the-midsagittal-plane-msp">Defining the Midsagittal Plane (MSP)</h2>
 
 
 </section>
