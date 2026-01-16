@@ -53,14 +53,14 @@
     "href": "Mirroring_Landmarks.html",
     "title": "Mirroring",
     "section": "",
-    "text": "This is a test page to input instructions for Mirroring creating and mirroring cranial hemisections for generating landmarks in missing bilateral regions."
+    "text": "A problem that I will inevitably face in this project is that imposed by fragmentary crania that are missing necessary morphologies for landmarking. Runnng morphometric assessments requires that all specimens under consideration have the same complete sets of landmarks (Gunz et al. 2009). Thus, any specimen that cannot be completely landmarked is rendered useless for the analysis. With limited fossil assemblages, such constraints severly limit the ability to investigate questions of variation over time. Fortunately, some of the issues arising from fragmentary remains have been remedied by digitally exploiting the tendancy towards bilateral symmetry in vertebrate morphology (Gunz et al. 2009; Toxvaerd 2021). As is observed on the Morphometrics page, landmarks can be paired (bilateral) or unpaired.\nGunz et al. (2009) and Lautenschlager (2016) discuss the common approaches to this task through the production of landmark-based algorithms to approximate"
   },
   {
-    "objectID": "Mirroring_Landmarks.html#test-page",
-    "href": "Mirroring_Landmarks.html#test-page",
+    "objectID": "Mirroring_Landmarks.html#missing-data",
+    "href": "Mirroring_Landmarks.html#missing-data",
     "title": "Mirroring",
     "section": "",
-    "text": "This is a test page to input instructions for Mirroring creating and mirroring cranial hemisections for generating landmarks in missing bilateral regions."
+    "text": "A problem that I will inevitably face in this project is that imposed by fragmentary crania that are missing necessary morphologies for landmarking. Runnng morphometric assessments requires that all specimens under consideration have the same complete sets of landmarks (Gunz et al. 2009). Thus, any specimen that cannot be completely landmarked is rendered useless for the analysis. With limited fossil assemblages, such constraints severly limit the ability to investigate questions of variation over time. Fortunately, some of the issues arising from fragmentary remains have been remedied by digitally exploiting the tendancy towards bilateral symmetry in vertebrate morphology (Gunz et al. 2009; Toxvaerd 2021). As is observed on the Morphometrics page, landmarks can be paired (bilateral) or unpaired.\nGunz et al. (2009) and Lautenschlager (2016) discuss the common approaches to this task through the production of landmark-based algorithms to approximate"
   },
   {
     "objectID": "data_processing.html",
