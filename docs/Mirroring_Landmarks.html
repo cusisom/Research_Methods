@@ -175,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="Images/Sym2.png" class="img-fluid figure-img"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="Images/Sym3.png" class="img-fluid figure-img"></p>
+<p><img src="Images/Sym3.png" class="img-fluid figure-img" data-widteh="120%"></p>
 </div>
 </div>
 </div>
@@ -185,18 +185,32 @@ Figure&nbsp;1: Missing Landmarks
 </figure>
 </div>
 <p>In the above image (fig.1) I illustrate damage along the buccal alveolar margin that makes it impossible to landmark the Right Ectomolare (ecmr) coordinate. The left side of the alveolar margin, however, is intact and has the needed landmark (ecml). To obtain the missing data (ecmr) I will need to</p>
-<pre><code>    1. Create a plane of symmetry (MSP)
-    
-    2. bisect the skull along that plane
-    
-    3. Mirror the intact side of the skull
-    
-    4. Place the needed landmark on the mirrored image
-    
-    5. Replace the mirrored model with the original skull</code></pre>
+<pre><code>    1) Create a plane of symmetry (MSP)
+    2) Bisect the skull along that plane
+    3) Mirror the intact side of the skull
+    4) Place the needed landmark on the mirrored image
+    5) Replace the mirrored model with the original skull</code></pre>
 </section>
 <section id="defining-the-midsagittal-plane-msp" class="level2">
 <h2 class="anchored" data-anchor-id="defining-the-midsagittal-plane-msp">Defining the Midsagittal Plane (MSP)</h2>
+<p>Following Green, Bloom, and Kulbersh (2017) I will use the Nasion, Basion, and Incisive Foramen landmarks to define the MSP (fig.2).</p>
+<div id="fig-SliceData" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/MSP1.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/MSP2.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Unpaired landmarks for MSP
+</figcaption>
+</figure>
+</div>
 
 
 </section>

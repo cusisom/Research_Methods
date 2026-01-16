@@ -31,9 +31,9 @@ In the above image (fig.1) I illustrate damage along the buccal alveolar margin 
 
 ## Defining the Midsagittal Plane (MSP)
 
-Following Green, Bloom, and Kulbersh (2017) I will use the Nasion, Basion, and Incisive Foramen landmarks to define the MSP (fig.2).
+Following Green, Bloom, and Kulbersh (2017) I will use the Nasion, Basion, and Incisive Foramen landmarks to define the MSP (fig.2). Landmarking protocol can be found under the "Landmark COnfiguration" section on the [`Morphometrics`](Morph.qmd) page.
 
-:::{fig-SliceData layout-ncol=2}
+:::{#fig-SliceData layout-ncol=2}
 
    ![](Images/MSP1)
    
