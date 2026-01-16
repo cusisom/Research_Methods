@@ -2,6 +2,8 @@
 title: "Mirroring"
 ---
 
-## Test Page
+## Missing Data
 
-This is a test page to input instructions for Mirroring creating and mirroring cranial hemisections for generating landmarks in missing bilateral regions. 
+A problem that I will inevitably face in this project is that imposed by fragmentary crania that are missing necessary morphologies for landmarking. Runnng morphometric assessments requires that all specimens under consideration have the same complete sets of landmarks (Gunz et al. 2009). Thus, any specimen that cannot be completely landmarked is rendered useless for the analysis. With limited fossil assemblages, such constraints severly limit the ability to investigate questions of variation over time. Fortunately, some of the issues arising from fragmentary remains have been remedied by digitally exploiting the tendancy towards bilateral symmetry in vertebrate morphology (Gunz et al. 2009; Toxvaerd 2021). As is observed on the [`Morphometrics`](Morph.qmd) page, landmarks can be paired (bilateral) or unpaired. 
+
+Gunz et al. (2009) and Lautenschlager (2016) discuss the common approaches to this task through the production of landmark-based algorithms to approximate 

@@ -7,3 +7,14 @@ Change directory by typing cd ./Documents/git/Research_Methods
 To pull up quarto site type: quarto preview
 
 To exit the quarto preview type: ctl C 
+
+Once you start editing the quarto site, use the following workflow:
+
+git init
+git add .
+git commit -m "first commit"
+
+You can continue to preview as you edit by simply using these (above) steps.
+
+To officially apply these to the quarto site, you must type: quarto render
+Be patient. It takes a while for this to adjust in the website. Just continue editing and using preview to see what you are doing. 
