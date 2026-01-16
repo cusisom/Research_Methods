@@ -5,3 +5,5 @@ It will start me in C:\Users\danny
 Change directory by typing cd ./Documents/git/Research_Methods 
 
 To pull up quarto site type: quarto preview
+
+To exit the quarto preview type: ctl C 

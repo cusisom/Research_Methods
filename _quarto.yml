@@ -12,6 +12,7 @@ website:
       - Research.qmd
       - Photogrammetry.qmd
       - Morph.qmd
+      - Mirroring_Landmarks.qmd
       - data_processing.qmd 
       - R_Analysis.qmd
       
