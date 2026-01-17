@@ -45,12 +45,12 @@ Unpaired landmarks for MSP
 :::
 
 2. In the Markups module find the `Plane` function
-	-This is in the upper `Create Markups` menu
-	-When you click on `plane` a new node will be provided for you in the `Node` menu (along with the coordinate set already established.
-	-Before messing with this, rename the plane (MSP) by right clicking the node. 
+	- This is in the upper `Create Markups` menu
+	- When you click on `plane` a new node will be provided for you in the `Node` menu (along with the coordinate set already established.
+	- Before messing with this, rename the plane (MSP) by right clicking the node. 
 3. Like the fiducial points applied for landmarks, the plane tool is at first a drag-and-drop function
-	-Drop the midpoint of the new plane approximately on the midline
-	-*This will be adjusted so don't stress the initial drop
+	- Drop the midpoint of the new plane approximately on the midline
+	- *This will be adjusted so don't stress the initial drop*
 
 :::{#fig-SliceData}
 
@@ -58,3 +58,9 @@ Unpaired landmarks for MSP
    
 Creating a Plane
 :::
+
+4. Right click on the central node of the new plane (labeled MSP)
+	- there will be a tab for `Interaction Options`
+	- Turn on both `Translate` and `Rotate`
+	- Adjust the plane so that it passes through each of the three midsagittal landmarks	
+		- *N, Bas, and IF*
