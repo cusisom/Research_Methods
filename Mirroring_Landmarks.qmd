@@ -78,5 +78,26 @@ Bisecting the skull
 With the midsagittal plane set, we can now bisect the model along it's placement. 
 
 1. Find the Surface Models tab in the dropdown menu and select `Dynamic Modeler`
-	- Within the `Create` menu in the top left of the window, find this ![] (Images/Planecut.png) icon labelled `Plane Cut`
+	- Within the `Create` menu in the top left of the window, find this ![](Images/Planecut.png) icon labelled `Plane Cut`
+2. There are a couple of fields in the lower menus that you will fill out.
+	- In the `Input nodes` window select your base model for the `model node` and the MSP (that you just made) for `Plane node 1`
+	- In the `Output nodes` you can choose either the positive or negative side for the output model. So far it seems that the positive side is the left and the negative the right. 
+	- Once you choose your output model, select `Apply` at the bottom
+3. Nothing will change in this screen after you apply the bisection
+	- Navigate back to your `Data` window
+	- Make your primary model invisible
+	- Make your new bisected model visible
+	- Voila
+
+::: {#fig-SliceData layout-ncol=2}
+
+   ![](Images/bisected1)
+   
+   ![](Images/bisected2)
+   
+   Bisected Models
+:::
+
+### Mirroring your model
+
 	
