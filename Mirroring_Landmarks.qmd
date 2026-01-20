@@ -64,3 +64,19 @@ Creating a Plane
 	- Turn on both `Translate` and `Rotate`
 	- Adjust the plane so that it passes through each of the three midsagittal landmarks	
 		- *N, Bas, and IF*
+		- *Expand the margins of the plane so that you can clearly see it during adjustment*
+
+:::{#fig-SliceData}
+
+   ![](Images/MSP4)
+
+Bisecting the skull
+:::
+
+### Bisecting the Digital Model
+
+With the midsagittal plane set, we can now bisect the model along it's placement. 
+
+1. Find the Surface Models tab in the dropdown menu and select `Dynamic Modeler`
+	- Within the `Create` menu in the top left of the window, find this ![] (Images/Planecut.png) icon labelled `Plane Cut`
+	
