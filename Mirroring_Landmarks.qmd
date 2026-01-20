@@ -82,6 +82,8 @@ With the midsagittal plane set, we can now bisect the model along it's placement
 2. There are a couple of fields in the lower menus that you will fill out.
 	- In the `Input nodes` window select your base model for the `model node` and the MSP (that you just made) for `Plane node 1`
 	- In the `Output nodes` you can choose either the positive or negative side for the output model. So far it seems that the positive side is the left and the negative the right. 
+	- Under the desired menu (positive or negative), select `Create new model as...`
+	- Title appropriately
 	- Once you choose your output model, select `Apply` at the bottom
 3. Nothing will change in this screen after you apply the bisection
 	- Navigate back to your `Data` window
@@ -100,4 +102,22 @@ With the midsagittal plane set, we can now bisect the model along it's placement
 
 ### Mirroring your model
 
-	
+The last step in this process is mirroring the complete side of your model so that missing landmarks can be placed.
+
+1. Navigate back to the `Dynamic Modeler` window
+	- Found in the drop down under `Surface Models`
+2. In the `Create` menu, find the `Mirror` icon	
+	- ![](Images/mirroricon.png)
+3. You will again be given options for Input and Output	
+	- For the Input, select the new bisected model that you want to be mirrored and the plane (MSP) that you wish to mirror on
+	- For the Output, select `Create new model as...` and label appropriately
+
+::: {#fig-SliceData}
+
+   ![](Images/mirroring.png)
+   
+   Mirror Menu
+:::
+
+4. Navigate back to `Data` window and landmark along your mirrored model
+	- Be sure to turn off the mirror visibility (and make the original model visible) when not using

@@ -136,6 +136,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#defining-the-midsagittal-plane-msp" id="toc-defining-the-midsagittal-plane-msp" class="nav-link" data-scroll-target="#defining-the-midsagittal-plane-msp">Defining the Midsagittal Plane (MSP)</a>
   <ul class="collapse">
   <li><a href="#bisecting-the-digital-model" id="toc-bisecting-the-digital-model" class="nav-link" data-scroll-target="#bisecting-the-digital-model">Bisecting the Digital Model</a></li>
+  <li><a href="#mirroring-your-model" id="toc-mirroring-your-model" class="nav-link" data-scroll-target="#mirroring-your-model">Mirroring your model</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -269,6 +270,73 @@ Figure&nbsp;4: Bisecting the skull
 <li>Find the Surface Models tab in the dropdown menu and select <code>Dynamic Modeler</code>
 <ul>
 <li>Within the <code>Create</code> menu in the top left of the window, find this <img src="Images/Planecut.png" class="img-fluid"> icon labelled <code>Plane Cut</code></li>
+</ul></li>
+<li>There are a couple of fields in the lower menus that you will fill out.
+<ul>
+<li>In the <code>Input nodes</code> window select your base model for the <code>model node</code> and the MSP (that you just made) for <code>Plane node 1</code></li>
+<li>In the <code>Output nodes</code> you can choose either the positive or negative side for the output model. So far it seems that the positive side is the left and the negative the right.</li>
+<li>Under the desired menu (positive or negative), select <code>Create new model as...</code></li>
+<li>Title appropriately</li>
+<li>Once you choose your output model, select <code>Apply</code> at the bottom</li>
+</ul></li>
+<li>Nothing will change in this screen after you apply the bisection
+<ul>
+<li>Navigate back to your <code>Data</code> window</li>
+<li>Make your primary model invisible</li>
+<li>Make your new bisected model visible</li>
+<li>Voila</li>
+</ul></li>
+</ol>
+<div id="fig-SliceData" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/bisected1.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="Images/bisected2.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Bisected Models
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="mirroring-your-model" class="level3">
+<h3 class="anchored" data-anchor-id="mirroring-your-model">Mirroring your model</h3>
+<p>The last step in this process is mirroring the complete side of your model so that missing landmarks can be placed.</p>
+<ol type="1">
+<li>Navigate back to the <code>Dynamic Modeler</code> window
+<ul>
+<li>Found in the drop down under <code>Surface Models</code></li>
+</ul></li>
+<li>In the <code>Create</code> menu, find the <code>Mirror</code> icon
+<ul>
+<li><img src="Images/mirroricon.png" class="img-fluid"></li>
+</ul></li>
+<li>You will again be given options for Input and Output
+<ul>
+<li>For the Input, select the new bisected model that you want to be mirrored and the plane (MSP) that you wish to mirror on</li>
+<li>For the Output, select <code>Create new model as...</code> and label appropriately</li>
+</ul></li>
+</ol>
+<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Images/mirroring.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Mirror Menu
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Navigate back to <code>Data</code> window and landmark along your mirrored model
+<ul>
+<li>Be sure to turn off the mirror visibility (and make the original model visible) when not using</li>
 </ul></li>
 </ol>
 
