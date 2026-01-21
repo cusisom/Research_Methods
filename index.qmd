@@ -6,7 +6,7 @@ title: "D. Cusimano Research Methods"
 
 This site exists to reflect the development of the Methods being proposed for capturing Geometric Morphometric data by using 3D Photogrammetry and digital landmarking software. The navigation bar above links to the different components of this project. 
 
-All current research is being produced at the John A. Burns School of Medicine (JABSOM) at the University of Hawai'i, Manoa in Kaka'ako, Honolulu. All work done and published through JABSOM is done in accordance with the school's protocols and done with the express permission and supervision of JABSOM faculty. All of the human remains used for this research have come from the [`Willed Body Program'](https://jabsom.hawaii.edu/about/giving/willed-body/index.html) and are thus donated for use in research and education. 
+Much of the current research is being produced at the John A. Burns School of Medicine (JABSOM) at the University of Hawai'i, Manoa in Kaka'ako, Honolulu. All work done and published through JABSOM is done in accordance with the school's protocols and done with the express permission and supervision of JABSOM faculty. All of the human remains used for this research have come from the [`Willed Body Program'](https://jabsom.hawaii.edu/about/giving/willed-body/index.html) and are thus donated for use in research and education. 
 
 :::{layout-ncol=2}
 
@@ -31,6 +31,10 @@ The Photogrammetry page walks through how to collect and process image data for 
 ## Morphometrics
 
 The Morphometrics page discusses how to use the 3D Slicer software to collect Geometric Morphometric data from 3D models
+
+## Mirroring
+
+The Mirroring page covers the issue of missing bilateral landmarks the are an inherent nusiance of work on fossil and archaeological human remains.
 	
 ## Data Processing
 
