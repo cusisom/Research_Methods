@@ -21,5 +21,6 @@ data_path <- "C:/Users/danny/Documents/git/Research_Methods/docs/"
 dictionary1 <- read.csv(paste(data_path, "Book1.csv", sep=""))
 knitr::kable(dictionary1)
 
-save_data_location_csv <- "C:/Users/danny/Documents/git/Research_Methods/docs/Book1.csv"
-write.csv(dictionary1, file = save_data_location_csv, row.names=FALSE)
+
+
+
