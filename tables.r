@@ -15,11 +15,11 @@ require(gapminder) #for plot aesthetics
 
 ## ---- loaddata --------
 
-data_path <- "../docs/"
+data_path <- "C:/Users/danny/Documents/git/Research_Methods/docs/"
 
 ## ---- Table1 --------
-dictionary1 <- read.csv(paste(data_path, "CSample.csv", sep=""))
+dictionary1 <- read.csv(paste(data_path, "Book1.csv", sep=""))
 knitr::kable(dictionary1)
 
-save_data_location_csv <- "../docs/CSample.csv"
+save_data_location_csv <- "../docs/Book1.csv"
 write.csv(dictionary1, file = save_data_location_csv, row.names=FALSE)
