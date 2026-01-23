@@ -1,0 +1,7 @@
+---
+Title: "Tables"
+---
+```{r}
+#| cache = FALSE
+knitr::read_chunk('tables.r')
+```
