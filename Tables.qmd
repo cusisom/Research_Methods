@@ -5,3 +5,6 @@ Title: "Tables"
 #| cache = FALSE
 knitr::read_chunk('tables.r')
 ```
+
+```{r, dictionary1}
+```
