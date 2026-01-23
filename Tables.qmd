@@ -1,10 +1,11 @@
 ---
-Title: "Tables"
+title: "Tables"
 ---
+
 ```{r}
 #| cache = FALSE
 knitr::read_chunk('tables.r')
 ```
 
-```{r, loaddata}
+```{r, Table1}
 ```

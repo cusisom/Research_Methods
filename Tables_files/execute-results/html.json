@@ -1,9 +1,11 @@
 {
-  "hash": "aaec70829fc0232096ecf2d9142aaf9c",
+  "hash": "302aff011c58a1fc7bd8adbc54b90a1a",
   "result": {
     "engine": "knitr",
-    "markdown": "---\nTitle: \"Tables\"\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::read_chunk('tables.r')\n```\n:::\n\n::: {.cell}\n\n:::\n",
-    "supporting": [],
+    "markdown": "---\nTitle: \"Tables\"\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::read_chunk('tables.r')\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ndata_path <- \"../docs/\"\n```\n:::\n",
+    "supporting": [
+      "Tables_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

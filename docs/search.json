@@ -193,6 +193,6 @@
     "href": "Tables.html",
     "title": "D. Cusimano Dissertation Research",
     "section": "",
-    "text": "knitr::read_chunk('tables.r')"
+    "text": "knitr::read_chunk('tables.r')\n\n\ndata_path &lt;- \"../docs/\""
   }
 ]

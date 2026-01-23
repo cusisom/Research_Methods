@@ -13,8 +13,13 @@ require(skimr) #for nice visualization of data
 require(knitr) #for qmd building
 require(gapminder) #for plot aesthetics
 
-## ---- loaddata -------
+## ---- loaddata --------
 
 data_path <- "../docs/"
+
+## ---- Table1 --------
 dictionary1 <- read.csv(paste(data_path, "CSample.csv", sep=""))
 knitr::kable(dictionary1)
+
+save_data_location_csv <- "../docs/CSample.csv"
+write.csv(dictionary1, file = save_data_location_csv, row.names=FALSE)
