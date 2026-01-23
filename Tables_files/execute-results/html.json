@@ -1,0 +1,15 @@
+{
+  "hash": "aaec70829fc0232096ecf2d9142aaf9c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nTitle: \"Tables\"\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::read_chunk('tables.r')\n```\n:::\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

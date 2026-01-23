@@ -6,5 +6,5 @@ Title: "Tables"
 knitr::read_chunk('tables.r')
 ```
 
-```{r, dictionary1}
+```{r, loaddata}
 ```
