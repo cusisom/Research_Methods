@@ -18,7 +18,8 @@ require(gapminder) #for plot aesthetics
 data_path <- "C:/Users/danny/Documents/git/Research_Methods/docs/"
 
 ## ---- Table1 --------
-Table1 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/docs/Table1.csv"))
+dictionary1 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/docs/Book1.csv"))
+knitr::kable(dictionary1)
 
 
 

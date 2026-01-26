@@ -1,9 +1,0 @@
-[
-  {
-    "objectID": "Tables.html",
-    "href": "Tables.html",
-    "title": "Tables",
-    "section": "",
-    "text": "knitr::read_chunk('tables.r')\n\n\ndictionary1 &lt;- read.csv(print(\"C:/Users/danny/Documents/git/Research_Methods/docs/Book1.csv\"))\n\n[1] \"C:/Users/danny/Documents/git/Research_Methods/docs/Book1.csv\"\n\nknitr::kable(dictionary1)\n\n\n\n\nSpecies.Age.Category\nNumber\nHave.Need\n\n\n\n\nRecent H. sapiens\n192\nHave\n\n\nNeolithic H. sapiens\n27\nNeed\n\n\nLP H. sapiens\n10\nNeed\n\n\nChibanian H. sapiens\n0\nNeed\n\n\nNeanderthal\n9\nNeed\n\n\nH. heidelbergensis\n8\n3 of 8\n\n\nH. longi\n1\nHave\n\n\nMaba\n1\nNeed\n\n\nH. erectus\n13\n1 of 13\n\n\n\n\n\n\n\n\n261\n\n\n\n\n147/211"
-  }
-]
