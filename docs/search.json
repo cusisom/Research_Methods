@@ -5,54 +5,5 @@
     "title": "Tables",
     "section": "",
     "text": "knitr::read_chunk('tables.r')\n\n\ndictionary1 &lt;- read.csv(print(\"C:/Users/danny/Documents/git/Research_Methods/docs/Book1.csv\"))\n\n[1] \"C:/Users/danny/Documents/git/Research_Methods/docs/Book1.csv\"\n\nknitr::kable(dictionary1)\n\n\n\n\nSpecies.Age.Category\nNumber\nHave.Need\n\n\n\n\nRecent H. sapiens\n192\nHave\n\n\nNeolithic H. sapiens\n27\nNeed\n\n\nLP H. sapiens\n10\nNeed\n\n\nChibanian H. sapiens\n0\nNeed\n\n\nNeanderthal\n9\nNeed\n\n\nH. heidelbergensis\n8\n3 of 8\n\n\nH. longi\n1\nHave\n\n\nMaba\n1\nNeed\n\n\nH. erectus\n13\n1 of 13\n\n\n\n\n\n\n\n\n261\n\n\n\n\n147/211"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "D. Cusimano Research Methods",
-    "section": "",
-    "text": "This site exists to reflect the development of the Methods being proposed for capturing Geometric Morphometric data by using 3D Photogrammetry and digital landmarking software. The navigation bar above links to the different components of this project.\nMuch of the current research is being produced at the John A. Burns School of Medicine (JABSOM) at the University of Hawai’i, Manoa in Kaka’ako, Honolulu. All work done and published through JABSOM is done in accordance with the school’s protocols and done with the express permission and supervision of JABSOM faculty. All of the human remains used for this research have come from the `Willed Body Program’ and are thus donated for use in research and education."
-  },
-  {
-    "objectID": "index.html#research-background-and-aims",
-    "href": "index.html#research-background-and-aims",
-    "title": "D. Cusimano Research Methods",
-    "section": "Research Background and Aims",
-    "text": "Research Background and Aims\nA brief overview of the project context and research proposal. Navigate here to view the project goals, timeline, and progress."
-  },
-  {
-    "objectID": "index.html#photogrammetry",
-    "href": "index.html#photogrammetry",
-    "title": "D. Cusimano Research Methods",
-    "section": "Photogrammetry",
-    "text": "Photogrammetry\nThe Photogrammetry page walks through how to collect and process image data for the development of 3D models in Adobe Lightroom and Reality Capture"
-  },
-  {
-    "objectID": "index.html#morphometrics",
-    "href": "index.html#morphometrics",
-    "title": "D. Cusimano Research Methods",
-    "section": "Morphometrics",
-    "text": "Morphometrics\nThe Morphometrics page discusses how to use the 3D Slicer software to collect Geometric Morphometric data from 3D models"
-  },
-  {
-    "objectID": "index.html#mirroring",
-    "href": "index.html#mirroring",
-    "title": "D. Cusimano Research Methods",
-    "section": "Mirroring",
-    "text": "Mirroring\nThe Mirroring page covers the issue of missing bilateral landmarks the are an inherent nusiance of work on fossil and archaeological human remains."
-  },
-  {
-    "objectID": "index.html#data-processing",
-    "href": "index.html#data-processing",
-    "title": "D. Cusimano Research Methods",
-    "section": "Data Processing",
-    "text": "Data Processing\nThe Data Processing page currently displays each aspect of the processing code used to import and modify the datafiles needed to study variance across the sample. This page illustrates some basic figures regarding the sample demographics as well as preliminary visualization of coordinate data."
-  },
-  {
-    "objectID": "index.html#analysis",
-    "href": "index.html#analysis",
-    "title": "D. Cusimano Research Methods",
-    "section": "Analysis",
-    "text": "Analysis\nFinally, the analysis page acts as a repository that will be used to illustrate variance in GM data. This page is still under development but currently displays the process of importing and manipulating the needed data files and running Generalized Procrustes Analyses, ANOVAs, and Principal Component Analyses."
   }
 ]
