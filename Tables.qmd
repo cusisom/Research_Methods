@@ -2,7 +2,7 @@
 title: "Tables"
 ---
 
-Many problems and more
+Many problems 
 
 ```{r}
 #| cache = FALSE
