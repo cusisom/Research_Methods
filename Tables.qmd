@@ -2,6 +2,8 @@
 title: "Tables"
 ---
 
+Many problems
+
 ```{r}
 #| cache = FALSE
 knitr::read_chunk('tables.r')
