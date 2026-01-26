@@ -21,6 +21,8 @@ dictionary1 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/Boo
 knitr::kable(dictionary1)
 
 
+## ---- Table2 --------
 
+dictionary2 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/landmarks.csv"))
 
-
+knitr::kable(dictionary2)

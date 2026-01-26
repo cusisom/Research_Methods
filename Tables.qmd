@@ -9,5 +9,13 @@ Many problems
 knitr::read_chunk('tables.r')
 ```
 
+## Table 1: Current sample
+
 ```{r, Table1}
 ```
+
+## Table 2: Landmarks
+
+```{r, Table2}
+```
+
