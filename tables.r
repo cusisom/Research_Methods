@@ -19,7 +19,7 @@ data_path <- "C:/Users/danny/Documents/git/Research_Methods/docs/"
 
 ## ---- Table1 --------
 dictionary1 <- read.csv(paste(data_path, "Book1.csv", sep=""))
-knitr::kable(dictionary1)
+
 
 
 
