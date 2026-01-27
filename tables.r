@@ -16,7 +16,7 @@ require(gapminder) #for plot aesthetics
 
 ## ---- Table1 --------
 
-dictionary1 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/Book1.csv"))
+dictionary1 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/Book1.csv", header = FALSE, StringAsFactors = FALSE))
 
 knitr::kable(dictionary1)
 
@@ -33,3 +33,5 @@ knitr::kable(dictionary2)
 dictionary3 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/clp.csv"))
 
 knitr::kable(dictionary3)
+
+read.csv("C:/Users/danny/Documents/git/Research_Methods/Book1.csv", header=FALSE)
