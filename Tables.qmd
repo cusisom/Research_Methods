@@ -2,7 +2,7 @@
 title: "Tables"
 ---
 
-Many problems 
+
 
 ```{r}
 #| cache = FALSE
@@ -17,5 +17,10 @@ knitr::read_chunk('tables.r')
 ## Table 2: Landmarks
 
 ```{r, Table2}
+```
+
+## Table 3: Chibanian and Late Pleistocene (CLP) assemblage (*pending access*)
+
+```{r, Table3}
 ```
 

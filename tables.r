@@ -26,3 +26,10 @@ knitr::kable(dictionary1)
 dictionary2 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/landmarks.csv"))
 
 knitr::kable(dictionary2)
+
+
+## ---- Table3 --------
+
+dictionary3 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/clp.csv"))
+
+knitr::kable(dictionary3)
