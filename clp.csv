@@ -1,4 +1,4 @@
-Species,Specimen,NMNH,Field,Age,Dating Method
+Species,Specimen,NMNH,Field,Age,"""Dating Method"""
 *H. heidelbergensis s.l*,Kabwe,-,1,274-224 Ka,U-Series
 ,Arago,1,-,455 Ka,Gamma Spectrometry/U-Series
 ,Bodo,1,-,600 Ka,40Ar/39Ar
@@ -11,7 +11,7 @@ Species,Specimen,NMNH,Field,Age,Dating Method
 Chinese Chibanian,,-,-,,
 ,Maba,1,-,237-129 Ka,U-Series
 ,Jinniushan ,-,-,260-200 Ka,"U-Series, Biostratigraphy"
-H. neanderthalensis,,-,-,,
+*H. neanderthalensis*,,-,-,,
 ,Amud,1,-,70-50 Ka,Thermoluminescence
 ,Galilee (Manot?),-,1,,
 ,Gibraltar 1,-,1,>70 Ka,

@@ -1,5 +1,5 @@
-,Time Period,Age,Specimens/Assemblages,Number,Continent
-Total H. sapiens,,,,193,
+Species,"""Time Period""",Age,"""Specimens/Assemblages""",Number,Continent
+Total *H. sapiens*,,,,193,
 ,Modern,20th/21st century,JABSOM collection,54,North America
 ,,19th/20th century,Certosa Cemetery,50,Europe
 ,Classical to Middle Ages,"Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)",Semna South,88,Africa
@@ -7,7 +7,7 @@ Total H. sapiens,,,,193,
 ,Mesolithic,12-10 kya,-,-,
 ,Upper Paleolithic,50-12 kya,-,-,
 ,Middle Paleolithic ,150-120 ka,Singa,1,Africa
-Total non-H. sapiens sample,,,,5,
+Total non-*H. sapiens* sample,,,,5,
 ,,260-200 ka,Jinniushan,1,Asia
 ,,~260 ka,Florisbad,1,Africa
 ,,300-200 ka,Eliye Springs,1,
