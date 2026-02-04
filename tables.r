@@ -18,6 +18,8 @@ require(gapminder) #for plot aesthetics
 
 dictionary1 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/Book1.csv", check.names = FALSE, StringAsFactors = FALSE))
 
+colnames(dictionary1) <- c("Species", "Time Period", "Specimens/Assemblages", "Number", "Continent")
+
 knitr::kable(dictionary1)
 
 
