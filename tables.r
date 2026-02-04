@@ -36,7 +36,7 @@ knitr::kable(dictionary2, align = "c")
 
 dictionary3 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/clp.csv"))
 
-colnames(dictionary1) <- c("Species", "Specimen", "NMNH", "Field", "Age", "Dating Method")
+colnames(dictionary3) <- c("Species", "Specimen", "NMNH", "Field", "Age", "Dating Method")
 
 knitr::kable(dictionary3, align = "c")
 

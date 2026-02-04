@@ -209,139 +209,139 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dictionary1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Time Period"</span>, <span class="st">"Specimens/Assemblages"</span>, <span class="st">"Number"</span>, <span class="st">"Continent"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary1, <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 15%">
 <col style="width: 13%">
-<col style="width: 49%">
+<col style="width: 48%">
 <col style="width: 9%">
 <col style="width: 5%">
 <col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Species</th>
-<th style="text-align: left;">Time Period</th>
-<th style="text-align: left;">Specimens/Assemblages</th>
-<th style="text-align: left;">Number</th>
-<th style="text-align: left;">Continent</th>
-<th style="text-align: left;">NA</th>
+<th style="text-align: center;">Species</th>
+<th style="text-align: center;">Time Period</th>
+<th style="text-align: center;">Specimens/Assemblages</th>
+<th style="text-align: center;">Number</th>
+<th style="text-align: center;">Continent</th>
+<th style="text-align: center;">NA</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Total <em>H. sapiens</em></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">193</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">Total <em>H. sapiens</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">193</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Modern</td>
-<td style="text-align: left;">20th/21st century</td>
-<td style="text-align: left;">JABSOM collection</td>
-<td style="text-align: left;">54</td>
-<td style="text-align: left;">North America</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Modern</td>
+<td style="text-align: center;">20th/21st century</td>
+<td style="text-align: center;">JABSOM collection</td>
+<td style="text-align: center;">54</td>
+<td style="text-align: center;">North America</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">19th/20th century</td>
-<td style="text-align: left;">Certosa Cemetery</td>
-<td style="text-align: left;">50</td>
-<td style="text-align: left;">Europe</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">19th/20th century</td>
+<td style="text-align: center;">Certosa Cemetery</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">Europe</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Classical to Middle Ages</td>
-<td style="text-align: left;">Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)</td>
-<td style="text-align: left;">Semna South</td>
-<td style="text-align: left;">88</td>
-<td style="text-align: left;">Africa</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Classical to Middle Ages</td>
+<td style="text-align: center;">Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)</td>
+<td style="text-align: center;">Semna South</td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">Africa</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Neolithic</td>
-<td style="text-align: left;">8000-3000 BCE</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Neolithic</td>
+<td style="text-align: center;">8000-3000 BCE</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Mesolithic</td>
-<td style="text-align: left;">12-10 kya</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Mesolithic</td>
+<td style="text-align: center;">12-10 kya</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Upper Paleolithic</td>
-<td style="text-align: left;">50-12 kya</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Upper Paleolithic</td>
+<td style="text-align: center;">50-12 kya</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Middle Paleolithic</td>
-<td style="text-align: left;">150-120 ka</td>
-<td style="text-align: left;">Singa</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Africa</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Middle Paleolithic</td>
+<td style="text-align: center;">150-120 ka</td>
+<td style="text-align: center;">Singa</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Africa</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Total non-<em>H. sapiens</em> sample</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">Total non-<em>H. sapiens</em> sample</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">260-200 ka</td>
-<td style="text-align: left;">Jinniushan</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Asia</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">260-200 ka</td>
+<td style="text-align: center;">Jinniushan</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Asia</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">~260 ka</td>
-<td style="text-align: left;">Florisbad</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Africa</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">~260 ka</td>
+<td style="text-align: center;">Florisbad</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Africa</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">300-200 ka</td>
-<td style="text-align: left;">Eliye Springs</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">300-200 ka</td>
+<td style="text-align: center;">Eliye Springs</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Lower Paleolithic</td>
-<td style="text-align: left;">~600 ka</td>
-<td style="text-align: left;">Bodo</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Africa</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Lower Paleolithic</td>
+<td style="text-align: center;">~600 ka</td>
+<td style="text-align: center;">Bodo</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Africa</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">750-680 ka</td>
-<td style="text-align: left;">Zhoukoudian</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Asia</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">750-680 ka</td>
+<td style="text-align: center;">Zhoukoudian</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Asia</td>
 </tr>
 </tbody>
 </table>
@@ -355,181 +355,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "C:/Users/danny/Documents/git/Research_Methods/landmarks.csv"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dictionary2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Landmark"</span>, <span class="st">"Abbreviation"</span>, <span class="st">"Definition and Measurement"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary2, <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 10%">
+<col style="width: 11%">
 <col style="width: 5%">
 <col style="width: 83%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Landmark</th>
-<th style="text-align: left;">Abbreviation</th>
-<th style="text-align: left;">X.Definition.and.Measurement.</th>
+<th style="text-align: center;">Landmark</th>
+<th style="text-align: center;">Abbreviation</th>
+<th style="text-align: center;">Definition and Measurement</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Alare</td>
-<td style="text-align: left;">alael; alarr</td>
-<td style="text-align: left;">The most lateral points on the nasal aperture</td>
+<td style="text-align: center;">Alare</td>
+<td style="text-align: center;">alael; alarr</td>
+<td style="text-align: center;">The most lateral points on the nasal aperture</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Asterion</td>
-<td style="text-align: left;">astl; astr</td>
-<td style="text-align: left;">The sutural meeting point where the temporal, parietal, and occipital bones meet; if the meeting point includes a wormian bone, the lambdoid suture was extended followed by the temporo-parietal and temporo- occipital sutures</td>
+<td style="text-align: center;">Asterion</td>
+<td style="text-align: center;">astl; astr</td>
+<td style="text-align: center;">The sutural meeting point where the temporal, parietal, and occipital bones meet; if the meeting point includes a wormian bone, the lambdoid suture was extended followed by the temporo-parietal and temporo- occipital sutures</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Basion</td>
-<td style="text-align: left;">bas</td>
-<td style="text-align: left;">The meeting point of the midsagittal plane and the anterior border of the foramen magnum; located on the anterior-inferior portion of the rim</td>
+<td style="text-align: center;">Basion</td>
+<td style="text-align: center;">bas</td>
+<td style="text-align: center;">The meeting point of the midsagittal plane and the anterior border of the foramen magnum; located on the anterior-inferior portion of the rim</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Bregma</td>
-<td style="text-align: left;">brg</td>
-<td style="text-align: left;">The sutural meeting point of the coronal and sagittal sutures</td>
+<td style="text-align: center;">Bregma</td>
+<td style="text-align: center;">brg</td>
+<td style="text-align: center;">The sutural meeting point of the coronal and sagittal sutures</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Dacryon</td>
-<td style="text-align: left;">dacl; dacr</td>
-<td style="text-align: left;">The meeting point of the lacrimal, frontal, and maxilla bones in the orbit at the apex of the lacrimal fossa</td>
+<td style="text-align: center;">Dacryon</td>
+<td style="text-align: center;">dacl; dacr</td>
+<td style="text-align: center;">The meeting point of the lacrimal, frontal, and maxilla bones in the orbit at the apex of the lacrimal fossa</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Ectoconchion</td>
-<td style="text-align: left;">ectl; ectr</td>
-<td style="text-align: left;">The intersection point of the anterior surface of the lateral orbital border and a line bisecting the long axis of the orbit</td>
+<td style="text-align: center;">Ectoconchion</td>
+<td style="text-align: center;">ectl; ectr</td>
+<td style="text-align: center;">The intersection point of the anterior surface of the lateral orbital border and a line bisecting the long axis of the orbit</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Ectomolare</td>
-<td style="text-align: left;">ecml; ecmr</td>
-<td style="text-align: left;">The most lateral point on the buccal alveolar margin, at the center of the second molar position</td>
+<td style="text-align: center;">Ectomolare</td>
+<td style="text-align: center;">ecml; ecmr</td>
+<td style="text-align: center;">The most lateral point on the buccal alveolar margin, at the center of the second molar position</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Eurion</td>
-<td style="text-align: left;">eurl; eurr</td>
-<td style="text-align: left;">The lateral-most point (left and right) of the cranial vault comprising the greatest cranial breadth, located on the parietals or temporal bones superior to the zygomatic arch and external auditory meatus</td>
+<td style="text-align: center;">Eurion</td>
+<td style="text-align: center;">eurl; eurr</td>
+<td style="text-align: center;">The lateral-most point (left and right) of the cranial vault comprising the greatest cranial breadth, located on the parietals or temporal bones superior to the zygomatic arch and external auditory meatus</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Foramen magnum breadth points</td>
-<td style="text-align: left;">fobl; fobr</td>
-<td style="text-align: left;">The lateral-most point (left and right sides) of the foramen magnum rim</td>
+<td style="text-align: center;">Foramen magnum breadth points</td>
+<td style="text-align: center;">fobl; fobr</td>
+<td style="text-align: center;">The lateral-most point (left and right sides) of the foramen magnum rim</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Frontomalare anterior</td>
-<td style="text-align: left;">fmal; fmar</td>
-<td style="text-align: left;">The anterior-most point of the fronto-malar suture</td>
+<td style="text-align: center;">Frontomalare anterior</td>
+<td style="text-align: center;">fmal; fmar</td>
+<td style="text-align: center;">The anterior-most point of the fronto-malar suture</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Frontomalare temporale</td>
-<td style="text-align: left;">fmtl; fmtr</td>
-<td style="text-align: left;">The lateral-most point of the fronto-malar suture</td>
+<td style="text-align: center;">Frontomalare temporale</td>
+<td style="text-align: center;">fmtl; fmtr</td>
+<td style="text-align: center;">The lateral-most point of the fronto-malar suture</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Frontotemporale</td>
-<td style="text-align: left;">wfbl; wfbr</td>
-<td style="text-align: left;">The anteriomedial-most point of the temporal line</td>
+<td style="text-align: center;">Frontotemporale</td>
+<td style="text-align: center;">wfbl; wfbr</td>
+<td style="text-align: center;">The anteriomedial-most point of the temporal line</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Glabella</td>
-<td style="text-align: left;">glb</td>
-<td style="text-align: left;">The anterior-most point of the midsagittal plane on the frontal bone above the frontonasal suture</td>
+<td style="text-align: center;">Glabella</td>
+<td style="text-align: center;">glb</td>
+<td style="text-align: center;">The anterior-most point of the midsagittal plane on the frontal bone above the frontonasal suture</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Jugale</td>
-<td style="text-align: left;">jugl; jugr</td>
-<td style="text-align: left;">The point of the deepest curvature on the zygomatic bone between the temporal and frontal processes</td>
+<td style="text-align: center;">Jugale</td>
+<td style="text-align: center;">jugl; jugr</td>
+<td style="text-align: center;">The point of the deepest curvature on the zygomatic bone between the temporal and frontal processes</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Lambda</td>
-<td style="text-align: left;">lam</td>
-<td style="text-align: left;">The meeting point of the sagittal and labmdoid sutures, when a wormian bone is present, extend the sagittal and lambdoid sutures into the wormian and where the lines meet is the location of lambda</td>
+<td style="text-align: center;">Lambda</td>
+<td style="text-align: center;">lam</td>
+<td style="text-align: center;">The meeting point of the sagittal and labmdoid sutures, when a wormian bone is present, extend the sagittal and lambdoid sutures into the wormian and where the lines meet is the location of lambda</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Lower orbital border</td>
-<td style="text-align: left;">obhi</td>
-<td style="text-align: left;">The intersection point of the lower orbital rim and a line that bisects the orbit and is perpendicular to the long axis of the orbit, this point is an inside measurement and is taken at the superior apex of the lower orbital rim</td>
+<td style="text-align: center;">Lower orbital border</td>
+<td style="text-align: center;">obhi</td>
+<td style="text-align: center;">The intersection point of the lower orbital rim and a line that bisects the orbit and is perpendicular to the long axis of the orbit, this point is an inside measurement and is taken at the superior apex of the lower orbital rim</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Upper orbital border</td>
-<td style="text-align: left;">obhs</td>
-<td style="text-align: left;">The intersection point of the upper orbital rim and a line that bisects the orbit and is perpendicular to the long axis of the orbit, this point is an inside measurement and is taken at the inferior apex of the upper orbital rim</td>
+<td style="text-align: center;">Upper orbital border</td>
+<td style="text-align: center;">obhs</td>
+<td style="text-align: center;">The intersection point of the upper orbital rim and a line that bisects the orbit and is perpendicular to the long axis of the orbit, this point is an inside measurement and is taken at the inferior apex of the upper orbital rim</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Mastoidale</td>
-<td style="text-align: left;">mastl; mastr</td>
-<td style="text-align: left;">The most inferolateral point of the mastoid process</td>
+<td style="text-align: center;">Mastoidale</td>
+<td style="text-align: center;">mastl; mastr</td>
+<td style="text-align: center;">The most inferolateral point of the mastoid process</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Maximum frontal point</td>
-<td style="text-align: left;">xfbl; xfbr</td>
-<td style="text-align: left;">The point of the coronal suture where the frontal bone is at its maximum width, not on the temporal lines</td>
+<td style="text-align: center;">Maximum frontal point</td>
+<td style="text-align: center;">xfbl; xfbr</td>
+<td style="text-align: center;">The point of the coronal suture where the frontal bone is at its maximum width, not on the temporal lines</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Most inferior nasal border</td>
-<td style="text-align: left;">nlhil; nlhir</td>
-<td style="text-align: left;">The inferior-most point on the lower rim of the nasal aperture on either side, at the beginning of the nasal floor</td>
+<td style="text-align: center;">Most inferior nasal border</td>
+<td style="text-align: center;">nlhil; nlhir</td>
+<td style="text-align: center;">The inferior-most point on the lower rim of the nasal aperture on either side, at the beginning of the nasal floor</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Nasion</td>
-<td style="text-align: left;">nas</td>
-<td style="text-align: left;">The meeting point of the fronto-nasal suture and the midsagittal plane</td>
+<td style="text-align: center;">Nasion</td>
+<td style="text-align: center;">nas</td>
+<td style="text-align: center;">The meeting point of the fronto-nasal suture and the midsagittal plane</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Opisthocranion</td>
-<td style="text-align: left;">opg</td>
-<td style="text-align: left;">The posterior-most point of the cranium on the occipital bone, farthest from glabella, the location should not be on the inion hook unless it is on a well-developed crest</td>
+<td style="text-align: center;">Opisthocranion</td>
+<td style="text-align: center;">opg</td>
+<td style="text-align: center;">The posterior-most point of the cranium on the occipital bone, farthest from glabella, the location should not be on the inion hook unless it is on a well-developed crest</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Opisthion</td>
-<td style="text-align: left;">ops</td>
-<td style="text-align: left;">The meeting point of the midsagittal plane and the posterior border of the foramen magnum; located on the inferior portion of the rim</td>
+<td style="text-align: center;">Opisthion</td>
+<td style="text-align: center;">ops</td>
+<td style="text-align: center;">The meeting point of the midsagittal plane and the posterior border of the foramen magnum; located on the inferior portion of the rim</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Porion</td>
-<td style="text-align: left;">porl; porr</td>
-<td style="text-align: left;">The superior-most point on the margin of the external auditory meatus</td>
+<td style="text-align: center;">Porion</td>
+<td style="text-align: center;">porl; porr</td>
+<td style="text-align: center;">The superior-most point on the margin of the external auditory meatus</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Prosthion</td>
-<td style="text-align: left;">prosH</td>
-<td style="text-align: left;">The anterior-most point on the midsagittal plane on the alveolar border, between the central incisors</td>
+<td style="text-align: center;">Prosthion</td>
+<td style="text-align: center;">prosH</td>
+<td style="text-align: center;">The anterior-most point on the midsagittal plane on the alveolar border, between the central incisors</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Stephanion</td>
-<td style="text-align: left;">stpl; stpr</td>
-<td style="text-align: left;">The meeting point of the coronal suture and the inferior temporal line (the superior limit of the temporal muscle)</td>
+<td style="text-align: center;">Stephanion</td>
+<td style="text-align: center;">stpl; stpr</td>
+<td style="text-align: center;">The meeting point of the coronal suture and the inferior temporal line (the superior limit of the temporal muscle)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Subspinale</td>
-<td style="text-align: left;">ssp</td>
-<td style="text-align: left;">The deepest incurvature point below the anterior nasal spine when viewed in profile</td>
+<td style="text-align: center;">Subspinale</td>
+<td style="text-align: center;">ssp</td>
+<td style="text-align: center;">The deepest incurvature point below the anterior nasal spine when viewed in profile</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Zygion</td>
-<td style="text-align: left;">zygl; zygr</td>
-<td style="text-align: left;">The lateral-most point on the zygomatic arch</td>
+<td style="text-align: center;">Zygion</td>
+<td style="text-align: center;">zygl; zygr</td>
+<td style="text-align: center;">The lateral-most point on the zygomatic arch</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Zygomaxilare</td>
-<td style="text-align: left;">zygoml; zygomr</td>
-<td style="text-align: left;">The inferior, anterior point of the zygomaxillary suture and the inferior orbital rim, taken midway between the facial and orbital floor surfaces</td>
+<td style="text-align: center;">Zygomaxilare</td>
+<td style="text-align: center;">zygoml; zygomr</td>
+<td style="text-align: center;">The inferior, anterior point of the zygomaxillary suture and the inferior orbital rim, taken midway between the facial and orbital floor surfaces</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Zygoorbitale</td>
-<td style="text-align: left;">zygool; zygoor</td>
-<td style="text-align: left;">The meeting point of the zygomaxillary suture and the inferior orbital rim, taken midway between the facial and orbital floor surfaces</td>
+<td style="text-align: center;">Zygoorbitale</td>
+<td style="text-align: center;">zygool; zygoor</td>
+<td style="text-align: center;">The meeting point of the zygomaxillary suture and the inferior orbital rim, taken midway between the facial and orbital floor surfaces</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Zygotemporale inferior</td>
-<td style="text-align: left;">zytil; zytir</td>
-<td style="text-align: left;">The inferior-most point on the zygo-temporal suture</td>
+<td style="text-align: center;">Zygotemporale inferior</td>
+<td style="text-align: center;">zytil; zytir</td>
+<td style="text-align: center;">The inferior-most point on the zygo-temporal suture</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Zygotemporale superior</td>
-<td style="text-align: left;">zytsl; zytsr</td>
-<td style="text-align: left;">The superior-most point on the zygo-temporal suture</td>
+<td style="text-align: center;">Zygotemporale superior</td>
+<td style="text-align: center;">zytsl; zytsr</td>
+<td style="text-align: center;">The superior-most point on the zygo-temporal suture</td>
 </tr>
 </tbody>
 </table>
@@ -543,259 +545,261 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "C:/Users/danny/Documents/git/Research_Methods/clp.csv"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dictionary1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Specimen"</span>, <span class="st">"NMNH"</span>, <span class="st">"Field"</span>, <span class="st">"Age"</span>, <span class="st">"Dating Method"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary3, <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 19%">
 <col style="width: 18%">
-<col style="width: 3%">
 <col style="width: 4%">
+<col style="width: 5%">
 <col style="width: 19%">
-<col style="width: 33%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Species</th>
-<th style="text-align: left;">Specimen</th>
-<th style="text-align: left;">NMNH</th>
-<th style="text-align: left;">Field</th>
-<th style="text-align: left;">Age</th>
-<th style="text-align: left;">X.Dating.Method.</th>
+<th style="text-align: center;">Species</th>
+<th style="text-align: center;">Specimen</th>
+<th style="text-align: center;">NMNH</th>
+<th style="text-align: center;">Field</th>
+<th style="text-align: center;">Age</th>
+<th style="text-align: center;">X.Dating.Method.</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><em>H. heidelbergensis s.l</em></td>
-<td style="text-align: left;">Kabwe</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">274-224 Ka</td>
-<td style="text-align: left;">U-Series</td>
+<td style="text-align: center;"><em>H. heidelbergensis s.l</em></td>
+<td style="text-align: center;">Kabwe</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">274-224 Ka</td>
+<td style="text-align: center;">U-Series</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Arago</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">455 Ka</td>
-<td style="text-align: left;">Gamma Spectrometry/U-Series</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Arago</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">455 Ka</td>
+<td style="text-align: center;">Gamma Spectrometry/U-Series</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Bodo</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">600 Ka</td>
-<td style="text-align: left;">40Ar/39Ar</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Bodo</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">600 Ka</td>
+<td style="text-align: center;">40Ar/39Ar</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ceprano</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">&gt;700kya, 450 ka, 353 Ka</td>
-<td style="text-align: left;">NA, magnetostratigraphy &amp; K/Ar, 40Ar/39Ar</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Ceprano</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">&gt;700kya, 450 ka, 353 Ka</td>
+<td style="text-align: center;">NA, magnetostratigraphy &amp; K/Ar, 40Ar/39Ar</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Eliye Springs</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">IND</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Eliye Springs</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">IND</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Florisbad</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">224-294 Ka</td>
-<td style="text-align: left;">ESR/OSL</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Florisbad</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">224-294 Ka</td>
+<td style="text-align: center;">ESR/OSL</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Petralona</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">300-250 Ka</td>
-<td style="text-align: left;">U-Series</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Petralona</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">300-250 Ka</td>
+<td style="text-align: center;">U-Series</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Steinheim</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">350, OIS 9 (337-300)</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Steinheim</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">350, OIS 9 (337-300)</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Swanscombe</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">350-250 Ka</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Swanscombe</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">350-250 Ka</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Chinese Chibanian</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">Chinese Chibanian</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Maba</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">237-129 Ka</td>
-<td style="text-align: left;">U-Series</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Maba</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">237-129 Ka</td>
+<td style="text-align: center;">U-Series</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Jinniushan</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">260-200 Ka</td>
-<td style="text-align: left;">U-Series, Biostratigraphy</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Jinniushan</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">260-200 Ka</td>
+<td style="text-align: center;">U-Series, Biostratigraphy</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><em>H. neanderthalensis</em></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><em>H. neanderthalensis</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Amud</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">70-50 Ka</td>
-<td style="text-align: left;">Thermoluminescence</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Amud</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">70-50 Ka</td>
+<td style="text-align: center;">Thermoluminescence</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Galilee (Manot?)</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Galilee (Manot?)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Gibraltar 1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">&gt;70 Ka</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Gibraltar 1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">&gt;70 Ka</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">La Chapelle-aux-Saints</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">60-42 Ka</td>
-<td style="text-align: left;">ESR</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">La Chapelle-aux-Saints</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">60-42 Ka</td>
+<td style="text-align: center;">ESR</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">La Ferrassie</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">45-44 Ka</td>
-<td style="text-align: left;">OSL and C14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">La Ferrassie</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">45-44 Ka</td>
+<td style="text-align: center;">OSL and C14</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">La Quina 5</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">63-55 Ka</td>
-<td style="text-align: left;">Luminescence and Biostratigraphy</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">La Quina 5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">63-55 Ka</td>
+<td style="text-align: center;">Luminescence and Biostratigraphy</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Saccopastore 1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">130-100 Ka</td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Saccopastore 1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">130-100 Ka</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Saint-Cesaire</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">42-41 Ka</td>
-<td style="text-align: left;">AMS C14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Saint-Cesaire</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">42-41 Ka</td>
+<td style="text-align: center;">AMS C14</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Shanidar 1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">46-50 Ka</td>
-<td style="text-align: left;">C14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Shanidar 1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">46-50 Ka</td>
+<td style="text-align: center;">C14</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Spy</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Spy</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Spy</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Spy</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Tabun 1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">106-138 Ka</td>
-<td style="text-align: left;">ESR</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Tabun 1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">106-138 Ka</td>
+<td style="text-align: center;">ESR</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Bilzingsleben</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">350 Ka</td>
-<td style="text-align: left;">U-Series</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Bilzingsleben</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">350 Ka</td>
+<td style="text-align: center;">U-Series</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Sima de los Huesos</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">600-530 Ka</td>
-<td style="text-align: left;">U-Series</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Sima de los Huesos</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">600-530 Ka</td>
+<td style="text-align: center;">U-Series</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ehringsdorf</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">OIS 7 (245-186 Ka)</td>
-<td style="text-align: left;">Biostratigraphy</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Ehringsdorf</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">OIS 7 (245-186 Ka)</td>
+<td style="text-align: center;">Biostratigraphy</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Total</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
