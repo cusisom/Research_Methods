@@ -10,9 +10,10 @@ To exit the quarto preview type: ctl C
 
 Once you start editing the quarto site, use the following workflow:
 
-git init
+
 git add .
 git commit -m "first commit"
+git push origin main 
 
 You can continue to preview as you edit by simply using these (above) steps.
 

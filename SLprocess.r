@@ -13,6 +13,7 @@ require(dplyr) #for data processing/cleaning
 require(tidyr) #for data processing/cleaning
 require(skimr) #for nice visualization of data 
 require(knitr) #for qmd building
+require(magrittr) 
 
 ## ---- loaddata --------
 
