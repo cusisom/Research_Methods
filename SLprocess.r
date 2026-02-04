@@ -56,13 +56,15 @@ dem
 
 ## ---- merge -------
 
+# I'm changing the pipe notation in this code. Where |> exists, it was once %>%
+
 dat<- merge(SM_output, dem, by= "ID")
 dat$ID <- as.factor(dat$ID)
 dat$Sex <- as.factor(dat$Sex)
 dat$Age <- as.factor(dat$Age)
 dat$Ancestry <- as.factor(dat$Ancestry)
 plot(dat$Ancestry)
-d1 <- dat %>% relocate(where(is.factor), .before = proc_dist)
+d1 <- dat |> relocate(where(is.factor), .before = proc_dist)
 skim(d1[1:6], )
 
 save_data_location<-"Data/Processed_data/output.rds"
