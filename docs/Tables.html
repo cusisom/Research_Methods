@@ -207,25 +207,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "C:/Users/danny/Documents/git/Research_Methods/Book1.csv"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dictionary1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Time Period"</span>, <span class="st">"Specimens/Assemblages"</span>, <span class="st">"Number"</span>, <span class="st">"Continent"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dictionary1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 15%">
-<col style="width: 12%">
+<col style="width: 13%">
 <col style="width: 49%">
-<col style="width: 11%">
-<col style="width: 3%">
+<col style="width: 9%">
+<col style="width: 5%">
 <col style="width: 7%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Species</th>
-<th style="text-align: left;">X.Time.Period.</th>
-<th style="text-align: left;">Age</th>
-<th style="text-align: left;">Specimens.Assemblages</th>
+<th style="text-align: left;">Time Period</th>
+<th style="text-align: left;">Specimens/Assemblages</th>
 <th style="text-align: left;">Number</th>
 <th style="text-align: left;">Continent</th>
+<th style="text-align: left;">NA</th>
 </tr>
 </thead>
 <tbody>

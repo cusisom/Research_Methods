@@ -20,19 +20,23 @@ dictionary1 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/Boo
 
 colnames(dictionary1) <- c("Species", "Time Period", "Specimens/Assemblages", "Number", "Continent")
 
-knitr::kable(dictionary1)
+knitr::kable(dictionary1, align = "c")
 
 
 ## ---- Table2 --------
 
 dictionary2 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/landmarks.csv"))
 
-knitr::kable(dictionary2)
+colnames(dictionary2) <- c("Landmark", "Abbreviation", "Definition and Measurement")
+
+knitr::kable(dictionary2, align = "c")
 
 
 ## ---- Table3 --------
 
 dictionary3 <- read.csv(print("C:/Users/danny/Documents/git/Research_Methods/clp.csv"))
 
-knitr::kable(dictionary3)
+colnames(dictionary1) <- c("Species", "Specimen", "NMNH", "Field", "Age", "Dating Method")
+
+knitr::kable(dictionary3, align = "c")
 
