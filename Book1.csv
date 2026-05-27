@@ -1,15 +1,35 @@
-Species,"""Time Period""",Age,Specimens/Assemblages,Number,Continent
-Total *H. sapiens*,,,,193,
-,Modern,20th/21st century,JABSOM collection,54,North America
-,,19th/20th century,Certosa Cemetery,50,Europe
-,Classical to Middle Ages,"Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)",Semna South,88,Africa
-,Neolithic,8000-3000 BCE,-,-,
-,Mesolithic,12-10 kya,-,-,
-,Upper Paleolithic,50-12 kya,-,-,
-,Middle Paleolithic ,150-120 ka,Singa,1,Africa
-Total non-*H. sapiens* sample,,,,5,
-,,260-200 ka,Jinniushan,1,Asia
-,,~260 ka,Florisbad,1,Africa
-,,300-200 ka,Eliye Springs,1,
-,Lower Paleolithic,~600 ka,Bodo,1,Africa
-,,750-680 ka,Zhoukoudian,1,Asia
+"""Time Period""",Age Range,"""Geologic Age (ka)""",Specimens/Assemblages,Number,Species,Continent,Citation
+,,,,,,,
+Modern,20th/21st century,0,JABSOM collection (JAB),37,H. sapiens,North America,
+Modern,19th/20th century,0.2,Certosa Cemetery (CERT),50,H. sapiens,Europe,
+Classical to Middle Ages,"Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)",0.6,Semna South (SEMS),88,H. sapiens,Africa,
+Classical to Middle Ages,,2.4,Langwith Cave,1,H. sapiens,Europe,
+Neolithic,8000-3000 BCE,6,Tilbury,1,H. sapiens,Europe,
+Neolithic,,7,Murzak-koba,2,H. sapiens,Europe,
+Neolithic,,7,Fatma-koba,1,H. sapiens,Europe,
+Neolithic,,8,Nakuru IX,1,H. sapiens,Africa,
+Mesolithic,,8,"Ofnet (02, 11, 18, 21)",4,H. sapiens,Europe,
+Mesolithic,12-8 kya,9.5,Combe-Capalle,1,H. sapiens,Europe,
+Mesolithic,,10,Wajak 1,1,H. sapiens,Africa,
+Mesolithic,,10,"Elmenteita (A,D, F1)",3,H. sapiens,Africa,
+Mesolithic,,10,"Gambles Cave (4,5)",2,H. sapiens,Africa,
+Upper Paleolithic,40-12 kya,10,Canteen Kopje,1,H. sapiens,Africa,
+Upper Paleolithic,,14,Oberkassel,2,H. sapiens,Europe,
+Upper Paleolithic,,24,"Brno (I,II,III)",3,H. sapiens,Europe,
+Upper Paleolithic,,25,Predmosti (3 & 4),2,H. sapiens,Europe,
+Upper Paleolithic,,28,Cro-Magnon (1 & 2),2,H. sapiens,Europe,
+Middle Paleolithic ,,30,Gibralter 1,1,H. neanderthalensis,Europe,
+Middle Paleolithic ,,36,Spy (1 & 2),2,H. neanderthalensis,Europe,
+Middle Paleolithic ,,40,Feldhofer 1,1,H. neanderthalensis,Europe,
+Middle Paleolithic ,,40,Le Moustier,1,H. neanderthalensis,Europe,
+Middle Paleolithic ,,50,La Ferrassie 1,1,H. neanderthalensis,Europe,
+Middle Paleolithic ,,60,La Chapelle aux Saints,1,H. neanderthalensis,Europe,
+Middle Paleolithic ,,60,La Quina 5,1,H. neanderthalensis,Europe,
+Middle Paleolithic ,,100,Skhul V,1,H. sapiens,W. Asia,
+Middle Paleolithic ,300-40 ka,135,Singa,1,H. sapiens,Africa,Stringer 2016
+Middle Paleolithic ,,230,Jinniushan,1,Undesignated,Asia,
+Middle Paleolithic ,,250,Eliye Springs,1,H. sapiens,Africa,"Brauer et al., 2004; Mounier and Lahr 2019"
+Middle Paleolithic ,,259,Florisbad,1,H. sapiens,Africa,"Grun et al., 1996"
+Middle Paleolithic ,,300,Kabwe,1,H. heidelbergensis,Africa,
+Middle Paleolithic ,,600,Bodo,1,H. heidelbergensis,Africa,
+Lower Paleolithic,,710,Zhoukoudian,1,H. erectus,Asia,
