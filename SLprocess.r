@@ -14,11 +14,12 @@ require(tidyr) #for data processing/cleaning
 require(skimr) #for nice visualization of data 
 require(knitr) #for qmd building
 require(magrittr) 
+require(rgl)
 
 ## ---- loaddata --------
 
 SM.log.file = "Data/Analysis_8-15/analysis.log"
-SMlog <- parser(SM.log.file)
+SMlog <- SlicerMorphR::parser(SM.log.file)
 head(SMlog)
 
 save_data_location<-"Data/Processed_data/SMlog.rds"
