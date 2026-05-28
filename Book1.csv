@@ -1,6 +1,6 @@
 """Time Period""",Age Range,"""Geologic Age (ka)""",Specimens/Assemblages,Number,Species,Continent,Citation
 ,,,,,,,
-Modern,20th/21st century,0,JABSOM collection (JAB),37,H. sapiens,North America,
+Modern,20th/21st century,0,JABSOM collection (JAB),37,H. sapiens,Asia & North America,
 Modern,19th/20th century,0.2,Certosa Cemetery (CERT),50,H. sapiens,Europe,
 Classical to Middle Ages,"Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)",0.6,Semna South (SEMS),88,H. sapiens,Africa,
 Classical to Middle Ages,,2.4,Langwith Cave,1,H. sapiens,Europe,
