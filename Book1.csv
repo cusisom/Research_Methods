@@ -2,7 +2,8 @@
 ,,,,,,,
 Modern,20th/21st century,0,JABSOM collection (JAB),37,H. sapiens,Asia & North America,
 Modern,19th/20th century,0.2,Certosa Cemetery (CERT),50,H. sapiens,Europe,
-Classical to Middle Ages,"Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)",0.6,Semna South (SEMS),88,H. sapiens,Africa,
+Classical to Middle Ages,,0.8-0.5,St. Gregory's Priory,43,H. sapiens,UK,
+Classical to Middle Ages,"Merotic Period (350-BCE-350 CE), Ballana Period (350-550 CE, and Medieval Period (550-1400 CE)",2.3-0.6,Semna South (SEMS),88,H. sapiens,Africa,
 Classical to Middle Ages,,2.4,Langwith Cave,1,H. sapiens,Europe,
 Neolithic,8000-3000 BCE,6,Tilbury,1,H. sapiens,Europe,
 Neolithic,,7,Murzak-koba,2,H. sapiens,Europe,
@@ -30,6 +31,7 @@ Middle Paleolithic ,300-40 ka,135,Singa,1,H. sapiens,Africa,Stringer 2016
 Middle Paleolithic ,,230,Jinniushan,1,Undesignated,Asia,
 Middle Paleolithic ,,250,Eliye Springs,1,H. sapiens,Africa,"Brauer et al., 2004; Mounier and Lahr 2019"
 Middle Paleolithic ,,259,Florisbad,1,H. sapiens,Africa,"Grun et al., 1996"
+Middle Paleolithic ,,320-250,Steinheim,1,H. heidelbergensis,Europe,
 Middle Paleolithic ,,300,Kabwe,1,H. heidelbergensis,Africa,
 Middle Paleolithic ,,600,Bodo,1,H. heidelbergensis,Africa,
 Lower Paleolithic,,710,Zhoukoudian,1,H. erectus,Asia,
