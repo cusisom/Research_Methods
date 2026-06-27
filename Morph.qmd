@@ -2,6 +2,7 @@
 
 ---
 title: "Morphometrics"
+date: "6/26/2026"
 ---
 
 # Morphometrics Workflow 

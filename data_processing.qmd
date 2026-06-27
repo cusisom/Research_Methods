@@ -98,7 +98,8 @@ are shown to be 35 rows and 6 columns. 4 of the rows are classified as factors w
 
 ## Build array from Slicer data
 
-To work with coordinate data in r, `geomorph` requires that the information be formatted into an array by using `arrayspecs`. 
+To work with coordinate data in r, `geomorph` requires that the information be formatted into an array 
+by using `arrayspecs`. 
 
 ```{r, BuildingArray}
 ```
