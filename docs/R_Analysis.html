@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Cusimano">
-<meta name="dcterms.date" content="2024-08-15">
+<meta name="dcterms.date" content="2026-06-26">
 
 <title>Analysis – D. Cusimano Dissertation Research</title>
 <style>
@@ -182,6 +182,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data">Importing Data</a></li>
   </ul></li>
   <li><a href="#pca" id="toc-pca" class="nav-link" data-scroll-target="#pca">PCA</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
+  <li><a href="#morphological-disparity" id="toc-morphological-disparity" class="nav-link" data-scroll-target="#morphological-disparity">Morphological Disparity</a></li>
+  <li><a href="#morphological-disparity-by-ancestry" id="toc-morphological-disparity-by-ancestry" class="nav-link" data-scroll-target="#morphological-disparity-by-ancestry">Morphological Disparity by Ancestry</a></li>
+  <li><a href="#format-tables-for-quarto" id="toc-format-tables-for-quarto" class="nav-link" data-scroll-target="#format-tables-for-quarto">Format Tables for Quarto</a></li>
   </ul>
 </nav>
     </div>
@@ -208,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 15, 2024</p>
+      <p class="date">June 26, 2026</p>
     </div>
   </div>
   
@@ -228,6 +232,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This markdown file utilizes codechunks.</p>
 <p>Load needed packages</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show the Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(geomorph) <span class="co">#for GM analysis</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(SlicerMorphR) <span class="co">#for importing Slicer data</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(plyr) <span class="co">#for wireframe specs</span></span>
@@ -236,30 +242,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(skimr) <span class="co">#for nice visualization of data </span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(knitr) <span class="co">#for qmd building</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(gapminder) <span class="co">#for plot aesthetics</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="importing-data" class="level2">
 <h2 class="anchored" data-anchor-id="importing-data">Importing Data</h2>
 <p>The files used in this analysis were produced in the processing code (<code>SLprocess.r</code>) illustrated in the <code>Data Processing</code> page on this website. The files listed below represent only the material thus far used. More data may be added as this project continues.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_location1 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/output.rds"</span></span>
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_location1 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/Analysis1/output.rds"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_location1)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_location2 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/Coords.rds"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_location2 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/Analysis1/Coords.rds"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Coords <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_location2) </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>data_location3 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/gpa.rds"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>data_location3 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/Analysis1/gpa.rds"</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>d1array.gpa <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_location3)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>data_location4 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/SMlog.rds"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>data_location4 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/Analysis1/SMlog.rds"</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>SMlog <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_location4)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>data_location5 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/PD.rds"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>data_location5 <span class="ot">&lt;-</span> <span class="st">"Data/Processed_data/Analysis1/PD.rds"</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>PD <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_location5)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="do">###Work in progress#### </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -277,37 +287,63 @@ Figure&nbsp;1: Slicer Analysis
 <h1>PCA</h1>
 <p>The primary statistical approach first applied is a Principal Components Analysis. The next three plots below illustrate the initial results of PC1 by PC2, followed by color coded modifiers to visualize how the plotted variation relates to the sample demographics.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show the Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>d1.pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(d1array.gpa<span class="sc">$</span>coords)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>d1.pca</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Ordination type: Principal Component Analysis 
 Centering by OLS mean
 Orthogonal projection of OLS residuals
-Number of observations: 15 
-Number of vectors 14 
+Number of observations: 35 
+Number of vectors 34 
 
 Importance of Components:
-                             Comp1        Comp2        Comp3        Comp4
-Eigenvalues            0.001284241 0.0008394793 0.0007064908 0.0004946383
-Proportion of Variance 0.231890428 0.1515815806 0.1275683414 0.0893149409
-Cumulative Proportion  0.231890428 0.3834720082 0.5110403496 0.6003552905
+                              Comp1        Comp2        Comp3        Comp4
+Eigenvalues            0.0007762149 0.0006506236 0.0005004489 0.0003659404
+Proportion of Variance 0.1712255407 0.1435213125 0.1103942136 0.0807229317
+Cumulative Proportion  0.1712255407 0.3147468532 0.4251410668 0.5058639985
                               Comp5        Comp6        Comp7        Comp8
-Eigenvalues            0.0004420162 0.0003562317 0.0002984485 0.0002513745
-Proportion of Variance 0.0798131715 0.0643233985 0.0538897120 0.0453897296
-Cumulative Proportion  0.6801684621 0.7444918605 0.7983815725 0.8437713021
-                              Comp9       Comp10       Comp11       Comp12
-Eigenvalues            0.0002313215 0.0001697308 0.0001513341 0.0001270698
-Proportion of Variance 0.0417688424 0.0306476375 0.0273258209 0.0229445070
-Cumulative Proportion  0.8855401445 0.9161877820 0.9435136029 0.9664581099
-                             Comp13       Comp14
-Eigenvalues            0.0001010387 8.472084e-05
-Proportion of Variance 0.0182441710 1.529772e-02
-Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
+Eigenvalues            0.0002743775 0.0002599849 0.0002234453 0.0001761264
+Proportion of Variance 0.0605250385 0.0573501554 0.0492898857 0.0388517914
+Cumulative Proportion  0.5663890370 0.6237391925 0.6730290782 0.7118808696
+                              Comp9       Comp10       Comp11      Comp12
+Eigenvalues            0.0001618127 0.0001285202 0.0001160936 0.000100312
+Proportion of Variance 0.0356943134 0.0283503232 0.0256091196 0.022127860
+Cumulative Proportion  0.7475751830 0.7759255061 0.8015346257 0.823662486
+                             Comp13       Comp14       Comp15       Comp16
+Eigenvalues            0.0000896728 8.360343e-05 7.522842e-05 6.781368e-05
+Proportion of Variance 0.0197809557 1.844211e-02 1.659467e-02 1.495905e-02
+Cumulative Proportion  0.8434434419 8.618856e-01 8.784802e-01 8.934393e-01
+                             Comp17       Comp18       Comp19       Comp20
+Eigenvalues            6.290149e-05 5.328197e-05 4.717855e-05 4.047021e-05
+Proportion of Variance 1.387546e-02 1.175349e-02 1.040713e-02 8.927339e-03
+Cumulative Proportion  9.073147e-01 9.190682e-01 9.294754e-01 9.384027e-01
+                             Comp21       Comp22       Comp23       Comp24
+Eigenvalues            3.692334e-05 3.345814e-05 2.850823e-05 2.721243e-05
+Proportion of Variance 8.144933e-03 7.380543e-03 6.288640e-03 6.002799e-03
+Cumulative Proportion  9.465476e-01 9.539282e-01 9.602168e-01 9.662196e-01
+                             Comp25       Comp26       Comp27       Comp28
+Eigenvalues            0.0000238953 2.199787e-05 1.963764e-05 1.781957e-05
+Proportion of Variance 0.0052710739 4.852519e-03 4.331874e-03 3.930825e-03
+Cumulative Proportion  0.9714906798 9.763432e-01 9.806751e-01 9.846059e-01
+                             Comp29       Comp30       Comp31       Comp32
+Eigenvalues            1.724931e-05 1.518568e-05 1.240609e-05 9.647437e-06
+Proportion of Variance 3.805033e-03 3.349816e-03 2.736663e-03 2.128132e-03
+Cumulative Proportion  9.884109e-01 9.917607e-01 9.944974e-01 9.966255e-01
+                             Comp33       Comp34
+Eigenvalues            8.595729e-06 6.701667e-06
+Proportion of Variance 1.896135e-03 1.478323e-03
+Cumulative Proportion  9.985217e-01 1.000000e+00</code></pre>
 </div>
+<details class="code-fold">
+<summary>Show the Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -315,6 +351,8 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 </figure>
 </div>
 </div>
+<details class="code-fold">
+<summary>Show the Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> SlicerMorph.MS <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="fu">paste</span>(SMlog<span class="sc">$</span>output.path,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                                            SMlog<span class="sc">$</span>MeanShape,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">sep=</span><span class="st">"/"</span>),</span>
@@ -326,6 +364,7 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">pch=</span><span class="dv">16</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(d1<span class="sc">$</span>Sex), <span class="at">legend =</span> <span class="fu">unique</span>(d1<span class="sc">$</span>Sex))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -333,10 +372,13 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 </figure>
 </div>
 </div>
+<details class="code-fold">
+<summary>Show the Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA by Ancestry"</span>,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span>d1<span class="sc">$</span>Ancestry,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">pch=</span><span class="dv">16</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -347,6 +389,8 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 </div>
 <p>The collage below shows the original PC1 by PC2 compared with analyses by three different planes. Unsurprisingly, the original analysis shows the most variation and the strongest clustering by ancestry. This collage also labels the PC axes for me which I haven’t figured out how do yet for the larger plots. Everything is still a work in progress.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show the Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">col=</span>d1<span class="sc">$</span>Ancestry,</span>
@@ -358,21 +402,21 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">col=</span>d1<span class="sc">$</span>Ancestry,</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch=</span><span class="dv">16</span></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry))</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis1=</span><span class="dv">2</span>, <span class="at">axis2=</span><span class="dv">3</span>,</span>
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">col=</span>d1<span class="sc">$</span>Ancestry,</span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch=</span><span class="dv">16</span></span>
 <span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry))</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d1.pca, <span class="at">main =</span> <span class="st">"PCA"</span>,</span>
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis1=</span><span class="dv">3</span>, <span class="at">axis2=</span><span class="dv">4</span>,</span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">col=</span>d1<span class="sc">$</span>Ancestry,</span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">pch=</span><span class="dv">16</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col=</span><span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry), <span class="at">legend =</span> <span class="fu">unique</span>(d1<span class="sc">$</span>Ancestry))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -381,115 +425,578 @@ Cumulative Proportion  0.9847022809 1.000000e+00</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="anova" class="level1">
+<h1>ANOVA</h1>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(PD,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">Ancestry =</span> d1<span class="sc">$</span>Ancestry,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">Sex =</span> d1<span class="sc">$</span>Sex,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">Csize =</span> d1<span class="sc">$</span>centeroid)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(gdf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$names
-[1] ""         "Ancestry" "Sex"      "Csize"   
-
-$class
-[1] "geomorph.data.frame"</code></pre>
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Build the data frame (Explicitly mapping Coords = PD)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Coords =</span> PD,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Ancestry =</span> d1<span class="sc">$</span>Ancestry,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sex =</span> d1<span class="sc">$</span>Sex,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Csize =</span> d1<span class="sc">$</span>centroid</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Fit the primary interaction model </span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>lm.fit <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(Coords <span class="sc">~</span> Ancestry <span class="sc">*</span> Sex, <span class="at">data =</span> gdf)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Fit the Allometry + Interaction model</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>lm.allometry <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(Coords <span class="sc">~</span> Csize <span class="sc">+</span> Ancestry <span class="sc">*</span> Sex, <span class="at">data =</span> gdf)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># POLISH TABLE 1: Baseline Interaction Model</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>anova_fit_raw <span class="ot">&lt;-</span> <span class="fu">anova</span>(lm.fit)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>anova_fit_df  <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(anova_fit_raw<span class="sc">$</span>table)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>anova_fit_df[<span class="fu">is.na</span>(anova_fit_df)] <span class="ot">&lt;-</span> <span class="st">""</span> <span class="co"># Strip NA spaces</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(anova_fit_df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Df"</span>, <span class="st">"SS"</span>, <span class="st">"MS"</span>, <span class="st">"Rsq"</span>, <span class="st">"F"</span>, <span class="st">"Z (Effect Size)"</span>, <span class="st">"P-Value"</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  anova_fit_df,</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Procrustes ANOVA: Shape Variation Accounted for by Ancestry and Sex Interaction"</span>,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>), </span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"rcccccc"</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Procrustes ANOVA: Shape Variation Accounted for by Ancestry and Sex Interaction</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 2%">
+<col style="width: 6%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Df</th>
+<th style="text-align: center;">SS</th>
+<th style="text-align: center;">MS</th>
+<th style="text-align: center;">Rsq</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">Z (Effect Size)</th>
+<th style="text-align: center;">P-Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ancestry</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">0.0005</td>
+<td style="text-align: center;">9.13009663998404e-05</td>
+<td style="text-align: center;">0.350968518974116</td>
+<td style="text-align: center;">2.88307735467883</td>
+<td style="text-align: center;">1.73720354896043</td>
+<td style="text-align: center;">0.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sex</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">1.65623609430787e-05</td>
+<td style="text-align: center;">0.0127334189770794</td>
+<td style="text-align: center;">0.523001778161801</td>
+<td style="text-align: center;">0.0608931261849285</td>
+<td style="text-align: center;">0.49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ancestry:Sex</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">2.13399227623826e-06</td>
+<td style="text-align: center;">0.00328129761699807</td>
+<td style="text-align: center;">0.0673866340005444</td>
+<td style="text-align: center;">-1.5894601545215</td>
+<td style="text-align: center;">0.938</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">3.16678864865251e-05</td>
+<td style="text-align: center;">0.633016764431806</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: center;">0.0013</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>lm.fit <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(Coords<span class="sc">~</span>Ancestry<span class="sc">*</span>Sex, <span class="at">data=</span>gdf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: 
-This is not an error!  It is a friendly warning.
- 
-Because variables in the linear model are redundant, 
-the linear model design has been truncated (via QR decomposition). 
-Original X columns: 10 
-Final X columns (rank): 7 
-Check coefficients or degrees of freedom in ANOVA to see changes.
- 
-Use suppressWarnings() to turn off these warnings. </code></pre>
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># POLISH TABLE 2: Size (Allometry) Added Model</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ==========================================</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>anova_allo_raw <span class="ot">&lt;-</span> <span class="fu">anova</span>(lm.allometry)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>anova_allo_df  <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(anova_allo_raw<span class="sc">$</span>table)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>anova_allo_df[<span class="fu">is.na</span>(anova_allo_df)] <span class="ot">&lt;-</span> <span class="st">""</span> <span class="co"># Strip NA spaces</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(anova_allo_df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Df"</span>, <span class="st">"SS"</span>, <span class="st">"MS"</span>, <span class="st">"Rsq"</span>, <span class="st">"F"</span>, <span class="st">"Z (Effect Size)"</span>, <span class="st">"P-Value"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  anova_allo_df,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Procrustes ANOVA: Shape Variation Accounted for by Size (Allometry), Ancestry, and Sex"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>), </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"rcccccc"</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Procrustes ANOVA: Shape Variation Accounted for by Size (Allometry), Ancestry, and Sex</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 2%">
+<col style="width: 6%">
+<col style="width: 19%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Df</th>
+<th style="text-align: center;">SS</th>
+<th style="text-align: center;">MS</th>
+<th style="text-align: center;">Rsq</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">Z (Effect Size)</th>
+<th style="text-align: center;">P-Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Csize</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">6.86552534875859e-05</td>
+<td style="text-align: center;">0.0527833024916868</td>
+<td style="text-align: center;">2.22972734294804</td>
+<td style="text-align: center;">1.01029335115098</td>
+<td style="text-align: center;">0.161</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ancestry</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: center;">0.0004</td>
+<td style="text-align: center;">8.97785496981732e-05</td>
+<td style="text-align: center;">0.345116222376229</td>
+<td style="text-align: center;">2.91575191851026</td>
+<td style="text-align: center;">1.76043723647787</td>
+<td style="text-align: center;">0.042</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sex</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">4.62110091681289e-06</td>
+<td style="text-align: center;">0.00355277935986138</td>
+<td style="text-align: center;">0.150080213025549</td>
+<td style="text-align: center;">-0.580688338896679</td>
+<td style="text-align: center;">0.711</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ancestry:Sex</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">4.379637653186e-06</td>
+<td style="text-align: center;">0.00673427676132309</td>
+<td style="text-align: center;">0.14223817306682</td>
+<td style="text-align: center;">-1.16749405802209</td>
+<td style="text-align: center;">0.877</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">3.0790873917711e-05</td>
+<td style="text-align: center;">0.5918134190109</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: center;">0.0013</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Analysis of Variance, using Residual Randomization
-Permutation procedure: Randomization of null model residuals 
-Number of permutations: 1000 
-Estimation method: Ordinary Least Squares 
-Sums of Squares and Cross-products: Type I 
-Effect sizes (Z) based on F distributions
-
-             Df        SS        MS     Rsq      F        Z Pr(&gt;F)  
-Ancestry      4 0.0090834 0.0022709 0.37550 1.5073  1.63054  0.056 .
-Sex           1 0.0019193 0.0019193 0.07934 1.2739  0.69194  0.234  
-Ancestry:Sex  1 0.0011348 0.0011348 0.04691 0.7532 -0.46291  0.675  
-Residuals     8 0.0120528 0.0015066 0.49825                         
-Total        14 0.0241903                                           
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Call: procD.lm(f1 = Coords ~ Ancestry * Sex, data = gdf)</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lm.fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="morphological-disparity" class="level1">
+<h1>Morphological Disparity</h1>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Build the data frame using PD directly for coords</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">coords =</span> PD,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">Ancestry =</span> d1<span class="sc">$</span>Ancestry,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">Sex =</span> d1<span class="sc">$</span>Sex,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">Csize =</span> d1<span class="sc">$</span>centroid)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. FIX: Capture and hide the calculation progress text completely</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">capture.output</span>(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    shape_disp_ancestry <span class="ot">&lt;-</span> <span class="fu">morphol.disparity</span>(coords <span class="sc">~</span> Ancestry, </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">groups =</span> <span class="sc">~</span> Ancestry, </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">data =</span> gdf, </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">iter =</span> <span class="dv">999</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. CREATE TABLE 1: Procrustes Variances per Ancestry Group</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>disp_variance_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">Ancestry =</span> <span class="fu">names</span>(shape_disp_ancestry<span class="sc">$</span>Procrustes.var),</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Procrustes Variance</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(shape_disp_ancestry<span class="sc">$</span>Procrustes.var)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  disp_variance_df, </span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Morphological Disparity (Procrustes Variance) by Ancestry Group"</span>,</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">6</span>,</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"lc"</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Morphological Disparity (Procrustes Variance) by Ancestry Group</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ancestry</th>
+<th style="text-align: center;">Procrustes.Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Caucasian</td>
+<td style="text-align: center;">3.4e-05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinese</td>
+<td style="text-align: center;">0.0e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IND</td>
+<td style="text-align: center;">2.0e-05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Japanese</td>
+<td style="text-align: center;">1.3e-05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Korean</td>
+<td style="text-align: center;">2.7e-05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mix</td>
+<td style="text-align: center;">1.8e-05</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. CREATE TABLE 2: Pairwise P-Values Matrix (Cleaned Academic Triangle)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>disp_p_matrix <span class="ot">&lt;-</span> shape_disp_ancestry<span class="sc">$</span>PV.dist.Pval</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe check to ensure the matrix cleared out properly before rendering</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.null</span>(disp_p_matrix)) {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  disp_p_matrix[<span class="fu">upper.tri</span>(disp_p_matrix, <span class="at">diag =</span> <span class="cn">TRUE</span>)] <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  disp_p_table <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(disp_p_matrix)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    disp_p_table, </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Pairwise P-Values for Differences in Morphological Disparity Across Ancestries (Alpha = 0.05)"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">"c"</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Pairwise P-Values for Differences in Morphological Disparity Across Ancestries (Alpha = 0.05)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Caucasian</th>
+<th style="text-align: center;">Chinese</th>
+<th style="text-align: center;">IND</th>
+<th style="text-align: center;">Japanese</th>
+<th style="text-align: center;">Korean</th>
+<th style="text-align: center;">Mix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Caucasian</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinese</td>
+<td style="text-align: center;">0.176</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IND</td>
+<td style="text-align: center;">0.259</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Japanese</td>
+<td style="text-align: center;">0.18</td>
+<td style="text-align: center;">0.698</td>
+<td style="text-align: center;">0.671</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Korean</td>
+<td style="text-align: center;">0.669</td>
+<td style="text-align: center;">0.352</td>
+<td style="text-align: center;">0.692</td>
+<td style="text-align: center;">0.473</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mix</td>
+<td style="text-align: center;">0.404</td>
+<td style="text-align: center;">0.534</td>
+<td style="text-align: center;">0.904</td>
+<td style="text-align: center;">0.814</td>
+<td style="text-align: center;">0.674</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="morphological-disparity-by-ancestry" class="level1">
+<h1>Morphological Disparity by Ancestry</h1>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. FIX: Capture and hide the calculation progress text completely</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">capture.output</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    ancestry_variance <span class="ot">&lt;-</span> <span class="fu">morphol.disparity</span>(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>      Coords <span class="sc">~</span> Ancestry, </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">groups =</span> <span class="sc">~</span> Ancestry, </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> gdf,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">iter =</span> <span class="dv">999</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract the variance vector</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>ancestry_vars <span class="ot">&lt;-</span> ancestry_variance<span class="sc">$</span>Procrustes.var</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Generate the barplot for Ancestry</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>)) </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  ancestry_vars, </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"tomato"</span>,          </span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">2</span>,                 </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Morphological Disparity by Ancestry"</span>,</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Procrustes Variance"</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="R_Analysis_files/figure-html/gdf-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="R_Analysis_files/figure-html/Morphological Disparity by Ancestry-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
+</div>
+</section>
+<section id="format-tables-for-quarto" class="level1">
+<h1>Format Tables for Quarto</h1>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Capture the console summary text to hide the progress statement</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">capture.output</span>(summary_table <span class="ot">&lt;-</span> <span class="fu">summary</span>(ancestry_variance)))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. CREATE TABLE 1: Procrustes Variances per Ancestry Group</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>variance_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Ancestry =</span> <span class="fu">names</span>(ancestry_variance<span class="sc">$</span>Procrustes.var),</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Procrustes Variance</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ancestry_variance<span class="sc">$</span>Procrustes.var)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  variance_df, </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Morphological Disparity (Procrustes Variance) by Ancestry Group"</span>,</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">6</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"lc"</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="R_Analysis_files/figure-html/gdf-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<table class="caption-top table table-sm table-striped small">
+<caption>Morphological Disparity (Procrustes Variance) by Ancestry Group</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ancestry</th>
+<th style="text-align: center;">Procrustes.Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Caucasian</td>
+<td style="text-align: center;">0.000802</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinese</td>
+<td style="text-align: center;">0.000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IND</td>
+<td style="text-align: center;">0.000904</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Japanese</td>
+<td style="text-align: center;">0.001083</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Korean</td>
+<td style="text-align: center;">0.001097</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mix</td>
+<td style="text-align: center;">0.001134</td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
+<details class="code-fold">
+<summary>Show the Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. CRITICAL FIX: Pull the pairwise P-values matrix straight from the source object</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>p_matrix <span class="ot">&lt;-</span> ancestry_variance<span class="sc">$</span>PV.dist.Pval</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Clean up the matrix layout for markdown rendering</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This drops the redundant duplicate upper triangle safely</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>p_matrix[<span class="fu">upper.tri</span>(p_matrix, <span class="at">diag =</span> <span class="cn">TRUE</span>)] <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>p_table_clean <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(p_matrix)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. CREATE TABLE 2: Pairwise P-Values Matrix</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  p_table_clean, </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Pairwise P-Values for Differences in Morphological Disparity (Alpha = 0.05)"</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"c"</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="R_Analysis_files/figure-html/gdf-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="R_Analysis_files/figure-html/gdf-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">procD.lm</span>(Coords<span class="sc">~</span>Csize <span class="sc">+</span> Ancestry<span class="sc">*</span>Sex, <span class="at">data=</span>gdf))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: 
-This is not an error!  It is a friendly warning.
- 
-Because variables in the linear model are redundant, 
-the linear model design has been truncated (via QR decomposition). 
-Original X columns: 11 
-Final X columns (rank): 8 
-Check coefficients or degrees of freedom in ANOVA to see changes.
- 
-Use suppressWarnings() to turn off these warnings. </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Analysis of Variance, using Residual Randomization
-Permutation procedure: Randomization of null model residuals 
-Number of permutations: 1000 
-Estimation method: Ordinary Least Squares 
-Sums of Squares and Cross-products: Type I 
-Effect sizes (Z) based on F distributions
-
-             Df        SS        MS     Rsq      F        Z Pr(&gt;F)    
-Csize         1 0.0034837 0.0034837 0.14401 2.5410  2.97834  0.001 ***
-Ancestry      4 0.0082665 0.0020666 0.34173 1.5074  1.49535  0.079 .  
-Sex           1 0.0018098 0.0018098 0.07481 1.3200  0.70917  0.247    
-Ancestry:Sex  1 0.0010333 0.0010333 0.04272 0.7537 -0.43578  0.658    
-Residuals     7 0.0095969 0.0013710 0.39673                           
-Total        14 0.0241903                                             
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Call: procD.lm(f1 = Coords ~ Csize + Ancestry * Sex, data = gdf)</code></pre>
+<table class="caption-top table table-sm table-striped small">
+<caption>Pairwise P-Values for Differences in Morphological Disparity (Alpha = 0.05)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Caucasian</th>
+<th style="text-align: center;">Chinese</th>
+<th style="text-align: center;">IND</th>
+<th style="text-align: center;">Japanese</th>
+<th style="text-align: center;">Korean</th>
+<th style="text-align: center;">Mix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Caucasian</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinese</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IND</td>
+<td style="text-align: center;">0.48</td>
+<td style="text-align: center;">0.028</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Japanese</td>
+<td style="text-align: center;">0.144</td>
+<td style="text-align: center;">0.006</td>
+<td style="text-align: center;">0.384</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Korean</td>
+<td style="text-align: center;">0.105</td>
+<td style="text-align: center;">0.007</td>
+<td style="text-align: center;">0.342</td>
+<td style="text-align: center;">0.953</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mix</td>
+<td style="text-align: center;">0.13</td>
+<td style="text-align: center;">0.005</td>
+<td style="text-align: center;">0.293</td>
+<td style="text-align: center;">0.86</td>
+<td style="text-align: center;">0.903</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 

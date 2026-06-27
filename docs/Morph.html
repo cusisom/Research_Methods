@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-c51defa157ccb18095ba4b35bf459923.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -149,11 +152,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data">Importing Data</a></li>
   <li><a href="#model-alignment" id="toc-model-alignment" class="nav-link" data-scroll-target="#model-alignment">Model Alignment</a></li>
   <li><a href="#landmark-configuration" id="toc-landmark-configuration" class="nav-link" data-scroll-target="#landmark-configuration">Landmark Configuration</a></li>
+  <li><a href="#mirroring" id="toc-mirroring" class="nav-link" data-scroll-target="#mirroring">Mirroring</a></li>
   <li><a href="#alpaca" id="toc-alpaca" class="nav-link" data-scroll-target="#alpaca">ALPACA!</a></li>
   <li><a href="#consolidating-landmark-data" id="toc-consolidating-landmark-data" class="nav-link" data-scroll-target="#consolidating-landmark-data">Consolidating Landmark Data</a></li>
   <li><a href="#generalized-procrustes-analysis-in-slicermorph" id="toc-generalized-procrustes-analysis-in-slicermorph" class="nav-link" data-scroll-target="#generalized-procrustes-analysis-in-slicermorph">Generalized Procrustes Analysis in SlicerMorph</a></li>
   </ul></li>
-  <li><a href="#the-next-processing-steps-can-be-found-on-the-r_analysis-page." id="toc-the-next-processing-steps-can-be-found-on-the-r_analysis-page." class="nav-link" data-scroll-target="#the-next-processing-steps-can-be-found-on-the-r_analysis-page.">The next processing steps can be found on the <code>R_Analysis</code> page.</a></li>
+  <li><a href="#the-next-processing-steps-can-be-found-on-the-data-processing-and" id="toc-the-next-processing-steps-can-be-found-on-the-data-processing-and" class="nav-link" data-scroll-target="#the-next-processing-steps-can-be-found-on-the-data-processing-and">The next processing steps can be found on the <code>Data Processing</code> and</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -208,10 +212,10 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Once the extensions are installed, navigate back to the <code>Welcome to Slicer</code> screen <em>Fig.1</em></li>
 </ol>
-<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-SliceData" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/SliceWelcome.png" class="img-fluid figure-img">
+<a href="Images/SliceWelcome.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Welcome to Slicer"><img src="Images/SliceWelcome.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Welcome to Slicer
@@ -221,25 +225,24 @@ Figure&nbsp;1: Welcome to Slicer
 </section>
 <section id="importing-data" class="level3">
 <h3 class="anchored" data-anchor-id="importing-data">Importing Data</h3>
-<p><em>This step specifies the process of loading data for a single model with no associated landmark data. For more details on how to import multiple files for alignment and landmark configuration see the <code>Alignment</code> and <code>ALPACA</code> sections below</em></p>
+<p><em>This step specifies the process of loading data for a single model with no associated landmark data. For more details on how to import multiple files for alignment and landmark configuration see the <code>Model Alignment</code> and <code>ALPACA!</code> sections below</em></p>
 <ol type="1">
-<li>To import the Reality Capture models, click on the <code>Add Data</code> button
+<li>To import the Reality Scan models, click on the <code>Add Data</code> button
 <ul>
-<li>This button can be found twice on the welcome screen or under the <code>File</code> dropdown menu</li>
+<li>This button can be found both on the welcome screen and under the <code>File</code> dropdown menu</li>
 </ul></li>
 <li>Select <code>Choose File(s) to Add</code>
 <ul>
-<li>Files for this project can be found under <code>Photogrammetry/Lightroom/Dcusimano</code></li>
-<li>Select both the Model (OBJ) file and the Texture (JPEG) file <em>Fig.2</em></li>
-<li>Give the software a moment to load your data and you should see two images loaded <em>Fig.2</em></li>
+<li>Select both the Model (OBJ) file and the Texture (JPEG) file [<em>Fig.2</em>]</li>
+<li>Give the software a moment to load your data and you should see two images loaded [<em>Fig.2</em>]</li>
 <li>To keep track of what files are loaded in Slicer, navigate to the <code>Data</code> window from the <code>Modules</code> dropdown menu. <em>See Below</em></li>
 </ul></li>
-<li>While not important for this step, you can check to see that your <code>Texture</code> file works with the model by opening the <code>Texture Model</code> modules
+<li>While not important for this step, you can check to see that your <code>Texture</code> file works with the model by opening the <code>Texture Model</code> module
 <ul>
 <li>This can be done by either scrolling through the Modules dropdown menu to the <code>Surface Models</code> tab and then to the <code>Texture Model</code> module or by clicking on the magnifying class in the task ribbon and searching for <code>Texture Model</code></li>
 <li>In either case you will open a window with three boxes for data and parameters.
 <ul>
-<li>In the <code>Model</code> box, make sure your Reality Capture <code>OBJ</code> file is selected</li>
+<li>In the <code>Model</code> box, make sure your Reality Scan <code>OBJ</code> file is selected</li>
 <li>In the <code>Texture</code> box, make sure your resized <code>PNG</code> texture file is selected</li>
 <li>The last box provides the option to <code>save color information as point data</code>. My practice is to set this as <code>RGB Vector</code></li>
 </ul></li>
@@ -251,10 +254,10 @@ Figure&nbsp;1: Welcome to Slicer
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="Images/loaddata.png" class="img-fluid figure-img"></p>
+<p><a href="Images/loaddata.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Loading Data"><img src="Images/loaddata.png" class="img-fluid figure-img"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="Images/loaded.png" class="img-fluid figure-img"></p>
+<p><a href="Images/loaded.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Loading Data"><img src="Images/loaded.png" class="img-fluid figure-img"></a></p>
 </div>
 </div>
 </div>
@@ -263,10 +266,10 @@ Figure&nbsp;2: Loading Data
 </figcaption>
 </figure>
 </div>
-<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-SliceData" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/textured.png" class="img-fluid figure-img">
+<a href="Images/textured.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Textured Model"><img src="Images/textured.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Textured Model
@@ -277,11 +280,11 @@ Figure&nbsp;3: Textured Model
 <section id="model-alignment" class="level3">
 <h3 class="anchored" data-anchor-id="model-alignment">Model Alignment</h3>
 <p>When working with multiple models it becomes important to make sure that each is in the same alignment within a 3D cartesian plane. To accomplish this we make use of the <code>FastModelAlign</code> module available through slicer morph.</p>
-<p><em>This step requires at least two models. We recommend establishing one model as the template for this step as well as for the landmark configuration process in future steps.</em></p>
+<p><em>This step requires at least two models. Be sure to establish one model as the template for this step as well as for the landmark configuration process in future steps.</em></p>
 <ol type="1">
-<li>Load in an additional model.
+<li>Load in an additional model
 <ul>
-<li>follow the steps from above and check that you have two models loaded in the <code>Data</code> window</li>
+<li>Follow the steps from above and check that you have two models loaded in the <code>Data</code> window</li>
 </ul></li>
 <li>Find the SlicerMorph tab under the <code>Modules</code> dropdown menu
 <ul>
@@ -294,7 +297,10 @@ Figure&nbsp;3: Textured Model
 <ul>
 <li>Under <code>Source Model</code> select the model that you are trying to align to a template</li>
 <li>Under <code>Target Model</code> select the model that you will use as a template</li>
-<li>Click on the box that says <code>Skip Scaling</code></li>
+<li>Click on the box that says <code>Skip Scaling</code> if your models were all created under the same conditions/parameters*
+<ul>
+<li>In collecting fossil data, especially when using models generated by different parties, I have had to keep scaling on. There is no real issue with doing so when collecting shape (not size) data</li>
+</ul></li>
 <li>For the <code>Output registered model</code> select the same model as you used for <code>Source Model</code></li>
 </ul></li>
 <li>Click on the <code>Test pointcloud subsampling</code> button
@@ -303,11 +309,11 @@ Figure&nbsp;3: Textured Model
 </ul></li>
 <li>Click on <code>Run rigid registration</code></li>
 </ol>
-<p>Once the rigid registration is completed both models will be overlapping. To see the differences between the two models you can choose to have one textured and the other not or you can navigate back to the <code>Data</code> window and change the colors of either model.</p>
-<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Once the rigid registration is completed both models will be overlapping. To see the differences between the two models you can choose to have one textured and the other not [<em>Fig 4</em>] or you can navigate back to the <code>Data</code> window and change the colors of either model.</p>
+<div id="fig-SliceData" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/aligned.png" class="img-fluid figure-img">
+<a href="Images/aligned.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;4: Aligned Models"><img src="Images/aligned.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Aligned Models
@@ -318,7 +324,7 @@ Figure&nbsp;4: Aligned Models
 <li>With this complete, click on the <code>Save</code> button
 <ul>
 <li>This will open a <code>Save Scene</code> window with multiple files selected</li>
-<li>Make sure that only the file you need to save is selected, in this case the model that was being aligned.</li>
+<li>Make sure that only the file you need to save is selected, in this case the model that was being aligned (<em>only the .obj file</em>).</li>
 </ul></li>
 </ol>
 </section>
@@ -326,11 +332,13 @@ Figure&nbsp;4: Aligned Models
 <h3 class="anchored" data-anchor-id="landmark-configuration">Landmark Configuration</h3>
 <p>The process of placing landmarks in 3D Slicer is not overly complicated as long as the user has the following:</p>
 <ul>
-<li>A list of desired landmarks</li>
-<li>Definitions of each landmark with instructions on how to find it <em>this sometimes differs if taking the landmark manually or digitally</em></li>
+<li>A list of desired landmarks (see the <a href="./Tables.html"><code>Landmarks</code></a> table I created for my work (<em>Table 2</em>))</li>
+<li>Definitions of each landmark with instructions on how to find it (<em>this sometimes differs if taking the landmark manually or digitally</em>)</li>
 <li>A clear method of organizing landmarks so that each landmarking sequence is the same for every specimen</li>
 <li>A clear way of lablling landmarks and format for saving landmark files</li>
 </ul>
+<section id="landmarking-steps" class="level4">
+<h4 class="anchored" data-anchor-id="landmarking-steps">Landmarking Steps</h4>
 <ol type="1">
 <li>The module used for configuring Geometric Morphometric landmarks is called <code>Markups</code> and can be found either in the modules dropdown menu or on the primary task ribbon.
 <ul>
@@ -340,33 +348,33 @@ Figure&nbsp;4: Aligned Models
 <ul>
 <li>Slicer will give this list a priliminary name which should be changed to suit suit the researchers needs
 <ul>
-<li>I use the prefix <code>LM</code> followed by an underscore* and the specimen number</li>
-<li>Ex. LM_####</li>
-<li>*The underscore becomes important latter when using this landmark data in <code>R</code>. This is because <code>R</code> does not like spaces in file names.</li>
+<li>I use the prefix <code>JAB_LM</code> followed by an underscore* and the specimen number for my JABSOM data</li>
+<li>Ex. JAB_LM_####</li>
+<li>*The underscore becomes important later when using this landmark data in <code>R</code>. This is because <code>R</code> does not like spaces in file names</li>
 </ul></li>
 </ul></li>
-<li>After naming the <code>Point List</code>, open the <code>Display</code> and <code>Control Points</code> menus below.
+<li>After naming the <code>Point List</code>, open the <code>Display</code> and <code>Control Points</code> menus below
 <ul>
 <li>When hovering the cursor over the model, a potential point will display with an icon and specimen/point number</li>
 <li>For ease of use, the size of both or either of these features can be changed in the display menu</li>
-<li>Set this to your preference (often a touch smaller than the default)</li>
+<li>Set this to your preference</li>
 <li><em>It is good to follow what point number you are on. For each specimen assessed through this workflow, the point numbers should match. For example, if point one on specimen one is Left Alare, point one on all specimens should be Left Alare. <strong>Do Not Rearrange the Points for Different Specimens</strong></em></li>
 </ul></li>
 </ol>
-<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-SliceData" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/oneMark.png" class="img-fluid figure-img">
+<a href="Images/oneMark.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;5: Placing Landmarks"><img src="Images/oneMark.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Placing Landmarks
 </figcaption>
 </figure>
 </div>
-<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-SliceData" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/MultiMark.png" class="img-fluid figure-img">
+<a href="Images/MultiMark.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;6: Landmark Set"><img src="Images/MultiMark.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Landmark Set
@@ -374,9 +382,8 @@ Figure&nbsp;6: Landmark Set
 </figure>
 </div>
 <ol start="4" type="1">
-<li>A couple of notes on using <code>Markups</code>
+<li>To place a <code>Control Point</code>, make sure the <code>Place control point</code> button is selected <img src="Images/cp.png" class="img-fluid">
 <ul>
-<li>To place a <code>Control Point</code>, make sure the <code>Place control point</code> button is selected <img src="Images/cp.png" class="img-fluid"></li>
 <li>While placing control points, left clicking anywhere will place a point. If you need to rotate the model, right click to switch back to the cursor. Then click the <code>Place control point</code> button <img src="Images/cp.png" class="img-fluid"> above to switch back.</li>
 <li>If a control point is placed in the wrong spot (inevitable in this process) it is better to move it than to delete it.
 <ul>
@@ -384,16 +391,16 @@ Figure&nbsp;6: Landmark Set
 </ul></li>
 <li>When developing your <code>Point List</code> it is good practice to name each point in the corresponding description box
 <ul>
-<li><em>This will become even more useful later</em></li>
+<li><em>Click on Figure 6 above to see how this looks in the window. The abbreviations coincide with my landmark table seen in Table 2 here <a href="./Tables.html"><code>Tables</code></a></em></li>
 </ul></li>
 </ul></li>
 <li>Craniometric Points in Slicer
 <ul>
-<li>Placing points in Slicer has it’s advantages and disadvantages</li>
+<li>Placing points in Slicer has its advantages and disadvantages</li>
 <li>Advantages
 <ul>
-<li>The R, A, S (Right, Anterior, Superior) fields can allow one to find the most lateral, anterior, superior, and etcetera surfaces on the model.</li>
-<li>If your scale was set appropriately in Reality Capture, finding points such as Opisthocranion become simple by using the line tool to measure the distance from Glabella to the farthest surface on the posterior aspect of the skull</li>
+<li>The R, A, S (Right, Anterior, Superior) fields can allow one to find the most lateral, anterior, superior, and etcetera surfaces on the model</li>
+<li>Finding points such as Opisthocranion become simple by using the line tool to measure the distance from Glabella to the farthest surface on the posterior aspect of the skull</li>
 <li>The model is easily rotated to establish points such as Basion on the inferior aspect of the skull</li>
 <li>It is easy to visually keep track of data along the way by keeping each control point viewable</li>
 </ul></li>
@@ -403,7 +410,6 @@ Figure&nbsp;6: Landmark Set
 <ul>
 <li>Faint suture lines, for example, that may be visible with appropriate light and magnification are occassionally lost in the digital format</li>
 <li>Features that are sometimes easier to feel (i.e., temporal lines) are more difficult to discern</li>
-<li><em>To clarify how each of the landmarks used in this study were obtained, a <code>Data Dictionary</code> with descriptive text and images will be generated soon.</em></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -412,11 +418,22 @@ Figure&nbsp;6: Landmark Set
 <li>Once all points have been established, click on the <code>Save</code> button in the primary task ribbon</li>
 <li>Be sure to only select the file that you intended (Slicer will auto-select multiple files) and establish the proper directory for it
 <ul>
-<li>Since we modified the cloned landmark set, Slicer attempts to save this file with the original template data</li>
+<li>In this case you should only be saving the landmark file. Slicer might automatically designate this as a .json file. For my work it is important to change this to a .fcsv file</li>
+<li>again, be sure to be consistent with your labling. All of my JABSOM landmark files are designate in the same format (JAB_LM_####)</li>
+</ul></li>
+<li>Since we modified the cloned landmark set, Slicer attempts to save this file with the original template data
+<ul>
+<li><em>Be sure to check all directories before saving. I have definitely lost files this way.</em></li>
 </ul></li>
 <li>When you click on <code>Save</code> from this window, Slicer will alert you to <code>warnings</code> which occured while saving. Ignore this and save away.</li>
 </ul></li>
 </ol>
+</section>
+</section>
+<section id="mirroring" class="level3">
+<h3 class="anchored" data-anchor-id="mirroring">Mirroring</h3>
+<p>When working with skeletal or fossil material one often encounters damaged or environmentally deformed specimens. In the past such materials would need to be excluded from most morphometric assessments. Digitizing 3D models, however, allows a workaround with working with such material. Specifically, if the damage is unilateral, it is possible to <code>mirror</code> the undamaged side so that landmark data can still be taken for portions of the skull that are missing. While this is not a perfect system, the logic follows that we are largely bilaterally symmetrical and so many of the landmarks can be comfortably reflected from one side of the skull to the other.</p>
+<p>For more information on how and why this is done and stepwise instructions on how to do it, see the <code>Mirroring</code> tab on the Navigation Bar above or follow the link here <a href="./Mirroring_Landmarks.html"><code>Mirroring</code></a></p>
 </section>
 <section id="alpaca" class="level3">
 <h3 class="anchored" data-anchor-id="alpaca">ALPACA!</h3>
@@ -438,7 +455,7 @@ Figure&nbsp;6: Landmark Set
 </ul></li>
 <li>Under <code>Source Landmark Set</code> select the <code>.fcsv</code> file (<code>Point List</code>) you saved with the coordinate data</li>
 <li>Under <code>Target Model</code> select the model file that does not have associated coordinate data</li>
-<li>Make sure that <code>Scaling</code> and <code>Projection</code> are not chaecked</li>
+<li><code>Scaling</code> and <code>Projection</code> are not checked</li>
 <li>Leave the <code>Target Landmark Set (Optional)</code> field blank</li>
 </ul></li>
 <li>Select <code>Run subsampling</code>
@@ -448,7 +465,7 @@ Figure&nbsp;6: Landmark Set
 </ul></li>
 <li>Select <code>Run ALPACA</code>
 <ul>
-<li>When ALPACA is complete you will be provided with a clone of the landmark data that can be modified over your target model.</li>
+<li>When ALPACA is complete you will be provided with a clone of the landmark data that can be modified over your target model</li>
 <li><em>There are a couple of different files generated after running ALPACA. You can review these when navigating back to the <code>Data</code> module or, better for our purposes, back to the <code>Markups</code> module</em></li>
 <li>In <code>Markups</code> you should see 3 <code>Point Lists</code>
 <ul>
@@ -458,13 +475,13 @@ Figure&nbsp;6: Landmark Set
 </ul></li>
 <li>Despite the ALPACA effort, these files can never be perfectly placed on the new model. Thus, the next step is to manually adjust each control point to best match the landmark definition.</li>
 <li>The main benefit of running ALPACA then becomes the transfer of the point list and the increased efficiency gained by adjusting points rather than placing new points.</li>
-<li>__Be sure that you are adjusting the correct point list. I work with the <code>Source_Landmarks_clone</code> file</li>
+<li>Be sure that you are adjusting the correct point list. I work with the <code>Source_Landmarks_clone</code> file but this isn’t necessary. Whichever list you choose to work with, howver, just be sure to rename it to follow your format (<em>i.e.&nbsp;JAB_LM_####</em>) as suggested in the step below</li>
 </ul></li>
 </ol>
-<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-SliceData" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/ALPACA.png" class="img-fluid figure-img">
+<a href="Images/ALPACA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;7: ALPACA Overlay"><img src="Images/ALPACA.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: ALPACA Overlay
@@ -474,13 +491,13 @@ Figure&nbsp;7: ALPACA Overlay
 <ol start="5" type="1">
 <li>Rename the <code>Point List</code> you are adjusting
 <ul>
-<li>Match the file format from above (i.e., LM_####)</li>
+<li>Match the file format from above</li>
 </ul></li>
 <li>Load in the Texture data
 <ul>
 <li>Follow the instructions listed under <code>Importing Data</code> above</li>
 </ul></li>
-<li>Adjust Landmarks and save as described in the <code>Landmark Configuration</code> section above.</li>
+<li>Adjust Landmarks and save as described in the <code>Landmark Configuration</code> section above</li>
 </ol>
 </section>
 <section id="consolidating-landmark-data" class="level3">
@@ -490,7 +507,7 @@ Figure&nbsp;7: ALPACA Overlay
 <ul>
 <li>Ex. Dcusimano -&gt; Skull ###, Skull ###, Skull ###</li>
 <li>With the incoming Landmark Data, I found it conveneient to have an additional folder for only this information</li>
-<li>Ex. Dcusimano -&gt; Coordinate Data</li>
+<li>Ex. Dcusimano -&gt; Coords (coordinate data)</li>
 <li>This will help tremendously when running our analyses in the next step</li>
 </ul></li>
 </ol>
@@ -500,7 +517,18 @@ Figure&nbsp;7: ALPACA Overlay
 <p>The last step for a typical Geometric Morphometric analysis in Slicer is to run the Generalized Procrustes Analysis (GPA). With a decent sample of Landmark data, this step is super simple.</p>
 <ol type="1">
 <li>Navigate to the <code>GPA</code> module under the <code>SlicerMorph</code> tab in the modules dropdown menu SlicerMorph-&gt;Geometric Morphometrics-&gt;GPA</li>
-<li>Click on <code>Select Landmark Files</code> -If you consolidated your files into one folder, you can simply select all -It is possible to select the individual files from multiple folders, but far more tedious -Click the <code>...</code> button next to the <code>Select Output Directory</code> field -I keep the output directory as the <code>Coordinate Data</code> folder -I choose to select the <code>Use Boas coordinates for GPA</code> button</li>
+<li>Click on <code>Select Landmark Files</code>
+<ul>
+<li>If you consolidated your files into one folder, you can simply select all
+<ul>
+<li>It is possible to select the individual files from multiple folders, but far more tedious</li>
+</ul></li>
+<li>Click the <code>...</code> button next to the <code>Select Output Directory</code> field
+<ul>
+<li>I keep the output directory as the <code>Coords</code> folder</li>
+</ul></li>
+<li>I choose to select the <code>Use Boas coordinates for GPA</code> button</li>
+</ul></li>
 <li>Select <code>Execute GPA + PCA</code>
 <ul>
 <li>When the analysis is complete, Slicer will provide you a few windows to explore your data</li>
@@ -513,10 +541,10 @@ Figure&nbsp;7: ALPACA Overlay
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="Images/GPA.png" class="img-fluid figure-img"></p>
+<p><a href="Images/GPA.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;8: Generalized Procrustes Analysis"><img src="Images/GPA.png" class="img-fluid figure-img"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="Images/Variance.png" class="img-fluid figure-img"></p>
+<p><a href="Images/Variance.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;8: Generalized Procrustes Analysis"><img src="Images/Variance.png" class="img-fluid figure-img"></a></p>
 </div>
 </div>
 </div>
@@ -534,10 +562,10 @@ Figure&nbsp;8: Generalized Procrustes Analysis
 </ul></li>
 </ul></li>
 </ol>
-<div id="fig-SliceData" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-SliceData" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Images/output.png" class="img-fluid figure-img">
+<a href="Images/output.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;9: Output Files"><img src="Images/output.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SliceData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9: Output Files
@@ -546,8 +574,9 @@ Figure&nbsp;9: Output Files
 </div>
 </section>
 </section>
-<section id="the-next-processing-steps-can-be-found-on-the-r_analysis-page." class="level2">
-<h2 class="anchored" data-anchor-id="the-next-processing-steps-can-be-found-on-the-r_analysis-page.">The next processing steps can be found on the <a href="./R_Analysis.html"><code>R_Analysis</code></a> page.</h2>
+<section id="the-next-processing-steps-can-be-found-on-the-data-processing-and" class="level2">
+<h2 class="anchored" data-anchor-id="the-next-processing-steps-can-be-found-on-the-data-processing-and">The next processing steps can be found on the <a href="./data_processing.html"><code>Data Processing</code></a> and</h2>
+<p><a href="./R_Analysis.html"><code>Analysis</code></a> pages.</p>
 
 
 </section>
@@ -955,6 +984,38 @@ Figure&nbsp;9: Output Files
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

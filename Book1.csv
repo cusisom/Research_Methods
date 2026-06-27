@@ -1,4 +1,4 @@
-"""Time Period""",Age Range,"""Geologic Age (ka)""",Specimens/Assemblages,Number,Species,Continent,Citation
+"""Time Period""",Age Range,"""Approximate Geologic Age (ka)""",Specimens/Assemblages,Number,Species,Continent,Citation
 ,,,,,,,
 Modern,20th/21st century,0,JABSOM collection (JAB),37,H. sapiens,Asia & North America,
 Modern,19th/20th century,0.2,Certosa Cemetery (CERT),50,H. sapiens,Europe,
@@ -18,6 +18,7 @@ Upper Paleolithic,40-12 kya,10,Canteen Kopje,1,H. sapiens,Africa,
 Upper Paleolithic,,14,Oberkassel,2,H. sapiens,Europe,
 Upper Paleolithic,,24,"Brno (I,II,III)",3,H. sapiens,Europe,
 Upper Paleolithic,,25,Predmosti (3 & 4),2,H. sapiens,Europe,
+Upper Paleolithic,,27,Dolni Vestonice,5,H. sapiens,Europe,
 Upper Paleolithic,,28,Cro-Magnon (1 & 2),2,H. sapiens,Europe,
 Middle Paleolithic ,,30,Gibralter 1,1,H. neanderthalensis,Europe,
 Middle Paleolithic ,,36,Spy (1 & 2),2,H. neanderthalensis,Europe,

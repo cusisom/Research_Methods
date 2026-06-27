@@ -15,7 +15,7 @@ Foldio 360 *Phone App*
 
 Adobe Lightroom
 
-Reality Capture
+Reality Scan
  
 3D Slicer
 
